@@ -1,0 +1,163 @@
+a {
+  color: #c70039;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #92042d;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-bottom: 5%;
+}
+
+h4 {
+  font-size: 0.8em;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: inline;
+}
+
+h5 {
+  font-size: 0.85em;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: inline;
+}
+
+h6 {
+  font-size: 1.1em;
+  font-weight: 300;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.page-container {
+  height: 100vh;
+  width: 100%;
+  background-color: #f6f2f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  height: 65%;
+  width: 55%;
+  background-color: #ffffff;
+  border-radius: 35px;
+  /* box-shadow: 2px, ; */
+  box-shadow: 1px 9px 6px -6px rgb(170, 169, 169);
+}
+
+.left-container {
+  background-image: url('/../../assets/login-img/family-cropped.png');
+  /* background-image: url('/../../assets/login-img/family-games-1.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  float: left;
+  border-radius: 35px 0 0 35px;
+  height: 100%;
+  width: 48%;
+}
+
+.form-container {
+  width: 50%;
+  padding-top: 3%;
+  display: inline-block
+}
+
+.form-group {
+  width: 72%;
+}
+
+.form-control {
+  border-radius: 10px;
+}
+
+.logo-container {
+  background-repeat: no-repeat;
+  height: 85px;
+}
+
+.logo {
+  height: 65%;
+  display: block;
+  margin: auto;
+}
+
+.form-wrapper {
+  margin-top: 6%;
+  padding-left: 24%;
+}
+
+.login-button {
+  color: #ffffff;
+  background-color: #c70039;
+  border-color: #c70039;
+  display: block;
+  margin: auto;
+  width: auto;
+}
+
+.login-button:hover {
+  color: #c70039;
+  background-color: #ffffff;
+}
+
+@media (max-width: 1025px) and (min-width: 768px) {
+  .left-container {
+    display: none;
+  }
+
+  .login-container {
+    height: 75%;
+    width: 65%;
+  }
+
+  .form-container {
+    width: 100%;
+    padding-top: 15%;
+    display: inline-block
+  }
+}
+
+@media (max-width: 767px) and (min-width: 280px) {
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  h6 {
+    font-size: 0.9em;
+  }
+
+  .left-container {
+    display: none;
+  }
+
+  .login-container {
+    height: 75%;
+    width: 85%;
+  }
+
+  .form-container {
+    width: 100%;
+    padding-top: 15%;
+  }
+
+  .form-group {
+    width: 82%;
+  }
+
+  .form-wrapper {
+    margin-top: 6%;
+    padding-left: 17%;
+  }
+
+  .logo {
+    height: 60%;
+  }
+}
