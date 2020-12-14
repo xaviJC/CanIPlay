@@ -1,0 +1,80 @@
+.mynav{
+    background-color: #f6f2f3;
+}
+
+
+.navbar-custom {
+    background-color: #a80836;
+    width: 100%;
+    height: 65px;
+    font-size: 13px;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(240, 234, 234, 0.5);
+}
+
+/* change the link color and padding  */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgb(219, 217, 217);
+    padding: 1.45rem 1rem;
+}
+
+/* change the color and bg color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+    background-color: #461236;
+    height: 100%;
+}
+
+
+.navbar-custom .dropdown-item {
+    color: #ffffff;
+}
+.navbar-custom .dropdown-item:hover,
+.navbar-custom .dropdown-item:focus {
+    color: #333333;
+    background-color: rgba(255,255,255,.5);
+
+}
+
+.navbar .navbar-nav{
+    margin-left: auto;
+
+}
+
+.navbar .dropdown-menu{
+    background-color:  #46123675;
+}
+
+.navbar .dropdown-item:hover{
+    background-color:  #46123675;
+}
+
+.noticia {
+    height: 70vh;
+}
+.inside {
+    
+    margin: 20px 50px;
+}
+
+.logIn{
+    margin-left: 12%;
+}
+
+.logo{
+    margin-left: 12px;
+}
+
+@media (max-width:767px){
+	#navbar {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+}
