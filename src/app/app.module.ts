@@ -19,6 +19,10 @@ import { PaginatipsComponent } from './pages/paginatips/paginatips.component';
 import { ToptenComponent } from './pages/topten/topten.component';
 import { PaginasugerirComponent } from './pages/paginasugerir/paginasugerir.component';
 import { PaginacrearcharlaComponent } from './pages/paginacrearcharla/paginacrearcharla.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -42,7 +46,9 @@ import { PaginacrearcharlaComponent } from './pages/paginacrearcharla/paginacrea
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
