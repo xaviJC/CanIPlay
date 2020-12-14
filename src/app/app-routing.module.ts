@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddgamesadminComponent } from './pages/addgamesadmin/addgamesadmin.component';
+import { AddsugerenciasadminComponent } from './pages/addsugerenciasadmin/addsugerenciasadmin.component';
 import { BuscarjuegosComponent } from './pages/buscarjuegos/buscarjuegos.component';
 import { CharlasComponent } from './pages/charlas/charlas.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -20,6 +22,7 @@ const routes: Routes = [
   {path:"perfil", component: PerfilComponent},
   {path:"sugAdmin", component: SugerenciasAdminComponent},
   {path:"registro", component: RegistroComponent},
+  {path:"crearjuego", component: AddgamesadminComponent},
 ];
 
 @NgModule({
