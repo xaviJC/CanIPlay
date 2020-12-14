@@ -1,0 +1,84 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css%27');
+#footer {
+    background:#830227 !important;
+    
+}
+
+#footer a {
+    color: #d4d3d3;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+#footer ul.social li a i {
+    margin-right: 10px;
+    margin-top: 6px;
+    margin-bottom:  4px;
+	font-size:20px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+
+p{
+    margin-top: 4px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+	font-size: 13px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;   
+}
+.foote_bottom_ul_amrc {
+    font-size: 15px;
+	list-style-type:none;
+    padding:0px;
+    
+    display:table;
+    
+    margin-bottom: 6px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.foote_bottom_ul_amrc li { 
+    display:inline;
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease; 
+    transition: .5s all ease;
+}
+
+.foote_bottom_ul_amrc li a { color:#999; margin:0 10px; }
+
+#footer ul.foote_bottom_ul_amrc li:hover a {
+    color: #50081D;
+  
+}
+
+#footer ul.social li:hover a i {
+	font-size:30px;
+    margin-top:-10px;
+    color: #50081D;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+	color:#d4d3d3;
+}
+#footer ul.social li a:hover{
+	color:#eeeeee;
+}
+#footer ul.quick-links li{
+
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+
+@media (max-width:767px){
+	#footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+}

@@ -1,3 +1,4 @@
+
 .mynav{
     background-color: #f6f2f3;
 }
@@ -48,6 +49,7 @@
 
 .navbar .dropdown-menu{
     background-color:  #46123675;
+    margin-left: auto;
 }
 
 .navbar .dropdown-item:hover{
