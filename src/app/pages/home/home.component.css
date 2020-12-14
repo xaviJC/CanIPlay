@@ -1,0 +1,118 @@
+/*.fondoNoticia{
+   content: url('../../../assets/patrik-larsson-TZxMh0i8kXA-unsplash.jpg');
+    background-attachment: 0;
+    background-repeat: no-repeat;
+    color: white;    
+    height: 400px;
+    width: 800px;
+    
+} */
+
+.jumbotron {
+    color: white;
+    background-image: url('../../../assets/home-img/patrik-larsson-TZxMh0i8kXA-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+    padding-top: 3vh;
+  }
+
+  
+  .textoNoticia {
+      background-color:rgba(0, 0, 0, 0.074);
+      
+      width: 50%;
+      margin: auto;
+  }
+
+  .imagenTop:hover {
+    transform: scale(1.08);
+    
+  }
+
+  .imagenTop {
+    transition: transform .25s ease;
+  }
+
+  .pegi {
+      width: 30px;
+  }
+.imagenTop {
+    width: 166px;
+    height: 209px;
+}
+.card {
+  margin: 0 auto; /* Added */
+  background-color: #ffffff;
+  border-radius: 35px;
+  /* box-shadow: 2px, ; */
+  box-shadow: 1px 9px 6px -6px rgb(170, 169, 169);
+}
+
+.grow-rotate-on-hover {
+  
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;  
+}
+.grow-rotate-on-hover:hover, .grow-rotate-on-hover:focus, .grow-rotate-on-hover:active {
+  -webkit-transform: scale(1.1) rotate(3deg);
+  z-index: 1;
+  transform: scale(1.2) rotate(3deg);
+}
+
+.grow-rotate-on-hover-left {
+  
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;  
+}
+.grow-rotate-on-hover-left:hover, .grow-rotate-on-hover-left:focus, .grow-rotate-on-hover-left:active {
+  -webkit-transform: scale(1.1) rotate(3deg);
+  z-index: 1;
+  transform: scale(1.2) rotate(-3deg);
+}
+
+
+.grow-rotate-on-hover-center {
+  
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;  
+}
+.grow-rotate-on-hover-center:hover, .grow-rotate-on-hover-center:focus, .grow-rotate-on-hover-center:active {
+  -webkit-transform: scale(1.1);
+  z-index: 1;
+  transform: scale(1.2);
+}
+
+.btn-rosado {
+  color: #ffffff;
+  background-color: #c70039;
+  border-color: #c70039;
+  display: block;
+  margin: auto;
+  /* width: 50%; */
+}
+
+.btn-rosado:hover {
+  color: #c70039;
+  background-color: #ffffff;
+}
