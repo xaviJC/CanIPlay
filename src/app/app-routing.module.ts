@@ -15,7 +15,6 @@ import { SugerenciasAdminComponent } from './pages/sugerencias-admin/sugerencias
 import { ToptenComponent } from './pages/topten/topten.component';
 
 const routes: Routes = [
-<<<<<<< HEAD
   { path: "home", component: HomeComponent },
   { path: "tips", component: PaginatipsComponent },
   { path: "topten", component: ToptenComponent },
