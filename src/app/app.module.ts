@@ -31,6 +31,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
 import { from } from 'rxjs';
+import { ErrorComponent } from './pages/error/error.component';
 
 
 
@@ -60,7 +61,8 @@ import { from } from 'rxjs';
     PaginatipsComponent,
     ToptenComponent,
     PaginasugerirComponent,
-    PaginacrearcharlaComponent
+    PaginacrearcharlaComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

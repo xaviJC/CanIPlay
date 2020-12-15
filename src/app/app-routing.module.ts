@@ -4,6 +4,7 @@ import { AddgamesadminComponent } from './pages/addgamesadmin/addgamesadmin.comp
 import { AddsugerenciasadminComponent } from './pages/addsugerenciasadmin/addsugerenciasadmin.component';
 import { BuscarjuegosComponent } from './pages/buscarjuegos/buscarjuegos.component';
 import { CharlasComponent } from './pages/charlas/charlas.component';
+import { ErrorComponent } from './pages/error/error.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PaginacrearcharlaComponent } from './pages/paginacrearcharla/paginacrearcharla.component';
@@ -27,6 +28,8 @@ const routes: Routes = [
   { path: "crearjuego", component: AddgamesadminComponent },
   { path: "crearcharla", component: PaginacrearcharlaComponent },
   { path: "paginajuego", component: PaginajuegoComponent },
+  {path: "404", component:ErrorComponent},
+  {path: "**", redirectTo: '/404'}
 ];
 
 @NgModule({
