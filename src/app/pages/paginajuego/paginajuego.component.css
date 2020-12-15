@@ -1,0 +1,316 @@
+h3 {
+  font-size: 1.2em;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h4 {
+  font-size: 1.0em;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h5 {
+  text-align: center;
+}
+
+.container {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.game-container {
+  background-color: #92042d;
+  border-radius: 5px;
+  /* box-shadow: 2px, ; */
+  box-shadow: 1px 9px 6px -6px rgb(170, 169, 169);
+  padding: 1% 1.5% 1% 1.5%;
+}
+
+.game-data {
+  background-color: #ffffff;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-bottom: 1%;
+
+  /* box-shadow: 2px, ; */
+  box-shadow: 6px 9px 6px -6px rgb(27, 27, 27);
+}
+
+.game-details {
+  background-color: #ffffff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  /* box-shadow: 2px, ; */
+  box-shadow: 1px 9px 6px -6px rgb(27, 27, 27);
+  padding-top: 5%;
+  padding-bottom: 5%;
+  /* margin-left: 1.5%; */
+  display: flex;
+}
+
+.box-container {
+  margin-top: 20%;
+}
+
+.videogame-img {
+  height: 275px;
+  border: 2px solid black;
+}
+
+.title-container {
+  margin-top: 6%;
+  margin-bottom: 3%;
+}
+
+.game-data-wrapper {
+  height: 30%;
+}
+
+.genre-age-wrapper {
+  display: flex;
+  width: 80%;
+  margin-left: 1%
+}
+
+.btn-warning {
+  margin-bottom: 2%;
+}
+
+.videogame-genre {
+  padding-top: 4%;
+  margin-right: 1%;
+}
+
+.genre-container {
+  padding-top: 1%;
+  padding-left: 25%;
+}
+
+.genre {
+  padding-right: 30%;
+  padding-top: 4%;
+}
+
+.pegi-container {
+  float: right;
+}
+
+.platform-container {
+  padding-top: 5%;
+}
+
+.recomend {
+  text-align: center;
+  margin-top: 3%;
+}
+
+.vote {
+  display: flex;
+  overflow: hidden;
+  padding-top: 2%;
+}
+
+.upvote {
+  padding-left: 35%;
+}
+
+.fa-thumbs-up {
+  color: #61b15a;
+}
+
+.fa-thumbs-up:hover {
+  color: #467a41;
+  transform: scale(1.2)
+}
+
+.downvote {
+  padding-right: 45%;
+  padding-top: 3%;
+}
+
+.fa-thumbs-down {
+  color: #da3328
+}
+
+.fa-thumbs-down:hover {
+  color: #91241c;
+  transform: scale(1.2)
+}
+
+.vertical-left {
+  height: 500px;
+  width: 2px;
+  border-width: 0.2em;
+  background-color: #cececf;
+}
+
+.vertical-right {
+  height: 500px;
+  width: 2px;
+  border-width: 0.2em;
+  background-color: #cececf;
+}
+
+.card-wrapper {
+  padding-top: 0%;
+}
+
+.card-tip {
+  padding: 2% 2% 2% 2%;
+  margin-top: 2%;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-radius: 20px;
+}
+
+
+.img-wrapper {
+  float: left;
+  margin-top: 0.5%;
+}
+
+.game-image {
+  height: 100px;
+  width: 150px;
+  border-radius: 13px;
+}
+
+.pictures {
+  width: 50%;
+}
+
+.centered-icon {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 8%;
+}
+
+.card-text {
+  text-align: center;
+}
+
+@media (max-width: 1025px) and (min-width: 768px) {
+
+  .genre-age-wrapper {
+    display: flex;
+    width: 100%;
+    margin-right: 2%;
+  }
+
+  .upvote {
+    padding-left: 35%;
+  }
+
+  .videogame-genre {
+    padding-top: 4%;
+    padding-right: 10%
+  }
+
+  .pegi-container {
+    margin-right: 1%;
+    padding-right: 5%;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+  }
+
+  .img-wrapper {
+    float: left;
+    margin-top: 10%;
+  }
+
+  .game-image {
+    height: 100px;
+    width: 125px;
+    border-radius: 13px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
+}
+
+@media (max-width: 767px) and (min-width: 280px) {
+
+  .game-data {
+    background-color: #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom: 1%;
+
+    /* box-shadow: 2px, ; */
+    box-shadow: 6px 9px 6px -6px rgb(27, 27, 27);
+  }
+
+  .videogame-genre {
+    padding-top: 15%;
+    padding-left: 80%;
+  }
+
+  .pegi-container {
+    margin-right: 10%;
+  }
+
+  .btn-warning {
+    padding: auto;
+    margin-left: 10%;
+  }
+
+  .game-details {
+    background-color: #ffffff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* box-shadow: 2px, ; */
+    box-shadow: 1px 9px 6px -6px rgb(27, 27, 27);
+    padding-top: 5%;
+    padding-bottom: 5%;
+    /* margin-left: 1.5%; */
+    display: inline;
+  }
+
+  .vote {
+    display: flex;
+    padding-top: 2%;
+  }
+
+  .upvote {
+    float: left;
+    padding-left: 8%;
+  }
+
+  .downvote {
+    float: right;
+    padding-right: 0;
+    padding-bottom: 5%;
+  }
+
+  .vertical-left {
+    display: none;
+  }
+
+  .vertical-right {
+    display: none;
+  }
+
+  .img-wrapper {
+    margin-top: 2%;
+    text-align: center;
+    padding-left: 12%
+  }
+
+  .game-image {
+    height: 175px;
+    width: 275px;
+    border-radius: 13px;
+  }
+
+
+
+}

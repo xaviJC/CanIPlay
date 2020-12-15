@@ -4,6 +4,7 @@ import { BuscarjuegosComponent } from './pages/buscarjuegos/buscarjuegos.compone
 import { CharlasComponent } from './pages/charlas/charlas.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PaginajuegoComponent } from './pages/paginajuego/paginajuego.component';
 import { PaginatipsComponent } from './pages/paginatips/paginatips.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { RegistroComponent } from './pages/registro/registro.component';
@@ -11,15 +12,16 @@ import { SugerenciasAdminComponent } from './pages/sugerencias-admin/sugerencias
 import { ToptenComponent } from './pages/topten/topten.component';
 
 const routes: Routes = [
-  {path:"home", component: HomeComponent},
-  {path:"tips", component: PaginatipsComponent},
-  {path:"topten", component: ToptenComponent},
-  {path:"charlas", component: CharlasComponent},
-  {path:"buscarjuegos", component: BuscarjuegosComponent},
-  {path:"login", component: LoginComponent},
-  {path:"perfil", component: PerfilComponent},
-  {path:"sugAdmin", component: SugerenciasAdminComponent},
-  {path:"registro", component: RegistroComponent},
+  { path: "home", component: HomeComponent },
+  { path: "tips", component: PaginatipsComponent },
+  { path: "topten", component: ToptenComponent },
+  { path: "charlas", component: CharlasComponent },
+  { path: "buscarjuegos", component: BuscarjuegosComponent },
+  { path: "login", component: LoginComponent },
+  { path: "perfil", component: PerfilComponent },
+  { path: "sugAdmin", component: SugerenciasAdminComponent },
+  { path: "registro", component: RegistroComponent },
+  { path: "paginajuego", component: PaginajuegoComponent },
 ];
 
 @NgModule({
