@@ -4,6 +4,7 @@ import { BuscarjuegosComponent } from './pages/buscarjuegos/buscarjuegos.compone
 import { CharlasComponent } from './pages/charlas/charlas.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PaginacrearcharlaComponent } from './pages/paginacrearcharla/paginacrearcharla.component';
 import { PaginatipsComponent } from './pages/paginatips/paginatips.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { RegistroComponent } from './pages/registro/registro.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:"perfil", component: PerfilComponent},
   {path:"sugAdmin", component: SugerenciasAdminComponent},
   {path:"registro", component: RegistroComponent},
+  {path:"crearcharla", component: PaginacrearcharlaComponent},
 ];
 
 @NgModule({
