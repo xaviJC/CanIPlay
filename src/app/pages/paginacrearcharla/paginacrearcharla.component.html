@@ -1,3 +1,4 @@
+
 <div class="d-flex align-items-sm-center page-container">
 
     <div class="login-container">
@@ -8,61 +9,67 @@
         </div>
         <div class="form-container">
             <div class="logo-container">
-                <img class="logo" src="/../../assets//bpchildlefty.regular.png">
+                <img class="logo" src="/../../assets/logo/bpchildlefty.regular.png">
             </div>
 
             <div class="form-wrapper">
-                <h3>Únete y disfruta de funcionalidades exclusivas.</h3>
-                <h3>Y además, inscríbete y participa en charlas educativas.</h3>
+                <h3>Crea tu propia charla</h3>
 
                 <form class="f2-wrapper">
                     <div class="row">
-                        <div class="col-4">
+                        <div class="form-group col-xs-6 col-sm-6 col-md-6 col-md-4">
                             <label for="password">
-                                <h6>Nombre</h6>
+                                <h6>Nombre autor</h6>
                             </label>
                             <input type="text" class="form-control" placeholder="Juan">
                         </div>
-                        <div class="col-4">
+                        <div class="form-group col-xs-6 col-sm-6 col-md-6 col-md-4">
                             <label for="password">
-                                <h6>Apellido</h6>
+                                <h6>Apellido autor</h6>
                             </label>
                             <input type="text" class="form-control" placeholder="García">
                         </div>
                     </div>
 
-                    <div class="form-group age-input mb-2 col-5">
-                        <label>
-                            <h6>Nº de hijos:</h6>
-                        </label>
-                        <select class="btn btn-mini">
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4+</option>
-                        </select>
-                    </div>
-                    <div class="form-group mb-2">
-                        <label for="email">
-                            <h6>Correo Electrónico</h6>
-                        </label>
-                        <input class="form-control" placeholder="Email...">
-                    </div>
-                    <div class="form-group mb-2">
-                        <label for="password">
-                            <h6>Contraseña</h6>
-                        </label>
-                        <input type="password" class="form-control" placeholder="***********">
+                    <div class="row">
+                        <div class="form-group mb-2 col-xs-6 col-sm-6 col-md-6 col-md-4">
+                            <label for="lugar">
+                                <h6>Lugar de realizacion</h6>
+                            </label>
+                            <input type="text" class="form-control" placeholder="Ej: Discord">
+                        </div>
+                        <div class="form-group mb-2 col-xs-6 col-sm-6 col-md-6 col-md-4">
+                            <label for="email">
+                                <h6>Fecha de realizacion</h6>
+                            </label>
+                            <div class="input-group">
+                                <input type="date" class="form-control" value="13-12-2020" min="2018-01-01" max="2020-12-31">
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group mb-4">
-                        <button type="button" class="btn register-button">Registrar</button>
+                    <div class="row">
+                        <div class="form-group mb-2 col-xs-6 col-sm-6 col-md-6 col-md-4">
+                            <label for="password">
+                                <h6>Nombre charla</h6>
+                            </label>
+                            <input type="text" class="form-control" placeholder="Ej: Tolerancia a la frustracion">
+                        </div>
+                        <div class="form-group mb-2 col-xs-6 col-sm-6 col-md-6 col-md-4">
+                            <label for="password">
+                                <h6>Descripcion de la charla</h6>
+                            </label>
+                            <div class="form-group ">
+                                <textarea name="txtMsg" class="form-control descripcion-charla" placeholder="Descripcion de la charla" ></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-4 justify-content-around">
+                        <button type="button" class="btn register-button mb-3">Crear charla</button>
                     </div>
                 </form>
-                <h4>¿Ya tienes una cuenta? </h4><a href=#>
-                    <h5>Inicia sesión.</h5>
-                </a>
+
             </div>
 
         </div>
