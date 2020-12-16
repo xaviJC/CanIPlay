@@ -48,8 +48,9 @@
 }
 
 .navbar .dropdown-menu{
-    background-color:  #46123675;
-    margin-left: auto;
+    background-color:  #461236;
+    width: 50px;
+    margin-top: -1px
 }
 
 .navbar .dropdown-item:hover{
@@ -80,3 +81,4 @@
     margin-bottom: 10px;
 }
 }
+
