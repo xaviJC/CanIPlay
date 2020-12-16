@@ -45,13 +45,17 @@ h6 {
 }
 
 .login-container {
-  height: 85%;
+  height: auto;
   width: 65%;
-  padding: 3% 3% 3% 3%;
+  padding: 1.5% 3% 3% 3%;
   background-color: #ffffff;
   border-radius: 35px;
   /* box-shadow: 2px, ; */
   box-shadow: 1px 9px 6px -6px rgb(170, 169, 169);
+}
+
+.page-title {
+  text-align: center;
 }
 
 .card-deck {
@@ -125,7 +129,9 @@ h6 {
   bottom: 0;
 }
 
-
+.card-text {
+  padding-bottom: 15%;
+}
 
 @media (max-width: 1025px) and (min-width: 768px) {
 
@@ -139,21 +145,29 @@ h6 {
   }
 
   .login-container {
-    height: 84%;
-    width: 55%;
+    height: 90%;
+    width: 80%;
     background-color: #ffffff;
-    border-radius: 35px;
+    border-radius: 30px;
     /* box-shadow: 2px, ; */
     box-shadow: 1px 9px 6px -6px rgb(170, 169, 169);
+  }
+
+  .profile-img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .card {
+    margin-bottom: 10%;
   }
 
 }
 
 @media (max-width: 767px) and (min-width: 280px) {
 
-  .login-container {
-    height: 90%;
-    width: 85%;
+  .page-container {
+    height: auto;
   }
 
 }
