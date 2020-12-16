@@ -32,6 +32,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
 import { from } from 'rxjs';
 import { ErrorComponent } from './pages/error/error.component';
+import { AboutComponent } from './pages/about/about.component';
 
 
 
@@ -62,7 +63,8 @@ import { ErrorComponent } from './pages/error/error.component';
     ToptenComponent,
     PaginasugerirComponent,
     PaginacrearcharlaComponent,
-    ErrorComponent
+    ErrorComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
