@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PaginacrearcharlaComponent } from './pages/paginacrearcharla/paginacrearcharla.component';
 import { PaginajuegoComponent } from './pages/paginajuego/paginajuego.component';
+import { PaginasugerirComponent } from './pages/paginasugerir/paginasugerir.component';
 import { PaginatipsComponent } from './pages/paginatips/paginatips.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { RegistroComponent } from './pages/registro/registro.component';
@@ -28,8 +29,10 @@ const routes: Routes = [
   { path: "crearjuego", component: AddgamesadminComponent },
   { path: "crearcharla", component: PaginacrearcharlaComponent },
   { path: "paginajuego", component: PaginajuegoComponent },
+  {path: "sugerirjuego", component: PaginasugerirComponent },
   {path: "404", component:ErrorComponent},
-  {path: "**", redirectTo: '/404'}
+  {path: "**", redirectTo: '/404'},
+
 ];
 
 @NgModule({
