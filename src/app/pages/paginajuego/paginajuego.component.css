@@ -311,6 +311,28 @@ h5 {
     border-radius: 13px;
   }
 
+  /* descomentar para intentar quitar ventana modal*/
+
+  /* .modal {
+    display: none;
+  }
+
+  .modal-dialog {
+    display: none;
+  }
+
+  .fade {
+    display: none;
+  }
+
+  .modal-content {
+    display: none;
+  }
+
+  .modal-body {
+    display: none;
+  } */
+
 
 
 }
