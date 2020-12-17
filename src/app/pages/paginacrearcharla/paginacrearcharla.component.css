@@ -42,8 +42,9 @@ h6 {
   align-items: center;
 }
 .descripcion-charla {
-  width: 260px; 
+  width: 350px; 
   height: 110px;
+  resize: none;
 }
 .login-container {
   height: 78%;
@@ -54,7 +55,7 @@ h6 {
 }
 
 .left-container {
-  background-image: url('/../../assets/crearcharla-img/niña.jpg');
+  background-image: url(/../../assets/crearcharla-img/img.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   float: left;
@@ -118,7 +119,33 @@ h6 {
   color: #c70039;
   background-color: #ffffff;
 }
+@media (max-width: 1626px) and (min-width: 1025px){
+  .descripcion-charla{
+    width: auto;
+  }
+    .left-container {
+    display: none;
+  }
+  .descripcion-charla {
+    width: auto;
+  }
 
+  .login-container {
+    height: 100%;
+    width: 100%;
+  }
+
+ .page-container{
+    height: auto;
+  }
+
+  .form-container {
+    width: 100%;
+    padding-top: 8%;
+    display: inline-block
+  }
+
+}
 @media (max-width: 1025px) and (min-width: 768px) {
   .left-container {
     display: none;
@@ -145,6 +172,27 @@ h6 {
 @media (max-width: 950px) and (min-width: 768px) {
   .descripcion-charla{
     width: auto;
+  }
+  .left-container {
+    display: none;
+  }
+  .descripcion-charla {
+    width: auto;
+  }
+
+  .login-container {
+    height: 100%;
+    width: 100%;
+  }
+
+ .page-container{
+    height: auto;
+  }
+
+  .form-container {
+    width: 100%;
+    padding-top: 8%;
+    display: inline-block
   }
 
 }
@@ -188,6 +236,10 @@ h6 {
 
   .form-control {
     width: 100%;
+  }
+  
+  .descripcion-charla{
+    width: auto;
   }
 
   .logo {

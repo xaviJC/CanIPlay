@@ -4,6 +4,8 @@ h1 {
   font-weight: 300;
 }
 
+
+
 .our-team-main {
   width: 100%;
   height: auto;
@@ -23,7 +25,9 @@ h1 {
   font-size: 20px;
   font-weight: 700;
 }
-
+.participa{
+  font-size: 1em;
+}
 
 .team-back {
   width: 100%;
