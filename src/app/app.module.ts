@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
+import { AngularTiltModule } from 'angular-tilt'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -83,7 +84,8 @@ import { ChatComponent } from './pages/chat/chat.component';
     MatPaginatorModule,
     MatInputModule,
     FormsModule,
-    MatTabsModule
+    MatTabsModule,
+    AngularTiltModule
   ],
   providers: [],
   bootstrap: [AppComponent]

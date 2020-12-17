@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  VanillaTiltSettings } from 'angular-tilt';
 
 @Component({
   selector: 'app-paginajuego',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./paginajuego.component.css']
 })
 export class PaginajuegoComponent implements OnInit {
+  public tiltSettings:VanillaTiltSettings;
 
+  test() {
+    this.tiltSettings.scale = 1.1;    
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
