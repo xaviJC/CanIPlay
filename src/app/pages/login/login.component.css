@@ -40,7 +40,7 @@ h6 {
   background-color: #f6f2f3;
   display: flex;
   justify-content: center;
-  align-items: center;
+  position: relative;
 }
 
 .login-container {
