@@ -1,11 +1,7 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css%27');
 
 #footer {
-<<<<<<< HEAD
-    background:#1c0d38 !important;
-    
-=======
-  background: #830227 !important;
+  background: #1c0d38 !important;
   position: relative;
   width: 100%;
   margin-top: auto;
@@ -13,7 +9,6 @@
 
 .container-fluid {
   height: 20%;
->>>>>>> altura-pagina
 }
 
 #footer a {
@@ -68,24 +63,14 @@ p {
 }
 
 #footer ul.foote_bottom_ul_amrc li:hover a {
-<<<<<<< HEAD
-    color: rgb(255, 219, 88);
-  
-=======
-  color: #50081D;
+  color: rgb(255, 219, 88);
 
->>>>>>> altura-pagina
 }
 
 #footer ul.social li:hover a i {
 
-<<<<<<< HEAD
-    margin-top:-10px;
-    color: rgb(255, 219, 88);
-=======
   margin-top: -10px;
-  color: #50081D;
->>>>>>> altura-pagina
+  color: rgb(255, 219, 88);
 }
 
 #footer ul.social li a,
