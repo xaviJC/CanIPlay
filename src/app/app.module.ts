@@ -30,8 +30,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
-import { from } from 'rxjs';
+import {MatTabsModule} from '@angular/material/tabs';
 import { ErrorComponent } from './pages/error/error.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ChatComponent } from './pages/chat/chat.component';
+
 
 
 
@@ -62,7 +65,9 @@ import { ErrorComponent } from './pages/error/error.component';
     ToptenComponent,
     PaginasugerirComponent,
     PaginacrearcharlaComponent,
-    ErrorComponent
+    ErrorComponent,
+    AboutComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -77,8 +82,8 @@ import { ErrorComponent } from './pages/error/error.component';
     MatFormFieldModule,
     MatPaginatorModule,
     MatInputModule,
-    FormsModule
-    
+    FormsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

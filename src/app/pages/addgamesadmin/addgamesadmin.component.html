@@ -4,12 +4,12 @@
 
       <div class="left-container">
           <div class="row mt-4 ml-2">
-            <label for="caratula"><h6>Caratula del juego</h6></label>
+            <label for="caratula"><h6>Carátula del juego</h6></label>
             <input type="text" class="form-control mb-1" placeholder="Inserte la url de la imagen" [(ngModel)]="urlCaratula">
           </div>
         <div class="row justify-content-center">
             <div class="col-xl-4 mt-4 ml-2">
-                
+
                 <img *ngIf="urlCaratula === ''; else imgExiste" class="caratula" src="https://www.evisionstore.com/images/notfound.png" alt="">
                 <ng-template #imgExiste>
                     <img  class="caratula" src="{{urlCaratula}}" alt="">
@@ -17,7 +17,7 @@
             </div>
             <div class=" col-xl-5 img-container mt-4 ml-2">
                 <div class="grupo-pantallazos mr-3 ">
-                    
+
                     <img class="pantallazos" src="https://images-na.ssl-images-amazon.com/images/I/81OY2Tnp5XL._AC_SL1500_.jpg">
                     <img class="pantallazos" src="https://images-na.ssl-images-amazon.com/images/I/71214JYG-tL._AC_SL1500_.jpg">
                     <br>
@@ -27,13 +27,13 @@
             </div>
         </div>
         <div class="img-container mt-4 ml-2">
-            <label for="caratula"><h6>Imagenes del juego ingame</h6></label>
+            <label for="caratula"><h6>Imágenes del juego</h6></label>
             <input type="text" class="form-control mb-1" placeholder="Screenshot 1">
             <input type="text" class="form-control mb-1" placeholder="Screenshot 2">
             <input type="text" class="form-control mb-1" placeholder="Screenshot 3">
             <input type="text" class="form-control mb-1" placeholder="Screenshot 4">
         </div>
-        
+
 
       </div>
       <div class="form-container">
@@ -43,11 +43,11 @@
           <form class="f2-wrapper">
             <div class="row">
                 <div class="col-4">
-                <label for="titulo"><h6>Titulo del juego</h6></label>
+                <label for="titulo"><h6>Título del juego</h6></label>
                   <input type="text" class="form-control" placeholder="">
                 </div>
                 <div class="col-4">
-                <label for="password"><h6>Genero</h6></label>
+                <label for="password"><h6>Género</h6></label>
                   <input type="text" class="form-control" placeholder="Accion/Deportes/Musical">
                 </div>
               </div>
@@ -59,26 +59,26 @@
                 <option>7</option>
                 <option>12</option>
                 <option>16</option>
-                <option>+18</option>
+                <option>18</option>
               </select>
               </div>
 
             <div class="form-group mb-2">
-              <label for="text"><h6>Plataformas disponible</h6></label>
+              <label for="text"><h6>Plataformas disponibles</h6></label>
               <input class="form-control"  type="text" placeholder="Xbox/Switch/PC">
             </div>
             <div class="row">
                 <div class="col-4">
                     <div>
-                        <b><span class="spanJuegos">Nº jugadores</span></b>
+                        <b><span class="spanJuegos">Nº de jugadores</span></b>
                         <br>
                         <br>
                         <input class="mr-2" type="radio" id="single" name="players" value="Single Player">
-                        <label for="male">Single Player</label><br>
+                        <label for="male">Single player</label><br>
                         <input class="mr-2"  type="radio" id="multioffline" name="players" value="Multi Player">
-                        <label for="male">Multiplayer offline Player</label><br>
+                        <label for="male">Multiplayer offline</label><br>
                         <input class="mr-2"  type="radio" id="multionline" name="players" value="Multi Player">
-                        <label for="male">Multiplayer online Player</label><br>
+                        <label for="male">Multiplayer online</label><br>
                     </div>
                 </div>
                 <div class="col-4">
@@ -91,7 +91,7 @@
                         <input class="mr-2"  type="radio" id="infatil" name="contenido" value="infantil">
                         <label for="male">Contenido infantil</label><br>
                     </div>
-                </div>                
+                </div>
             </div>
             <div class="row">
                 <div class="col-4">
@@ -100,9 +100,9 @@
                         <br>
                         <br>
                         <input class="mr-2"  type="radio" id="internet" name="conexion" value="internet">
-                        <label for="male">Requiere internet</label><br>
+                        <label for="male">Requiere conexión a internet</label><br>
                         <input class="mr-2"  type="radio" id="noInternet" name="conexion" value="noInternet">
-                        <label for="male">No requiere internet</label><br>
+                        <label for="male">No requiere conexión a internet</label><br>
                     </div>
                 </div>
                 <div class="col-4">
@@ -115,7 +115,7 @@
                         <input class="mr-2"  type="radio" id="noPagos" name="pagos" value="nopagos">
                         <label for="male">No contiene pagos online</label><br>
                     </div>
-                </div>                
+                </div>
             </div>
             <div class="form-group mb-4">
               <button type="button" class="btn register-button">Añadir</button>

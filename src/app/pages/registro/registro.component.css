@@ -34,7 +34,7 @@ h6 {
 }
 
 .page-container {
-  height: 100vh;
+  height: 73.5%;
   width: 100%;
   background-color: #f6f2f3;
   display: flex;
@@ -43,7 +43,7 @@ h6 {
 }
 
 .login-container {
-  height: 78%;
+  height: 98%;
   width: 75%;
   background-color: #ffffff;
   border-radius: 35px;
@@ -62,7 +62,7 @@ h6 {
 
 .form-container {
   width: 62%;
-  padding-top: 3%;
+  padding-top: 1%;
   display: inline-block
 }
 
@@ -86,12 +86,12 @@ h6 {
 }
 
 .form-wrapper {
-  margin-top: 2%;
+  margin-top: 1%;
   padding-left: 15%;
 }
 
 .f2-wrapper {
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 .register-button {
@@ -122,13 +122,13 @@ h6 {
   }
 
   .login-container {
-    height: 80%;
+    height: 95%;
     width: 65%;
   }
 
   .form-container {
     width: 100%;
-    padding-top: 8%;
+    padding-top: 2%;
     display: inline-block
   }
 }
@@ -149,13 +149,13 @@ h6 {
   }
 
   .login-container {
-    height: 75%;
+    height: 95%;
     width: 85%;
   }
 
   .form-container {
     width: 100%;
-    padding-top: 6%;
+    padding-top: 3%;
   }
 
   .form-group {
@@ -163,7 +163,7 @@ h6 {
   }
 
   .form-wrapper {
-    margin-top: 2%;
+    margin-top: 1%;
     padding-left: 16%;
   }
 
@@ -173,5 +173,9 @@ h6 {
 
   .logo {
     height: 60%;
+  }
+
+  .message {
+    display: none;
   }
 }

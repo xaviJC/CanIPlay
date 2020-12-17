@@ -1,54 +1,54 @@
 <div class="container mt-5">
     <div class="row" >
         <mat-form-field>
-            <mat-label>Filter</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+            <mat-label>Filtrar</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ej: Clash Royale" #input>
             <!-- <input matInput name="" id=""> -->
           </mat-form-field>
-        
+
         <table *ngIf="!notFound; else newGame"mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-                    
+
             <!-- caratula Column -->
             <ng-container matColumnDef="caratula">
-                <th mat-header-cell *matHeaderCellDef>Caratula </th>
+                <th mat-header-cell *matHeaderCellDef>Carátula </th>
                 <td mat-cell *matCellDef="let element"> <img class="caratulaBusqueda mt-2 mb-2" src="{{element.caratula}}"> </td>
               </ng-container>
-          
+
             <!-- Name Column -->
             <ng-container matColumnDef="name">
               <th mat-header-cell *matHeaderCellDef> Nombre </th>
               <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-            </ng-container>          
-                      
+            </ng-container>
+
             <!-- Añadir Column -->
             <ng-container matColumnDef="ver">
                 <th mat-header-cell *matHeaderCellDef>Ver </th>
                 <td mat-cell *matCellDef="let element">
                     <button style="color: black;" color="basic" mat-mini-fab aria-label="Example icon button with a delete icon" routerLink="/paginajuego">
                         <mat-icon>visibility</mat-icon>
-                      </button>  
+                      </button>
                 </td>
               </ng-container>
 
-          
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"
                 (click)="selection.toggle(row)">
             </tr>
-            
+
           </table>
 
           <mat-paginator [pageSizeOptions]="[5,10, 20]" showFirstLastButtons></mat-paginator>
-        
+
 
     </div>
     <ng-template #newGame>
         <div class="row text-center">
-                   
-                 <p>¿No encuentras el juego?Comentanos cual te gustaría encontrar<button mat-icon-button color="basic" aria-label="Example icon button with a home icon">
-                    <mat-icon routerLink="/paginajuego">create</mat-icon>  
+
+                 <p>¿No encuentras el juego que buscas? ¡Escuchamos tus propuestas!<button mat-icon-button color="basic">
+                    <mat-icon routerLink="/sugerirjuego">create</mat-icon>
                  </button>  </p>
-           
+
         </div>
     </ng-template>
 </div>
