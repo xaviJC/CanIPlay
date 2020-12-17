@@ -33,6 +33,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ErrorComponent } from './pages/error/error.component';
 import { AboutComponent } from './pages/about/about.component';
+import { ChatComponent } from './pages/chat/chat.component';
 
 
 
@@ -65,7 +66,8 @@ import { AboutComponent } from './pages/about/about.component';
     PaginasugerirComponent,
     PaginacrearcharlaComponent,
     ErrorComponent,
-    AboutComponent
+    AboutComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

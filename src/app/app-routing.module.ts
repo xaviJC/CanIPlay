@@ -5,6 +5,7 @@ import { AddgamesadminComponent } from './pages/addgamesadmin/addgamesadmin.comp
 import { AddsugerenciasadminComponent } from './pages/addsugerenciasadmin/addsugerenciasadmin.component';
 import { BuscarjuegosComponent } from './pages/buscarjuegos/buscarjuegos.component';
 import { CharlasComponent } from './pages/charlas/charlas.component';
+import { ChatComponent } from './pages/chat/chat.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: "paginajuego", component: PaginajuegoComponent },
   { path: "sugerirjuego", component: PaginasugerirComponent },
   { path: "about", component: AboutComponent },
+  { path: "chat", component: ChatComponent },
   { path: "404", component: ErrorComponent },
   { path: "**", redirectTo: '/404' },
 
