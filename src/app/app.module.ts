@@ -23,24 +23,20 @@ import { PaginasugerirComponent } from './pages/paginasugerir/paginasugerir.comp
 import { PaginacrearcharlaComponent } from './pages/paginacrearcharla/paginacrearcharla.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatTableModule} from '@angular/material/table';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatInputModule} from '@angular/material/input';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
 import { ErrorComponent } from './pages/error/error.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ChatComponent } from './pages/chat/chat.component';
-<<<<<<< HEAD
-import {MatBadgeModule} from '@angular/material/badge';
-
-=======
+import { MatBadgeModule } from '@angular/material/badge';
 import { ContactoComponent } from './pages/contacto/contacto.component';
->>>>>>> comp-contacto
 
 
 
