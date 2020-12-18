@@ -41,14 +41,6 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 
 
 
-
-
-
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
