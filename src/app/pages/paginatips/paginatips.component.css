@@ -4,8 +4,6 @@ h1 {
   font-weight: 300;
 }
 
-
-
 .our-team-main {
   width: 100%;
   height: auto;
@@ -34,8 +32,6 @@ h1 {
   padding: 5px 15px 5px 15px;
   text-align: center;
   margin-top: 22px;
-
-
 }
 
 .team-front {
@@ -58,5 +54,3 @@ h1 {
   border-color: #777;
   transition: 0.5s;
 }
-
-/*our-team-main*/

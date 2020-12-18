@@ -17,6 +17,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { SugerenciasAdminComponent } from './pages/sugerencias-admin/sugerencias-admin.component';
 import { ToptenComponent } from './pages/topten/topten.component';
+import { ContactoComponent } from './pages/contacto/contacto.component';
 
 const routes: Routes = [
   { path: "home", component: HomeComponent },
@@ -34,10 +35,9 @@ const routes: Routes = [
   { path: "sugerirjuego", component: PaginasugerirComponent },
   { path: "about", component: AboutComponent },
   { path: "chat", component: ChatComponent },
+  { path: "contacto", component: ContactoComponent },
   { path: "404", component: ErrorComponent },
   { path: "**", redirectTo: '/404' },
-
-
 ];
 
 @NgModule({
