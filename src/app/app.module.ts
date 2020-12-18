@@ -35,6 +35,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { ErrorComponent } from './pages/error/error.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ChatComponent } from './pages/chat/chat.component';
+import {MatBadgeModule} from '@angular/material/badge';
+
 
 
 
@@ -85,7 +87,8 @@ import { ChatComponent } from './pages/chat/chat.component';
     MatInputModule,
     FormsModule,
     MatTabsModule,
-    AngularTiltModule
+    AngularTiltModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -71,6 +71,7 @@
 }
 
 .logo{
+    transform: rotate(-5deg);
     margin-left: 12px;
 }
 

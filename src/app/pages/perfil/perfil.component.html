@@ -1,64 +1,12 @@
 <div class="card-deck d-flex align-items page-container">
 
   <div class="login-container d-flex justify-content-around col-xl-9 col-lg-10 col-md-12 col-sm-12 col-xs-12 card-deck">
-<!--
-    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12 taught card" style="overflow-y:scroll;">
-      <div class="courses-text-container">
-        <h3 class="courses-text">Charlas impartidas</h3>
-      </div>
-      <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">¿Qué es el Fornite?</h5>
-            <small class="text-muted">Fecha</small>
-          </div>
-          <p class="mb-1">Johnny Mentero</p>
-          <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-            varius blandit.</small>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Animal Crossing para animales.</h5>
-            <small class="text-muted">Fecha</small>
-          </div>
-          <p class="mb-1">Eddie Ficcio</p>
-          <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-            varius blandit.</small>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Dieta para adictos</h5>
-            <small class="text-muted">Fecha</small>
-          </div>
-          <p class="mb-1">Ben Dover Duras</p>
-          <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-            varius blandit.</small>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Micropagos = adios ahorros</h5>
-            <small class="text-muted">Fecha</small>
-          </div>
-          <p class="mb-1">Kevin Vives</p>
-          <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-            varius blandit.</small>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Gestión de la frustración</h5>
-            <small class="text-muted">Fecha</small>
-          </div>
-          <p class="mb-1">Alba Ranco</p>
-          <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-            varius blandit.</small>
-        </a>
-      </div>
-
-    </div> -->
-
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-xs-12 profile-container card">
       <div class="my-profile">
         <h3>Mi Perfil</h3>
+        <button mat-icon-button color="basic" data-toggle="modal" data-target="#exampleModalLong">
+          <mat-icon  class="editarPerfil"  >create</mat-icon>
+       </button> 
       </div>
       <div class="pic-container">
         <img class="profile-picture"
@@ -72,9 +20,13 @@
         <div class="other-info">
           <h4>caniplay@caniplay.gg</h4>
         </div>
-        <div class="other-info">
+        <div class="other-info text-center">
           <h4>Nº de hijos: </h4>
           <h4>7</h4>
+          <br>
+          <button mat-icon-button aria-label="Example icon button with a vertical three dot icon"  routerLink="/chat">
+            <mat-icon>sms</mat-icon>
+          </button>  
         </div>
         <div class="other-info suggest">
           <h5>¿No has encontrado lo que buscas?</h5>
@@ -86,30 +38,6 @@
       </div>
     </div>
 
-    <!-- <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12 attended card" style="overflow-y:scroll;">
-      <div class="courses-text-container">
-        <h3 class="courses-text">Charlas atendidas</h3>
-      </div>
-      <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">¿Qué es el Fornite?</h5>
-            <small class="text-muted">Fecha</small>
-          </div>
-          <p class="mb-1">Johnny Mentero</p>
-          <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-            varius blandit.</small>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">Vocabulario "gamer", bro.</h5>
-            <small class="text-muted">Fecha</small>
-          </div>
-          <p class="mb-1">Johnny Mentero</p>
-          <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-            varius blandit.</small>
-        </a>
-      </div> -->
       <div class="menuProfile">
          <mat-tab-group mat-align-tabs="start" style="overflow-y: auto; height:500px; ">
         <mat-tab label="Charlas atendidas">
@@ -191,3 +119,60 @@
     </div>
 
   </div>
+  
+<!-- Modal -->
+<div class="modal fade rounded-lg" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <h3 class="text-center">Editar perfil</h3>
+          <hr>
+          <div class="row text-center">
+            <form class="f2-wrapper">
+              <div class="row">
+                  <div class="col-4">
+                  <label for="password"><h6>Nombre</h6></label>
+                    <input type="text" class="form-control" placeholder="Juan">
+                  </div>
+                  <div class="col-4">
+                  <label for="password"><h6>Apellido</h6></label>
+                    <input type="text" class="form-control" placeholder="García">
+                  </div>
+                </div>
+  
+                <div class="form-group age-input mb-2 col-5">
+                  <label><h6>Nº de hijos:</h6></label>
+                <select class="btn btn-mini">
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4+</option>
+                </select>
+                </div>
+              <div class="form-group mb-2">
+                <label for="email"><h6>Correo Electrónico</h6></label>
+                <input class="form-control" placeholder="Email...">
+              </div>
+              <div class="form-group mb-4">
+                <button type="button" class="btn register-button">Modificar</button>
+              </div>
+              <div class="form-group mb-4">
+                <button type="button" class="btn register-button">Borrar perfil</button>
+              </div>
+            </form>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  

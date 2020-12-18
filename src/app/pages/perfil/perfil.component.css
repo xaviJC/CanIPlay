@@ -139,9 +139,9 @@ h6 {
   float: right;
 }
 
-.suggest {
+/* .suggest {
   padding-top: 15%;
-}
+} */
 .menuProfile {
   margin-top: 50px;
   width: 50%;
@@ -206,3 +206,7 @@ h6 {
 
 }
 
+.editarPerfil {
+  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
+}

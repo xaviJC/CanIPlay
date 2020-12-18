@@ -8,10 +8,6 @@ import {  VanillaTiltSettings } from 'angular-tilt';
 })
 export class PaginajuegoComponent implements OnInit {
   public tiltSettings:VanillaTiltSettings;
-
-  test() {
-    this.tiltSettings.scale = 1.1;    
-  }
   
   constructor() { }
 
