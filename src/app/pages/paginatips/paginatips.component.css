@@ -9,7 +9,7 @@ h1 {
 .our-team-main {
   width: 100%;
   height: auto;
-  border-bottom: 5px #830227 solid;
+  border-bottom: 5px rgb(168, 168, 168) solid;
   background: #fff;
   text-align: center;
   border-radius: 10px;
