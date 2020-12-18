@@ -35,8 +35,12 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { ErrorComponent } from './pages/error/error.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ChatComponent } from './pages/chat/chat.component';
+<<<<<<< HEAD
 import {MatBadgeModule} from '@angular/material/badge';
 
+=======
+import { ContactoComponent } from './pages/contacto/contacto.component';
+>>>>>>> comp-contacto
 
 
 
@@ -70,7 +74,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     PaginacrearcharlaComponent,
     ErrorComponent,
     AboutComponent,
-    ChatComponent
+    ChatComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

@@ -42,9 +42,7 @@ p {
   font-size: 15px;
   list-style-type: none;
   padding: 0px;
-
   display: table;
-
   margin-bottom: 6px;
   margin-right: auto;
   margin-left: auto;
@@ -64,11 +62,9 @@ p {
 
 #footer ul.foote_bottom_ul_amrc li:hover a {
   color: rgb(255, 219, 88);
-
 }
 
 #footer ul.social li:hover a i {
-
   margin-top: -10px;
   color: rgb(255, 219, 88);
 }
@@ -83,7 +79,6 @@ p {
 }
 
 #footer ul.quick-links li {
-
   -webkit-transition: .5s all ease;
   -moz-transition: .5s all ease;
   transition: .5s all ease;
