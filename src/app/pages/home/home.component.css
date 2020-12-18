@@ -104,15 +104,15 @@
 }
 
 .btn-rosado {
-  color: #ffffff;
-  background-color: #c70039;
-  border-color: #c70039;
+  color: #ded4f1;
+  background-color: #371a6d;
+  border-color: #371a6d;
   display: block;
   margin: auto;
   /* width: 50%; */
 }
 
 .btn-rosado:hover {
-  color: #c70039;
+  color: #371a6d;
   background-color: #ffffff;
 }
