@@ -3,34 +3,22 @@ import {MatTableDataSource} from '@angular/material/table';
 import {SelectionModel} from '@angular/cdk/collections';
 import {MatPaginator} from '@angular/material/paginator';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  caratula: string;
-}
+// export interface PeriodicElement {
+//   nombre:string;
+//   caratula: string;
+//   pegi: string;
+//   plataforma: string;
+// }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 0, name: 'Pes 2020', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 1, name: 'Super Mario bros ', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 2, name: 'Zelda', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 3, name: 'The last of s', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 4, name: 'Fifa 2020', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 5, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 6, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 7, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 8, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 10, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 11, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 12, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 13, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 14, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 15, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 16, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 17, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 18, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 19, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-  {position: 20, name: 'Super Mario bros', caratula: 'https://images-na.ssl-images-amazon.com/images/I/81tkL0RYLQL._AC_SL1500_.jpg'},
-];
+// const GAMES= [
+//   {nombre: "Ratchet and Clank", caratula: 'https://images-na.ssl-images-amazon.com/images/I/918fggv3mhL._AC_SL1500_.jpg', pegi: 'https://pegi.info/themes/pegi/public-images/pegi/pegi7.png', plataforma: "PS4"},
+//   {nombre: "Just Dance", caratula: 'https://images-na.ssl-images-amazon.com/images/I/71bGgd8pRqL._AC_SL1500_.jpg', pegi: 'https://pegi.info/themes/pegi/public-images/pegi/pegi3.png', plataforma: "PS4/XBOX/SWITCH"},
+//   {nombre: "Super Mario Party", caratula: 'https://images-na.ssl-images-amazon.com/images/I/81PlF%2BHTScL._AC_SL1500_.jpg', pegi: 'https://pegi.info/themes/pegi/public-images/pegi/pegi7.png', plataforma: "SWITCH"},
+//   {nombre: "Sonic Riders Gravity", caratula: 'https://images-na.ssl-images-amazon.com/images/I/91jlcmC4jML._AC_SL1500_.jpg', pegi: 'https://pegi.info/themes/pegi/public-images/pegi/pegi7.png', plataforma: "PS2"},
+//   {nombre: "The last of us ", caratula: 'https://es.static.webuy.com/product_images/Juegos/PS4%20Juegos/711719407515_l.jpg', pegi: 'https://pegi.info/themes/pegi/public-images/pegi/pegi18.png', plataforma: "PS2"},
+//   {nombre: "FIFA 2021", caratula: 'https://es.static.webuy.com/product_images/Juegos/PS4%20Juegos/5030930124434_l.jpg', pegi: 'https://pegi.info/themes/pegi/public-images/pegi/pegi3.png', plataforma: "XBOX/PS4/SWITCH"},
+
+// ];
 
 
 @Component({
@@ -40,28 +28,53 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class BuscarjuegosComponent implements OnInit {
   public notFound:boolean = false;
-  displayedColumns: string[] = [ 'caratula','name','ver'];
-  data = Object.assign( ELEMENT_DATA);
-  dataSource = new MatTableDataSource<Element>(this.data);  
-  selection = new SelectionModel<PeriodicElement>(true, []);
+  public games= [
+    {nombre: "Ratchet and Clank", caratula: 'https://images-na.ssl-images-amazon.com/images/I/918fggv3mhL._AC_SL1500_.jpg',pegi : "PEGI 7", pegiURL: 'https://pegi.info/themes/pegi/public-images/pegi/pegi7.png', plataforma: "PS4"},
+    {nombre: "Just Dance", caratula: 'https://images-na.ssl-images-amazon.com/images/I/71bGgd8pRqL._AC_SL1500_.jpg',pegi : "PEGI 3", pegiURL: 'https://pegi.info/themes/pegi/public-images/pegi/pegi3.png', plataforma: "PS4/XBOX/SWITCH"},
+    {nombre: "Super Mario Party", caratula: 'https://images-na.ssl-images-amazon.com/images/I/81PlF%2BHTScL._AC_SL1500_.jpg',pegi : "PEGI 7", pegiURL: 'https://pegi.info/themes/pegi/public-images/pegi/pegi7.png', plataforma: "SWITCH"},
+    {nombre: "Sonic Riders Gravity", caratula: 'https://images-na.ssl-images-amazon.com/images/I/91jlcmC4jML._AC_SL1500_.jpg',pegi : "PEGI 7", pegiURL: 'https://pegi.info/themes/pegi/public-images/pegi/pegi7.png', plataforma: "PS2"},
+    {nombre: "The last of us", caratula: 'https://es.static.webuy.com/product_images/Juegos/PS4%20Juegos/711719407515_l.jpg',pegi : "PEGI 18", pegiURL: 'https://pegi.info/themes/pegi/public-images/pegi/pegi18.png', plataforma: "PS4"},
+    {nombre: "FIFA 2021", caratula: 'https://es.static.webuy.com/product_images/Juegos/PS4%20Juegos/5030930124434_l.jpg',pegi : "PEGI 3", pegiURL: 'https://pegi.info/themes/pegi/public-images/pegi/pegi3.png', plataforma: "XBOX/PS4/SWITCH"},  
+  ];
+  public game;
+  public gameVarios;
 
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
-  
-  applyFilter(event: Event) {
-    console.log(event)
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-    if (this.dataSource.filteredData.length === 0) {
+  buscar(nombre:string,pegi:string) {
+    
+    let nombreSpaces = nombre.trim();
+    console.log(pegi)
+    this.gameVarios = this.games.filter(x => x.pegi.includes(pegi))
+    console.log(this.gameVarios)
+    if(this.gameVarios != "" ){
+      console.log("entro")
       this.notFound = true;
-    } else{
+    } else {
       this.notFound = false
     }
+    
   }
+  // displayedColumns: string[] = [ 'caratula','name','ver'];
+  // data = Object.assign( ELEMENT_DATA);
+  // dataSource = new MatTableDataSource<Element>(this.data);  
+  // selection = new SelectionModel<PeriodicElement>(true, []);
+
+
+  // @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  // ngAfterViewInit() {
+  //   this.dataSource.paginator = this.paginator;
+  // }
+  
+  // applyFilter(event: Event) {
+  //   console.log(event)
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+  //   if (this.dataSource.filteredData.length === 0) {
+  //     this.notFound = true;
+  //   } else{
+  //     this.notFound = false
+  //   }
+  // }
 
 /**
  * QUEDA METER FUNCIONALIDAD AL SLIDE BUTTON Y MAS COSAS

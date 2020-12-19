@@ -1,27 +1,98 @@
 <div class="container mt-5">
     <div class="row" >
-        <mat-form-field>
-            <mat-label>Filtrar</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ej: Clash Royale" #input>
-            <!-- <input matInput name="" id=""> -->
-          </mat-form-field>
+      <div class="col-xl-4">
+        
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+          <div class="input-group">            
+              <input type="search" placeholder="Titulo de de juego" class="form-control border-0 bg-light" #nombre>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4">
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+          <div class="input-group">
+            <select class="form-control border-0 bg-light" id="exampleFormControlSelect1" #pegi>
+              <option>PEGI 3</option>
+              <option>PEGI 7</option>
+              <option>PEGI 12</option>
+              <option>PEGI 16</option>
+              <option>PEGI 18</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4">
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+          <div class="input-group">
+              <input type="search" placeholder="Plataforma" class="form-control border-0 bg-light">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="text-center">
+        <button class="btn btn-rosado crearCharla mt-1" (click)="buscar(nombre.value,pegi.value)">Buscar</button>
+    </div>
+    </div>
+    <div class="row mt-3">
+      <hr>
+    </div>
+    <div class="row  justify-content-center text-center"  *ngIf="notFound;else newGame">
+      <div class="col-md-3 fade-in"  *ngFor="let game of gameVarios" >        
+          <div>
+            <img alt="picture" src="{{game.caratula}}" routerLink="/paginajuego" class="img-fluid imagenTop">
+            <br>
+             <span id="game">{{game.nombre}}</span>
+             <br>
+             <img class="pegi" src="{{game.pegiURL}}">
+            <br>
+            <span><b>{{game.plataforma}}</b><b  id="plataforma"></b></span>
+            <br>
+          </div>
+        </div>
+  </div>
+      <!-- <div class="row justify-content-center mt-2">
+        <div class="col-xl-6">
+            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                <div class="input-group">
+                    <input type="search" placeholder="Titulo de charla" class="form-control border-0 bg-light">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-1">
+        <div class="col-xl-3">
+            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                <div class="input-group">
 
-        <table *ngIf="!notFound; else newGame"mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    <input type="date" class="form-control border-0 bg-light" value="13-12-2020" min="2018-01-01"max="2020-12-31">
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+        <!-- <mat-form-field>
+            <mat-label>Filtrar</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ej: Clash Royale" #input> -->
+            <!-- <input matInput name="" id=""> -->
+          <!-- </mat-form-field>
+
+        <table *ngIf="!notFound; else newGame"mat-table [dataSource]="dataSource" class="mat-elevation-z8"> -->
 
             <!-- caratula Column -->
-            <ng-container matColumnDef="caratula">
+            <!-- <ng-container matColumnDef="caratula">
                 <th mat-header-cell *matHeaderCellDef>Carátula </th>
                 <td mat-cell *matCellDef="let element"> <img class="caratulaBusqueda mt-2 mb-2" src="{{element.caratula}}"> </td>
-              </ng-container>
+              </ng-container> -->
 
             <!-- Name Column -->
-            <ng-container matColumnDef="name">
+            <!-- <ng-container matColumnDef="name">
               <th mat-header-cell *matHeaderCellDef> Nombre </th>
               <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-            </ng-container>
+            </ng-container> -->
 
             <!-- Añadir Column -->
-            <ng-container matColumnDef="ver">
+            <!-- <ng-container matColumnDef="ver">
                 <th mat-header-cell *matHeaderCellDef>Ver </th>
                 <td mat-cell *matCellDef="let element">
                     <button style="color: black;" color="basic" mat-mini-fab aria-label="Example icon button with a delete icon" routerLink="/paginajuego">
@@ -41,7 +112,7 @@
           <mat-paginator [pageSizeOptions]="[5,10, 20]" showFirstLastButtons></mat-paginator>
 
 
-    </div>
+    </div>-->
     <ng-template #newGame>
         <div class="row text-center">
 
@@ -51,6 +122,7 @@
 
         </div>
     </ng-template>
+
 </div>
 
 
