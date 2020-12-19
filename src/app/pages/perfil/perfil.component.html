@@ -29,15 +29,15 @@
           </button>
         </div>
         <div class="other-info suggest">
-          <h5>¿Crees que falta algún juego?</h5>
+          <h5>Participa en Can I Play:</h5>
         </div>
         <div class="other-info">
-          <button type="button" class="btn btn-outline-dark" routerLink="">Sugiere un juego</button>
+          <button type="button" class="btn btn-outline-dark btn-sm" routerLink="/sugerirjuego">Sugerir juego</button>
+          <button type="button" class="btn btn-rosado btn-sm" routerLink="/crearcharla">Crear charla</button>
         </div>
 
       </div>
     </div>
-
       <div class="menuProfile">
          <mat-tab-group mat-align-tabs="start" style="overflow-y: auto; height:500px; ">
         <mat-tab label="Charlas atendidas">
@@ -125,21 +125,20 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header justify-content-center">
+        <h3 class="text-center justify-content-center">Editar perfil</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-          <h3 class="text-center">Editar perfil</h3>
-          <hr>
-          <div class="row text-center">
+          <div class="row">
             <form class="f2-wrapper">
-              <div class="row">
-                  <div class="col-4">
+              <div class="row mt-3 mb-3">
+                  <div class="col-6">
                   <label for="password"><h6>Nombre</h6></label>
                     <input type="text" class="form-control" placeholder="Juan">
                   </div>
-                  <div class="col-4">
+                  <div class="col-6">
                   <label for="password"><h6>Apellido</h6></label>
                     <input type="text" class="form-control" placeholder="García">
                   </div>
@@ -155,23 +154,23 @@
                   <option>4+</option>
                 </select>
                 </div>
-              <div class="form-group mb-2">
+              <div class="form-group email mb-2">
                 <label for="email"><h6>Correo Electrónico</h6></label>
                 <input class="form-control" placeholder="Email...">
               </div>
-              <div class="form-group mb-4">
-                <button type="button" class="btn register-button">Modificar</button>
+              <div class="form-group mb-1 mt-3 text-center">
+                <button type="button" class="btn btn-warning">Modificar</button>
               </div>
-              <div class="form-group mb-4">
-                <button type="button" class="btn register-button">Borrar perfil</button>
+              <div class="form-group mb-4 mt-3 text-center">
+                <button type="button" class="btn btn-danger ">Borrar cuenta de usuario</button>
               </div>
             </form>
-        </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
       </div>
     </div>
   </div>
 </div>
+
+
 

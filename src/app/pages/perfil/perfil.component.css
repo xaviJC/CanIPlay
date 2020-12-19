@@ -97,7 +97,6 @@ h6 {
   padding-top: 3%;
 }
 
-
 .taught {
   background-color: #270a42;
   height: 85%;
@@ -136,6 +135,28 @@ h6 {
 .menuProfile {
   margin-top: 50px;
   width: 50%;
+}
+
+.btn-rosado {
+  color: #ded4f1;
+  background-color: #371a6d;
+  border-color: #371a6d;
+}
+
+.btn-rosado:hover {
+  color: #371a6d;
+  background-color: #ffffff;
+}
+
+.btn-outline-dark {
+  color: #371a6d;
+  background-color: #ded4f1;
+  border-color: #ded4f1;
+}
+
+.btn-outline-dark:hover {
+  color: #371a6d;
+  background-color: #ffffff;
 }
 
 
