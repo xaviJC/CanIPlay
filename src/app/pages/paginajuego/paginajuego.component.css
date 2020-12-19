@@ -15,22 +15,22 @@ h5 {
 }
 
 .container {
-  margin-top: 2%;
+  margin-top: 2.5%;
   margin-bottom: 2%;
 }
 
 .game-container {
   background-color: #371a6d;
-  border-radius: 5px;
+  border-radius: 15px;
   /* box-shadow: 2px, ; */
   box-shadow: 1px 9px 6px -6px rgb(170, 169, 169);
-  padding: 1% 1.5% 1% 1.5%;
+  padding: 1% 1.7% 1% 1.7%;
 }
 
 .game-data {
   background-color: #ffffff;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   padding-bottom: 1%;
 
   /* box-shadow: 2px, ; */
@@ -39,8 +39,8 @@ h5 {
 
 .game-details {
   background-color: #ffffff;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
   /* box-shadow: 2px, ; */
   box-shadow: 1px 9px 6px -6px rgb(27, 27, 27);
   padding-top: 5%;
@@ -145,13 +145,6 @@ h5 {
   background-color: #cececf;
 }
 
-.vertical-right {
-  height: 500px;
-  width: 2px;
-  border-width: 0.2em;
-  background-color: #cececf;
-}
-
 .card-wrapper {
   padding-top: 0%;
 }
@@ -161,7 +154,7 @@ h5 {
   margin-top: 2%;
   margin-left: 1%;
   margin-right: 1%;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 
