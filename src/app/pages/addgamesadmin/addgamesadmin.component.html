@@ -3,6 +3,7 @@
     <div class="addgame-container">
 
       <div class="left-container">
+        <h3>Imágenes del juego</h3>
           <div class="row mt-4 ml-2">
             <label for="caratula"><h6>Carátula del juego</h6></label>
             <input type="text" class="form-control mb-1" placeholder="Inserte la url de la imagen" [(ngModel)]="urlCaratula">
@@ -34,9 +35,10 @@
             <input type="text" class="form-control mb-1" placeholder="Screenshot 4">
         </div>
 
-
       </div>
+
       <div class="form-container">
+        <h3>Datos del juego</h3>
 
         <div class="form-wrapper">
 
@@ -67,8 +69,8 @@
               <label for="text"><h6>Plataformas disponibles</h6></label>
               <input class="form-control"  type="text" placeholder="Xbox/Switch/PC">
             </div>
-            <div class="row">
-                <div class="col-4">
+            <div class="row game-cards">
+                <div class="col-5">
                     <div>
                         <b><span class="spanJuegos">Nº de jugadores</span></b>
                         <br>
@@ -81,7 +83,7 @@
                         <label for="male">Multiplayer online</label><br>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-5">
                     <div>
                         <b><span class="spanJuegos">Tipo de contenido</span></b>
                         <br>
@@ -93,8 +95,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-4">
+            <div class="row game-cards">
+                <div class="col-5">
                     <div>
                         <b> <span class="spanJuegos">Internet</span></b>
                         <br>
@@ -105,7 +107,7 @@
                         <label for="male">No requiere conexión a internet</label><br>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-5">
                     <div>
                         <b> <span class="spanJuegos">Pagos</span></b>
                         <br>

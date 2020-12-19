@@ -4,7 +4,7 @@ a {
 }
 
 a:hover {
-  color: #371a6d;
+  color: #ded4f1;
 }
 
 h3 {
@@ -37,14 +37,14 @@ h6 {
 .page-container {
   height: 73.5%;
   width: 100%;
-  background-color: #f6f2f3;
   display: flex;
   justify-content: center;
   position: relative;
 }
 
 .login-container {
-  height: 84%;
+  margin-top: 2%;
+  height: 86%;
   width: 55%;
   background-color: #ffffff;
   border-radius: 35px;
@@ -110,9 +110,8 @@ h6 {
 @media (max-width: 1025px) and (min-width: 768px) {
 
   .page-container {
-    height: 75%;
+    height: 90%;
     width: 100%;
-    background-color: #f6f2f3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,7 +137,7 @@ h6 {
 
   .form-container {
     width: 100%;
-    padding-top: 6%;
+    padding-top: 5%;
     display: inline-block
   }
 
@@ -169,7 +168,7 @@ h6 {
 
   .form-container {
     width: 100%;
-    padding-top: 15%;
+    padding-top: 5%;
   }
 
   .form-group {
@@ -177,7 +176,7 @@ h6 {
   }
 
   .form-wrapper {
-    margin-top: 6%;
+    margin-top: 4%;
     padding-left: 17%;
   }
 
