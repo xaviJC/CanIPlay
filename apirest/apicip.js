@@ -7,7 +7,6 @@ app.use(express.json())
 app.use(cors())
 let mysql = require('mysql');
 
-
 let connection = mysql.createConnection({
                 host : "localhost",
                 user : "root",
@@ -21,9 +20,8 @@ connection.connect(function (err) {
         console.log(err)
     } else {
         console.log("Conexion correcta")
-    }    
+    }
 });
-
 
 app.get('/', (req,res) => {
     console.log("Prueba")
