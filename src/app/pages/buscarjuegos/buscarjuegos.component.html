@@ -1,48 +1,56 @@
 <div class="container mt-5">
       <div class="row text-center">
-          <h2>ENCUENTRA <span style="font-weight: bold; font-size: 38px;">TU</span> JUEGO</h2>
+          <h2 class="title">ENCUENTRA TU JUEGO</h2>
       </div>
-      
+
     <div class="row" >
       <div class="col-xl-4">
-        
-        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-          <div class="input-group">            
-              <input type="search" placeholder="Titulo de de juego" class="form-control border-0 bg-light" #nombre>
+        <h6>Buscar por título</h6>
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 border">
+          <div class="input-group">
+              <input type="search" placeholder="Titulo de de juego" class="form-control border-0 bg-light rounded rounded-pill" #nombre>
           </div>
         </div>
       </div>
       <div class="col-xl-4">
-        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+        <h6>Filtrar por edad</h6>
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 border">
           <div class="input-group">
-            <select class="form-control border-0 bg-light" id="exampleFormControlSelect1" #pegi>
-              <option>PEGI 3</option>
-              <option>PEGI 7</option>
-              <option>PEGI 12</option>
-              <option>PEGI 16</option>
-              <option>PEGI 18</option>
+            <select class="form-control border-0 bg-light rounded rounded-pill" id="exampleFormControlSelect1" #pegi>
+              <option value="3">PEGI 3</option>
+              <option value="7">PEGI 7</option>
+              <option value="12">PEGI 12</option>
+              <option value="16">PEGI 16</option>
+              <option value="18">PEGI 18</option>
             </select>
           </div>
         </div>
       </div>
       <div class="col-xl-4">
-        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+        <h6>Filtrar por plataforma</h6>
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 border">
           <div class="input-group">
-              <input type="search" placeholder="Plataforma" class="form-control border-0 bg-light">
+            <select class="form-control border-0 bg-light rounded rounded-pill" id="exampleFormControlSelect1" #platform>
+              <option value="pc">PC</option>
+              <option value="ps4">PS4</option>
+              <option value="ps5">PS5 </option>
+              <option value="switch">NSW</option>
+              <option value="xbox_one">XONE</option>
+              <option value="xbox_series">XSXS</option>
+            </select>
           </div>
         </div>
       </div>
-    </div>
     <div class="row">
       <div class="text-center">
-        <button class="btn btn-rosado crearCharla mt-1" (click)="buscar(nombre.value,pegi.value)">Buscar</button>
+        <button class="btn btn-rosado crearCharla mt-1" (click)="buscar(nombre.value, pegi.value, platform.value)">Buscar</button>
     </div>
     </div>
     <div class="row mt-3">
       <hr>
     </div>
     <div class="row  justify-content-center text-center"  *ngIf="notFound;else newGame">
-      <div class="col-md-3 fade-in"  *ngFor="let game of gameVarios" >        
+      <div class="col-md-3 fade-in"  *ngFor="let game of gameVarios" >
           <div>
             <img alt="picture" src="{{game.caratula}}" routerLink="/paginajuego" class="img-fluid imagenTop">
             <br>
@@ -55,74 +63,13 @@
           </div>
         </div>
   </div>
-      <!-- <div class="row justify-content-center mt-2">
-        <div class="col-xl-6">
-            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-                <div class="input-group">
-                    <input type="search" placeholder="Titulo de charla" class="form-control border-0 bg-light">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center mt-1">
-        <div class="col-xl-3">
-            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-                <div class="input-group">
 
-                    <input type="date" class="form-control border-0 bg-light" value="13-12-2020" min="2018-01-01"max="2020-12-31">
-
-                </div>
-            </div>
-        </div>
-    </div> -->
-        <!-- <mat-form-field>
-            <mat-label>Filtrar</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ej: Clash Royale" #input> -->
-            <!-- <input matInput name="" id=""> -->
-          <!-- </mat-form-field>
-
-        <table *ngIf="!notFound; else newGame"mat-table [dataSource]="dataSource" class="mat-elevation-z8"> -->
-
-            <!-- caratula Column -->
-            <!-- <ng-container matColumnDef="caratula">
-                <th mat-header-cell *matHeaderCellDef>Carátula </th>
-                <td mat-cell *matCellDef="let element"> <img class="caratulaBusqueda mt-2 mb-2" src="{{element.caratula}}"> </td>
-              </ng-container> -->
-
-            <!-- Name Column -->
-            <!-- <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef> Nombre </th>
-              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-            </ng-container> -->
-
-            <!-- Añadir Column -->
-            <!-- <ng-container matColumnDef="ver">
-                <th mat-header-cell *matHeaderCellDef>Ver </th>
-                <td mat-cell *matCellDef="let element">
-                    <button style="color: black;" color="basic" mat-mini-fab aria-label="Example icon button with a delete icon" routerLink="/paginajuego">
-                        <mat-icon>visibility</mat-icon>
-                      </button>
-                </td>
-              </ng-container>
-
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-                (click)="selection.toggle(row)">
-            </tr>
-
-          </table>
-
-          <mat-paginator [pageSizeOptions]="[5,10, 20]" showFirstLastButtons></mat-paginator>
-
-
-    </div>-->
     <ng-template #newGame>
         <div class="row text-center">
 
-                 <p>¿No encuentras el juego que buscas? ¡Escuchamos tus propuestas!<button mat-icon-button color="basic">
-                    <mat-icon routerLink="/sugerirjuego">create</mat-icon>
-                 </button>  </p>
+                 <p>¿No encuentras el juego que buscas? ¡Escuchamos tus propuestas!
+                   <button mat-icon-button color="basic"><mat-icon routerLink="/sugerirjuego">create</mat-icon></button>
+                  </p>
 
         </div>
     </ng-template>
