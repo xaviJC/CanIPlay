@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 21-12-2020 a las 17:51:50
--- Versión del servidor: 10.4.16-MariaDB
--- Versión de PHP: 7.4.12
+-- hola-borrame
+-- Servidor: localhost
+-- Tiempo de generación: 22-12-2020 a las 14:54:18
+-- Versión del servidor: 10.4.14-MariaDB
+-- Versión de PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -58,9 +58,8 @@ CREATE TABLE `chat` (
 CREATE TABLE `juegos` (
   `id_juego` int(11) NOT NULL,
   `titulo_juego` varchar(60) NOT NULL,
-  `genero` enum('Acción','Aventura','Deportes','Estrategia','Educativo','Plataformas','Puzzles','Shooter','Simulación') NOT NULL,
+  `genero` enum('Acción','Aventura','Deportes','Estrategia','Educativo','Plataformas','Puzzles','Shooter','Simulación','Carreras','Musical') NOT NULL,
   `pegi` enum('3','7','12','16','18') NOT NULL,
-  `plataforma` varchar(60) NOT NULL,
   `tarjeta_jugador` enum('Single Player','Single/multiplayer','Multiplayer offline','Multiplayer online') NOT NULL,
   `tarjeta_pagos` enum('Contiene pagos online opcionales','No contiene pagos online','Requiere suscripción (con opción a pagos)','') NOT NULL,
   `tarjeta_contenido` enum('Contenido apto para niños','Contenido moderado','Contenido adulto','') NOT NULL,
@@ -74,6 +73,57 @@ CREATE TABLE `juegos` (
   `puntuacionTotal` int(11) NOT NULL,
   `web_oficial` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `juegos`
+--
+
+INSERT INTO `juegos` (`id_juego`, `titulo_juego`, `genero`, `pegi`, `tarjeta_jugador`, `tarjeta_pagos`, `tarjeta_contenido`, `tarjeta_internet`, `caratula_juego`, `pantallazo1`, `pantallazo2`, `pantallazo3`, `pantallazo4`, `votos`, `puntuacionTotal`, `web_oficial`) VALUES
+(1, 'Animal Crossing: New Horizons', 'Simulación', '3', 'Single Player', 'No contiene pagos online', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://es.static.webuy.com/product_images/Juegos/Switch%20Juegos/045496425395_l.jpg', 'https://images-na.ssl-images-amazon.com/images/I/61pWdBI3y2L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81wO%2BuQmqiL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81csRna%2ByNL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71ZXAED1WmL._AC_SL1500_.jpg', 20, 60, 'https://www.animal-crossing.com/new-horizons/es/'),
+(2, 'Super Mario Party', 'Estrategia', '3', 'Single/multiplayer', 'No contiene pagos online', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://es.static.webuy.com/product_images/Juegos/Switch%20Juegos/045496423001_l.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81%2BcBA7dl8L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/51I73x2xepL._AC_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/51-MvD4ODoL._AC_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/51sjKEzXzDL._AC_.jpg', 30, 70, 'https://www.nintendo.es/Juegos/Nintendo-Switch/Super-Mario-Party-1388641.html'),
+(3, 'Crash Team Racing Nitro-Fueled', 'Carreras', '3', 'Single/multiplayer', 'Contiene pagos online opcionales', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://es.static.webuy.com/product_images/Juegos/PS4%20Juegos/5030917269752_l.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81G3g72nTLL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81d3BJexD8L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81g0yoUiB5L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81Bnjr4PGNL._AC_SL1500_.jpg', 10, 50, 'https://www.crashbandicoot.com/es/crashteamracing'),
+(4, 'Just Dance 2021', 'Musical', '3', 'Single/multiplayer', 'Contiene pagos online opcionales', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://es.static.webuy.com/product_images/Juegos/PS5%20Juegos/3307216177227_l.jpg', 'https://images-na.ssl-images-amazon.com/images/I/91gsNRJPBhL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71Vxds%2BQRIL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71YDp%2BGGZmL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81DifeE6LEL._AC_SL1500_.jpg', 20, 60, 'https://www.justdancenow.com/?lang=es'),
+(5, 'FIFA 21', 'Deportes', '3', 'Single/multiplayer', 'Contiene pagos online opcionales', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://es.static.webuy.com/product_images/Juegos/Xbox%20One%20Juegos/5030937124420_l.jpg', 'https://images-na.ssl-images-amazon.com/images/I/814EnfkacKL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81WDE7ibZzL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/815pa2mTrbL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71bvhH7tuJL._AC_SL1500_.jpg', 20, 60, 'https://www.ea.com/es-es/games/fifa/fifa-21/buy?gclid=EAIaIQobChMI2Ois5bnh7QIVCbTtCh2b3Q-MEAAYASAAEgKXI_D_BwE&gclsrc=aw.ds'),
+(6, 'Spyro Reignited Trilogy', 'Plataformas', '7', 'Single/multiplayer', 'Contiene pagos online opcionales', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://es.static.webuy.com/product_images/Juegos/PS4%20Juegos/5030917242205_l.jpg', 'https://cdn.pocket-lint.com/r/s/660x/assets/images/144874-games-review-hands-on-spyro-before-and-after-image1-qrxwnm4tl6-jpg.webp?v1', 'https://cdn.pocket-lint.com/r/s/660x/assets/images/144874-games-review-hands-on-spyro-before-and-after-image2-kec0ym5qrn-jpg.webp?v1', 'https://cdn.pocket-lint.com/r/s/970x/assets/images/144874-games-review-hands-on-spyro-reignited-trilogy-initial-review-the-most-lovingly-created-remaster-image4-haoub5zety-jpg.webp', 'https://cdn.pocket-lint.com/r/s/970x/assets/images/144874-games-review-hands-on-spyro-reignited-trilogy-initial-review-the-most-lovingly-created-remaster-image8-t8hbyed2aw-jpg.webp', 20, 60, 'https://www.spyrothedragon.com/es'),
+(7, 'Among Us', 'Plataformas', '7', 'Multiplayer online', 'Contiene pagos online opcionales', 'Contenido apto para niños', 'Requiere conexión a internet', 'https://cdn2.unrealengine.com/egs-amongus-innersloth-s6-1200x1600-675403712.jpg', 'https://cdn.cloudflare.steamstatic.com/steam/apps/945360/ss_c80d2f3fab624b18d9531adc6957767a7fede100.1920x1080.jpg?t=1607727748', 'https://cdn.cloudflare.steamstatic.com/steam/apps/945360/ss_649e19ff657fa518d4c2b45bed7ffdc4264a4b3a.1920x1080.jpg?t=1607727748', 'https://cdn.cloudflare.steamstatic.com/steam/apps/945360/ss_eab32f16b59c005489c10f9063227ed7b54b31ec.1920x1080.jpg?t=1607727748', 'https://cdn.cloudflare.steamstatic.com/steam/apps/945360/ss_a0f2416e11bf5b47788eaa3617e092b73962b145.1920x1080.jpg?t=1607727748', 20, 60, 'https://www.epicgames.com/store/es-ES/product/among-us/home'),
+(8, 'Crash Bandicoot N. Sane Trilogy', 'Plataformas', '7', 'Single/multiplayer', 'Contiene pagos online opcionales', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://es.static.webuy.com/product_images/Juegos/PS4%20Juegos/5030917211072_l.jpg', 'https://images-na.ssl-images-amazon.com/images/I/91-2Wj4EPaL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81rGZqlgbjL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/91XJ6bwyA8L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/91HU4qGTrhL._AC_SL1500_.jpg', 20, 60, 'https://www.crashbandicoot.com/es/hub'),
+(9, 'Ratchet & Clank', 'Acción', '7', 'Single Player', 'No contiene pagos online', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/913V%2BirTARL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/61lxafgWusL._AC_SL1280_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71fKgB4HPtL._AC_SL1280_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/716ZsKhlJSL._AC_SL1280_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71PYsd4FqaL._AC_SL1280_.jpg', 20, 60, 'https://ratchet-galaxy.com/en/'),
+(10, 'Minecraft', 'Simulación', '7', 'Single/multiplayer', 'Contiene pagos online opcionales', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/61T5Ijw0hQL._AC_SL1100_.jpg', 'https://m.media-amazon.com/images/I/41yAB0lxCQL._AC_.jpg', 'https://m.media-amazon.com/images/I/51V83J7oN0L._AC_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71s8Kzc-iJL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/710T1uYrP1L._AC_SL1500_.jpg', 20, 60, 'https://www.minecraft.net/es-es'),
+(11, 'Kingdom Hearts 3', 'Acción', '12', 'Single/multiplayer', 'No contiene pagos online', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://m.media-amazon.com/images/I/81sbCzUlrML._AC_SL1500_.jpg', 'https://m.media-amazon.com/images/I/81sbCzUlrML._AC_SL1500_.jpg', 'https://m.media-amazon.com/images/I/813-Yid7tzL._AC_SL1500_.jpg', 'https://m.media-amazon.com/images/I/71iZzNGrUsL._AC_SL1500_.jpg', 'https://m.media-amazon.com/images/I/71KAf01cmoL._AC_SL1500_.jpg', 20, 60, 'https://www.kingdomhearts.com/3/es/home/'),
+(12, 'League of Legends', 'Estrategia', '12', 'Multiplayer online', 'Contiene pagos online opcionales', 'Contenido moderado', 'Requiere conexión a internet', 'https://i.redd.it/n3gfgw157rc41.jpg', 'https://fotografias-neox.atresmedia.com/clipping/cmsimages01/2016/03/22/68E80F24-9A51-49B0-A09E-13BE8809DCA7/58.jpg', 'https://k33.kn3.net/taringa/E/2/4/A/5/3/baltazar14/64C.jpg', 'https://www.muycomputer.com/wp-content/uploads/2019/05/LeagueofLegends_m%C3%B3vil.jpg', 'https://sm.ign.com/ign_es/screenshot/default/portada_7fes.jpg', 20, 60, 'https://na.leagueoflegends.com/es-es/'),
+(13, 'Aeterno Blade II', 'Plataformas', '12', 'Single Player', 'No contiene pagos online', 'Contenido apto para niños', 'Requiere conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/81saNnc4LUL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81wn8lO3ibL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/91Xhrjh1BLL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71AiihWQJsL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81-oDUhSrTL._AC_SL1500_.jpg', 20, 60, 'https://areajugones.sport.es/videojuegos/analisis-aeternoblade-ii/');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `juegos_plataforma`
+--
+
+CREATE TABLE `juegos_plataforma` (
+  `id_juego` int(11) NOT NULL,
+  `ps4` tinyint(1) NOT NULL,
+  `ps5` tinyint(1) NOT NULL,
+  `xbox_series` tinyint(1) NOT NULL,
+  `xbox_one` tinyint(1) NOT NULL,
+  `switch` tinyint(1) NOT NULL,
+  `pc` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `juegos_plataforma`
+--
+
+INSERT INTO `juegos_plataforma` (`id_juego`, `ps4`, `ps5`, `xbox_series`, `xbox_one`, `switch`, `pc`) VALUES
+(1, 0, 0, 0, 0, 1, 0),
+(2, 0, 0, 0, 0, 1, 0),
+(3, 1, 0, 0, 1, 1, 0),
+(4, 1, 1, 1, 1, 1, 0),
+(5, 1, 1, 1, 1, 1, 1),
+(6, 1, 0, 0, 1, 1, 1),
+(7, 0, 0, 0, 0, 0, 1),
+(8, 1, 0, 0, 1, 1, 1),
+(9, 1, 0, 0, 0, 0, 0),
+(10, 1, 0, 0, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -168,6 +218,12 @@ ALTER TABLE `juegos`
   ADD PRIMARY KEY (`id_juego`);
 
 --
+-- Indices de la tabla `juegos_plataforma`
+--
+ALTER TABLE `juegos_plataforma`
+  ADD KEY `id_juego` (`id_juego`);
+
+--
 -- Indices de la tabla `likes_usuario`
 --
 ALTER TABLE `likes_usuario`
@@ -223,7 +279,7 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT de la tabla `juegos`
 --
 ALTER TABLE `juegos`
-  MODIFY `id_juego` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_juego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `likes_usuario`
@@ -265,6 +321,12 @@ ALTER TABLE `charlas`
 ALTER TABLE `chat`
   ADD CONSTRAINT `chat_ibfk_1` FOREIGN KEY (`id_usuario1`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `chat_ibfk_2` FOREIGN KEY (`id_usuario2`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `juegos_plataforma`
+--
+ALTER TABLE `juegos_plataforma`
+  ADD CONSTRAINT `juegos_plataforma_ibfk_1` FOREIGN KEY (`id_juego`) REFERENCES `juegos` (`id_juego`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `likes_usuario`
