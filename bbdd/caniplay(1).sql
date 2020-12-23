@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
 -- version 5.0.3
 -- https://www.phpmyadmin.net/
--- hola-borrame
+--
 -- Servidor: localhost
--- Tiempo de generación: 22-12-2020 a las 14:54:18
+-- Tiempo de generación: 23-12-2020 a las 11:10:54
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.34
 
@@ -36,6 +36,18 @@ CREATE TABLE `charlas` (
   `lugar_charla` mediumtext NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `charlas`
+--
+
+INSERT INTO `charlas` (`id_charla`, `titulo_charla`, `fecha_charla`, `descripcion_charla`, `resumen_charla`, `lugar_charla`, `id_usuario`) VALUES
+(7, 'Videojuegos para un mundo mejor.', '2020-12-28', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '¡Imaginad aprovechar el poder de los videojuegos para resolver problemas diarios!', 'https://www.google.es/', 1),
+(8, 'Mejores ciudades con Cities: Skylines', '2021-01-05', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '¡Aprendamos con Karoliina y Cities: Skylines a mejorar las ciudades del mañana!', 'https://www.google.es/', 2),
+(9, 'Tu cerebro en los videojuegos', '2021-01-21', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '¿Cómo afectan los videojuegos al ritmo del cerebro? ¡Descúbrelo con Daphne!', 'https://www.google.es/', 3),
+(10, 'Coaching sessions #2: \"The Binding of Isaac\"', '2021-01-18', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '¿Te atreves a luchar contra tus mayores miedos? No te preocupes, ya lo hace Xavi por ti.', 'https://www.google.es/', 4),
+(11, 'Sobrevive el 2020 al más puro estilo \"Lara Croft\"', '2020-12-11', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'El 2020 aún no ha terminado. Yaiza nos explicará las mejores técnicas para aguantar lo que queda de año.', 'https://www.google.es/', 5),
+(12, 'Aprende inglés con los videojuegos', '2020-12-28', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '¿Se te da regular el inglés? ¡Patrícia te recomienda los mejores (y peores) juegos para aprender mientras juegas!', 'https://www.google.es/', 6);
 
 -- --------------------------------------------------------
 
@@ -91,7 +103,19 @@ INSERT INTO `juegos` (`id_juego`, `titulo_juego`, `genero`, `pegi`, `tarjeta_jug
 (10, 'Minecraft', 'Simulación', '7', 'Single/multiplayer', 'Contiene pagos online opcionales', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/61T5Ijw0hQL._AC_SL1100_.jpg', 'https://m.media-amazon.com/images/I/41yAB0lxCQL._AC_.jpg', 'https://m.media-amazon.com/images/I/51V83J7oN0L._AC_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71s8Kzc-iJL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/710T1uYrP1L._AC_SL1500_.jpg', 20, 60, 'https://www.minecraft.net/es-es'),
 (11, 'Kingdom Hearts 3', 'Acción', '12', 'Single/multiplayer', 'No contiene pagos online', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://m.media-amazon.com/images/I/81sbCzUlrML._AC_SL1500_.jpg', 'https://m.media-amazon.com/images/I/81sbCzUlrML._AC_SL1500_.jpg', 'https://m.media-amazon.com/images/I/813-Yid7tzL._AC_SL1500_.jpg', 'https://m.media-amazon.com/images/I/71iZzNGrUsL._AC_SL1500_.jpg', 'https://m.media-amazon.com/images/I/71KAf01cmoL._AC_SL1500_.jpg', 20, 60, 'https://www.kingdomhearts.com/3/es/home/'),
 (12, 'League of Legends', 'Estrategia', '12', 'Multiplayer online', 'Contiene pagos online opcionales', 'Contenido moderado', 'Requiere conexión a internet', 'https://i.redd.it/n3gfgw157rc41.jpg', 'https://fotografias-neox.atresmedia.com/clipping/cmsimages01/2016/03/22/68E80F24-9A51-49B0-A09E-13BE8809DCA7/58.jpg', 'https://k33.kn3.net/taringa/E/2/4/A/5/3/baltazar14/64C.jpg', 'https://www.muycomputer.com/wp-content/uploads/2019/05/LeagueofLegends_m%C3%B3vil.jpg', 'https://sm.ign.com/ign_es/screenshot/default/portada_7fes.jpg', 20, 60, 'https://na.leagueoflegends.com/es-es/'),
-(13, 'Aeterno Blade II', 'Plataformas', '12', 'Single Player', 'No contiene pagos online', 'Contenido apto para niños', 'Requiere conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/81saNnc4LUL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81wn8lO3ibL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/91Xhrjh1BLL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71AiihWQJsL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81-oDUhSrTL._AC_SL1500_.jpg', 20, 60, 'https://areajugones.sport.es/videojuegos/analisis-aeternoblade-ii/');
+(13, 'Aeterno Blade II', 'Plataformas', '12', 'Single Player', 'No contiene pagos online', 'Contenido apto para niños', 'Requiere conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/81saNnc4LUL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81wn8lO3ibL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/91Xhrjh1BLL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71AiihWQJsL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81-oDUhSrTL._AC_SL1500_.jpg', 20, 60, 'https://areajugones.sport.es/videojuegos/analisis-aeternoblade-ii/'),
+(14, 'The Legend Of Zelda: Breath Of The Wild', 'Plataformas', '12', 'Single Player', 'Contiene pagos online opcionales', 'Contenido apto para niños', 'No requiere conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/91jvZUxquKL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/811pf6pN7RL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71GdQsZyE8L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81Czz%2BhSxZL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81Zq-iX3CRL._AC_SL1500_.jpg', 20, 60, 'https://www.zelda.com/breath-of-the-wild/es/'),
+(15, 'Sid Meier\'s Civilization VI ', 'Estrategia', '12', 'Single/multiplayer', 'Contiene pagos online opcionales', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/81JeqskUs2L._SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81bfy%2B%2BQOKL._SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81esad6V%2BNL._SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81XCGzhFL5L._SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81-iXcnRjOL._SL1500_.jpg', 20, 60, 'https://civilization.com/es-ES/'),
+(16, 'Marvel´s Spider-Man: Miles Morales', 'Acción', '16', 'Single Player', 'No contiene pagos online', 'Contenido apto para niños', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/81njBIZp9PL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81RJ8xYn20L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81W2a3PtAjL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81voLMv8RQL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81L0X99ZEOL._AC_SL1500_.jpg', 20, 60, 'https://vandal.elespanol.com/juegos/ps5/spiderman-miles-morales/86451#p-89'),
+(17, 'Valorant', 'Shooter', '16', 'Multiplayer online', 'Contiene pagos online opcionales', 'Contenido moderado', 'Requiere conexión a internet', 'https://cdn.game.tv/game-tv-content/images_3/07e71c74484a1cedd92dbc35fa0c0304/GameTile.jpg', 'https://files.antena2.com/antena2/public/styles/imagen_despliegue/public/2020-05/valorant-2_1_0.jpg?itok=3Wvz5Pc0', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9hHEk6kr1N3jVvGQoAVTGjZOU7BZm-gCYjg&usqp=CAU', 'https://www.egamingmexico.com/wp-content/uploads/2020/08/3679063-val_t2_cinematic_day_1_banner.jpg', 'https://locuragaming.com/wp-content/uploads/2020/03/Untitled-4-e1583173454181.jpg', 20, 60, 'https://playvalorant.com/es-es/'),
+(18, 'Horizon: Zero Dawn', 'Aventura', '16', 'Single Player', 'No contiene pagos online', 'Contenido moderado', 'Mejor experiencia con conexión a internet', 'https://cdn-products.eneba.com/resized-products/zTTVb_NAle18D-5snqycIAeGQ7e94IVqNXi1jFi2ljs_350x200_1x-0.jpeg', 'https://www.alfabetajuega.com/wp-content/uploads/2019/10/horizon.jpg', 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2016/10/horizon-zero-dawn-nuevas-imagenes_0.jpg', 'https://www.alfabetajuega.com/wp-content/uploads/2020/10/Aloy-780x405.jpg', 'https://pbs.twimg.com/media/C7eHbVPXwAAWAYG.jpg', 20, 60, 'https://vandal.elespanol.com/juegos/ps4/horizon-zero-dawn/26118#p-73'),
+(19, 'Control', 'Acción', '16', 'Single Player', 'No contiene pagos online', 'Contenido moderado', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/718oh6QAJ-L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81oRXZZUYJL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71aCjk62aCL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/710%2BwG1CwAL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81vM8iczkSL._AC_SL1500_.jpg', 20, 60, 'https://www.remedygames.com/games/control/'),
+(20, 'Uncharted 2: El Reino De Los Ladrones', 'Aventura', '16', 'Single Player', 'No contiene pagos online', 'Contenido moderado', 'No requiere conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/71n85DXlQPL._AC_SL1085_.jpg', 'https://as.com/meristation/imagenes/2015/10/13/guia_pagina/1444719612_632620_1532430293_sumario_normal.jpg', 'https://http2.mlstatic.com/uncharted-2-among-thieves-ps3-original-nuevo-fisico-sellado-D_Q_NP_994357-MLA42013969529_052020-F.webp', 'https://img.zonared.com/images/noticias/62100/62114/uncharted-2-sigue-siendo-mejores-juegos-naughty-dog_1.jpg', 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2019/09/uncharted-4_0.jpg?itok=GoqPTL42', 20, 60, 'https://www.unchartedthegame.com/es-es/'),
+(21, 'The Last of Us Part II', 'Aventura', '18', 'Single Player', 'No contiene pagos online', 'Contenido adulto', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/81OFTUvFX4L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/51afOwvM7PL._AC_SL1000_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/51qafj3dLPL._AC_SL1000_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81DTTp0OeHL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/91tig0FhonL._AC_SL1500_.jpg', 20, 60, 'https://www.naughtydog.com/blog/the_last_of_us_part_ii'),
+(22, 'Tomb Raider: Shadow of the Tomb Raider', 'Aventura', '18', 'Single Player', 'Contiene pagos online opcionales', 'Contenido adulto', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/917q49DeTgL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71KWYSrd7TL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81yIfvvtgRL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81a4DLsgovL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71s75jkvcRL._AC_SL1500_.jpg', 20, 60, 'https://tombraider.square-enix-games.com/en-us'),
+(23, ' Resident Evil 3 ', 'Acción', '18', 'Single Player', 'No contiene pagos online', 'Contenido adulto', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/81dkv99OHwL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71D5bHWOWoL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/61vYhnsyJvL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71LabCg563L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/61fFySMSPtL._AC_SL1500_.jpg', 20, 60, 'https://www.residentevil.com/re3/es/'),
+(24, 'Mortal Kombat', 'Acción', '18', 'Single/multiplayer', 'No contiene pagos online', 'Contenido adulto', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/81IYymJXt%2BL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/61xPpYXpePL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71jxRkUc0LL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71HfL-x1jVL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/61C-Tjw61SL._AC_SL1500_.jpg', 20, 60, 'https://www.mortalkombat.com/'),
+(25, 'Hellblade Senua\'s Sacrifice', 'Aventura', '18', 'Single/multiplayer', 'No contiene pagos online', 'Contenido adulto', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/81UfMKqh-YL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/813rgb11U3L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/810a61UlgGL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71-E4QVAnUL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81R00SXtU3L._AC_SL1500_.jpg', 20, 60, 'https://www.hellblade.com/');
 
 -- --------------------------------------------------------
 
@@ -123,7 +147,22 @@ INSERT INTO `juegos_plataforma` (`id_juego`, `ps4`, `ps5`, `xbox_series`, `xbox_
 (7, 0, 0, 0, 0, 0, 1),
 (8, 1, 0, 0, 1, 1, 1),
 (9, 1, 0, 0, 0, 0, 0),
-(10, 1, 0, 0, 1, 1, 1);
+(10, 1, 0, 0, 1, 1, 1),
+(11, 1, 0, 0, 1, 0, 0),
+(12, 0, 0, 0, 0, 0, 1),
+(13, 1, 0, 0, 1, 1, 1),
+(14, 0, 0, 0, 0, 1, 0),
+(15, 1, 0, 0, 1, 0, 1),
+(16, 1, 1, 0, 0, 0, 0),
+(17, 0, 0, 0, 0, 0, 1),
+(18, 1, 0, 0, 0, 0, 1),
+(19, 1, 1, 1, 1, 0, 1),
+(20, 1, 0, 0, 0, 0, 0),
+(21, 1, 0, 0, 0, 0, 0),
+(22, 1, 0, 0, 1, 0, 1),
+(23, 1, 0, 0, 1, 0, 1),
+(24, 1, 0, 0, 1, 1, 1),
+(25, 1, 0, 0, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -180,6 +219,18 @@ CREATE TABLE `usuarios` (
   `password` varchar(120) NOT NULL,
   `tipo_usuario` enum('usuario','admin','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `hijos`, `email`, `password`, `tipo_usuario`) VALUES
+(1, 'Dámaso', 'Orta ', '2', 'damasoOrtaMadera@superrito.com', '1234', 'usuario'),
+(2, 'Andrea', 'Martinez', '1', 'andre40@gmail.com', '1234', 'usuario'),
+(3, 'Julia', 'Manzanares', '+4', 'JManzanares@gustr.com', '1234', 'usuario'),
+(4, 'Mario', 'Acosta', '3', 'acosta37@hotmail.es', '1234', 'usuario'),
+(5, 'Isabel ', 'Bermúdez', '1', 'isaBer@gmail.com', '1234', 'admin'),
+(6, 'Juan', 'Palomo', '+4', 'juanito@gmail.com', '1234', 'admin');
 
 -- --------------------------------------------------------
 
@@ -267,7 +318,7 @@ ALTER TABLE `usuario_charla`
 -- AUTO_INCREMENT de la tabla `charlas`
 --
 ALTER TABLE `charlas`
-  MODIFY `id_charla` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_charla` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `chat`
@@ -279,7 +330,7 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT de la tabla `juegos`
 --
 ALTER TABLE `juegos`
-  MODIFY `id_juego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_juego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `likes_usuario`
@@ -303,7 +354,7 @@ ALTER TABLE `sugerencias`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
