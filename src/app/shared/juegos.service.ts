@@ -15,7 +15,7 @@ export class JuegosService {
     return this.http.get(this.url + "/")
   }
 
-
+  // me gustan las patatas fritas
 
 
 }
