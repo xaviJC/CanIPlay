@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-    <div class="row">
+    <div class="row button-container">
       <div class="text-center">
         <button class="btn btn-rosado crearCharla mt-1" (click)="buscar(nombre.value, pegi.value, platform.value)">Buscar</button>
     </div>
@@ -49,7 +49,7 @@
     <div class="row mt-3">
       <hr>
     </div>
-    <div class="row  justify-content-center text-center"  *ngIf="notFound;else newGame">
+    <div class="row button-container justify-content-center text-center"  *ngIf="notFound;else newGame">
       <div class="col-md-3 fade-in"  *ngFor="let game of gameVarios" >
           <div>
             <img alt="picture" src="{{game.caratula}}" routerLink="/paginajuego" class="img-fluid imagenTop">

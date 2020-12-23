@@ -16,6 +16,10 @@ h6 {
   margin-bottom: 3%;
 }
 
+.button-container {
+  margin-left: 1%;
+}
+
 .imagenTop:hover {
   transform: scale(1.08);
 }
