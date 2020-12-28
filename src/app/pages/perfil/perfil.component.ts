@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioLoginService } from '../../shared/servicio-login.service';
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiServiceUsuario:ServicioLoginService) { }
 
   ngOnInit(): void {
+    this.apiServiceUsuario.datos()
+
   }
 
 }

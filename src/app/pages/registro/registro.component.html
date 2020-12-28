@@ -15,47 +15,46 @@
           <h3 class="message">Únete y disfruta de funcionalidades exclusivas.</h3>
           <h3 class="message">Y además, inscríbete y participa en charlas educativas.</h3>
 
-          <form class="f2-wrapper">
+          <form #usarioFrom="ngForm" class="f2-wrapper" >
             <div class="row">
                 <div class="col-4">
                 <label><h6>Nombre</h6></label>
-                  <input type="text" class="form-control" placeholder="Juan">
+                  <input type="text" name="nombre"  #nombre class="form-control" placeholder="Juan">
                 </div>
                 <div class="col-4">
                 <label><h6>Apellido</h6></label>
-                  <input type="text" class="form-control" placeholder="García">
+                  <input type="text" class="form-control" name="apellido" #apellido placeholder="García">
                 </div>
               </div>
 
               <div class="form-group age-input mb-2 col-5">
                 <label><h6>Nº de hijos:</h6></label>
-              <select class="btn btn-mini">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4+</option>
+              <select name="hijos" #hijos class="btn btn-mini">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4"> 4+</option>
               </select>
               </div>
             <div class="form-group mb-2">
               <label for="email"><h6>Correo Electrónico</h6></label>
-              <input class="form-control" placeholder="Email...">
+              <input class="form-control" placeholder="Email..." name="email" #email>
             </div>
             <div class="form-group mb-2">
               <label for="password"><h6>Contraseña</h6></label>
-              <input type="password" class="form-control" placeholder="***********">
+              <input type="password" class="form-control" placeholder="***********" name="password" #password >
             </div>
             <div class="form-group mb-2">
               <label for="password"><h6>Confirmar contraseña</h6></label>
               <input type="password" class="form-control" placeholder="***********">
             </div>
-
             <div class="form-group mb-4">
-              <button type="button" class="btn register-button">Registrar</button>
+              <button type="button" class="btn register-button"  (click)="createUsuario(nombre.value,apellido.value,hijos.value,email.value,password.value)">Registrar</button>
             </div>
           </form>
          <h4>¿Ya tienes una cuenta? </h4><a routerLink="/login"><h5>Inicia sesión.</h5></a>
-        </div>
+        </div> 
 
       </div>
 
