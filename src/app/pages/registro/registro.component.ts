@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioUsuarioService } from '../../shared/servicio-usuario.service';
+import { Usuario } from '../../model/usuario'
+
+
 
 @Component({
   selector: 'app-registro',
@@ -6,8 +10,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
+  constructor(private apiServiceUsuario:ServicioUsuarioService) { }
+  // constructor() { }
 
-  constructor() { }
+  createUsuario(nombre:string,apellido:string,hijos:string,email:string,password:string) {
+    this.apiServiceUsuario.addUsuario(new Usuario(nombre,apellido,hijos,email,password)).subscribe((data:Usuario) => {      
+      
+    })  
+  }
 
   ngOnInit(): void {
   }
