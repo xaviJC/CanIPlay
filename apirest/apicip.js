@@ -189,5 +189,99 @@ app.put('/registro', (req,res) => {
         
     });
 
+    // ------------------------ ENDPOINT CHARLAS --------------------------------------------
+
+    app.post('/charlas', (req,res) => {
+      let params = [req.body.titulo_charla,req.body.fecha_charla,req.body.descripcion_charla,req.body.resumen_charla,req.body.lugar_charla,req.body.id_usuario]
+      console.log(params)
+      let query = `INSERT INTO charlas (id_charla , titulo_charla, fecha_charla, descripcion_charla, resumen_charla, lugar_charla, id_usuario) VALUES (NULL, ?, ?, ?, ?, ?, ?);`;
+      connection.query(query,params, function (error, results) {
+          if (error) {
+              respuesta = `Hubo un error : ${error}`
+          } 
+          else{
+              respuesta = results
+          }
+          res.send(respuesta )    
+      });
+    });
+
+    app.get('/charlas', (req,res) => {
+      let params = [req.query.id_charla]
+      let query = `SELECT * FROM charlas`;
+      if (req.query.id_charla) {
+          query = `SELECT * FROM charlas WHERE id_charla = ? `;
+      } else {
+          query = `SELECT * FROM charlas`;
+      }
+      connection.query(query,params, function (error, results) {
+          if (error) {
+              respuesta = `Hubo un error : ${error}`
+          } 
+          else{
+              respuesta = results
+          }
+          res.send(respuesta )    
+      });
+    });
+
+    app.delete('/charlas', (req,res) => {
+      let params = [req.body.id_charla]
+      let query = `DELETE FROM charlas WHERE id_charla = ?`;
+      connection.query(query,params, function (error, results) {
+          if (error) {
+            respuesta = `Hubo un error : ${error}`
+          } 
+          else if (results.affectedRows === 0) {
+            respuesta = 404
+          } else {
+            respuesta = 200
+          }
+          res.send(respuesta )    
+      });
+    });
+
+
+    // ---------------------------ENDPOINT DE USUARIOS APUNTADOS A CHARLAS---------------------------
+    
+    
+    app.get('/asistenciaCharlas', (req,res) => {
+      let params = [req.body.id_usuario]
+      let query = `SELECT *
+                  FROM usuarios
+                  JOIN usuario_charla 
+                  ON usuarios.id_usuario = usuario_charla.id_usuario
+                  WHERE  usuarios.id_usuario = ?`;
+      connection.query(query,params, function (error, results) {
+          if (error) {
+              respuesta = `Hubo un error : ${error}`
+          } 
+          else{
+              respuesta = results
+          }
+          res.send(respuesta )    
+      });
+    });
+
+    // ---------------------------ENDPOINT DE CHARLAS CREADAS POR USUARIO --------------------------
+    
+    
+    app.get('/charlasCreadas', (req,res) => {
+      let params = [req.body.id_usuario]
+      let query = `SELECT * 
+      FROM usuarios 
+      JOIN charlas 
+      ON usuarios.id_usuario = charlas.id_usuario 
+      WHERE usuarios.id_usuario = ?`;
+      connection.query(query,params, function (error, results) {
+          if (error) {
+              respuesta = `Hubo un error : ${error}`
+          } 
+          else{
+              respuesta = results
+          }
+          res.send(respuesta )    
+      });
+    });
 
 app.listen(3000);
