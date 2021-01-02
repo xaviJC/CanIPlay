@@ -20,5 +20,6 @@ export class ServicioUsuarioService {
     newUsuario.password = hashInBase64;
 
     return this.http.post(this.url,newUsuario)
+    
   }
 }

@@ -14,8 +14,8 @@ export class RegistroComponent implements OnInit {
   // constructor() { }
 
   createUsuario(nombre:string,apellido:string,hijos:string,email:string,password:string) {
-    this.apiServiceUsuario.addUsuario(new Usuario(nombre,apellido,hijos,email,password)).subscribe((data:Usuario) => {      
-      
+    this.apiServiceUsuario.addUsuario(new Usuario(nombre,apellido,hijos,email,password,"usuario")).subscribe((data:Usuario) => {      
+      alert("Gracias por registrarse");
     })  
   }
 

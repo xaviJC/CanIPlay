@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-custom justify-content-center col-xs-12 col-sm-12 col-md-12 col-12" *ngIf="usuario != 'admin' ; else admin" >
+<nav class="navbar navbar-expand-lg navbar-custom justify-content-center col-xs-12 col-sm-12 col-md-12 col-12" *ngIf="usuarioRegistado.tipo_usuario === 'usuario'" >
+<!-- <nav class="navbar navbar-expand-lg navbar-custom justify-content-center col-xs-12 col-sm-12 col-md-12 col-12" > -->
   <a class="navbar-brand" routerLink="/home" class="logo">
     <img src="../../../assets/logo/bpchildlefty.regular.white.png" width="130" height="30" alt="" loading="lazy">
   </a>
@@ -9,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarCustom">
         <ul class="navbar-nav text-center">
             <li class="nav-item">
-                <a class="nav-link" routerLink="/home">HOME</a></li>
+                <a class="nav-link" routerLink="/home" >HOME</a></li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="/tips">CONSEJOS</a></li>
             <li class="nav-item">
@@ -25,17 +26,16 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">USUARIO</a>
                 <div class="dropdown-menu dropdown-menu-right dropdown_menu-5" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" routerLink="/perfil">Perfil</a>
-                    <a class="dropdown-item" routerLink="/sugAdmin">Sugerencias</a>
-                    <a class="dropdown-item" routerLink="/login">Log In</a>
-                    <a class="dropdown-item" routerLink="/home">Log Out</a>
+                    <a class="dropdown-item" routerLink="/home" (click)="logout()">Log Out</a>
                 </div>
             </li>
         </ul>
     </div>
 </nav>
 
-<ng-template #admin>
-<nav class="navbar navbar-expand-lg navbar-custom justify-content-center col-xs-12 col-sm-12 col-md-12 col-12">
+
+    <nav class="navbar navbar-expand-lg navbar-custom justify-content-center col-xs-12 col-sm-12 col-md-12 col-12" *ngIf="usuarioRegistado.tipo_usuario === 'admin'" >
+
     <a class="navbar-brand" routerLink="/home" class="logo">
       <img src="../../../assets/logo/bpchildlefty.regular.white.png" width="130" height="30" alt="" loading="lazy">
     </a>
@@ -55,14 +55,42 @@
   
           <ul class="navbar-nav ">
               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">USUARIO</a>
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">ADMIN</a>
                   <div class="dropdown-menu dropdown-menu-right dropdown_menu-5" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" routerLink="/login">Log In</a>
-                      <a class="dropdown-item" routerLink="/home">Log Out</a>
+                      <a class="dropdown-item" routerLink="/home" (click)="logout()">Log Out</a>
                   </div>
               </li>
           </ul>
       </div>
   </nav>
-</ng-template>
-  
+
+  <nav class="navbar navbar-expand-lg navbar-custom justify-content-center col-xs-12 col-sm-12 col-md-12 col-12" *ngIf="usuarioRegistado.tipo_usuario === '' ">
+
+    <a class="navbar-brand" routerLink="/home" class="logo">
+        <img src="../../../assets/logo/bpchildlefty.regular.white.png" width="130" height="30" alt="" loading="lazy">
+      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCustom" aria-controls="navbarCustom" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarCustom">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" >HOME</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/tips">CONSEJOS</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/topten">TOP 5 </a></li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/charlas">CHARLAS</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/buscarjuegos">BUSCAR JUEGOS</a></li>
+            </ul>
+    
+            <ul class="navbar-nav ">
+                <li class="nav-item ">
+                    <a class="nav-link " href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" routerLink="/login">LOG IN</a>
+                </li>
+            </ul>
+        </div>
+  </nav>

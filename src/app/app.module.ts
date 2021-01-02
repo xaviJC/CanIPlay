@@ -38,6 +38,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { HeaderUsuarioComponent } from './pages/header-usuario/header-usuario.component';
 
 
 
@@ -65,7 +66,8 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
     ErrorComponent,
     AboutComponent,
     ChatComponent,
-    ContactoComponent
+    ContactoComponent,
+    HeaderUsuarioComponent
   ],
   imports: [
     BrowserModule,

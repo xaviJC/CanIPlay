@@ -14,15 +14,15 @@
       </div>
       <div class="profile-info">
         <div class="name-surname">
-          <h3>Johnny </h3>
-          <h3>Mentero</h3>
+          <h3>{{usuarioRegistado.nombre}} </h3>
+          <h3>{{usuarioRegistado.apellido}}</h3>
         </div>
         <div class="other-info">
-          <h4>caniplay@caniplay.gg</h4>
+          <h4>{{usuarioRegistado.email}}</h4>
         </div>
         <div class="other-info text-center">
           <h4>Nº de hijos: </h4>
-          <h4>7</h4>
+          <h4>{{usuarioRegistado.hijos}}</h4>
           <br>
           <button mat-icon-button aria-label="Example icon button with a vertical three dot icon"  routerLink="/chat">
             <mat-icon>sms</mat-icon>
