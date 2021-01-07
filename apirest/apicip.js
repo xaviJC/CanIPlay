@@ -192,7 +192,7 @@ app.put('/registro', (req,res) => {
 // <-------------------------TOP 5------------------------------> YAIZA
 
 
-app.get("/juegos", function(req, res){
+app.get("/topfive", function(req, res){
     params = req.query.pegi
     let sql = "SELECT * FROM juegos AS s INNER JOIN juegos_plataforma AS m ON (s.id_juego = m.id_juego) WHERE pegi= ?  AND  ORDER BY puntuacionTotal DESC LIMIT 5";
     connection.query(sql,params, function(err, result){
