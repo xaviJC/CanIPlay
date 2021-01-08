@@ -24,86 +24,20 @@ connection.connect(function (err) {
     }
 });
 
+// -------------------------ENDPOINT ---- JUEGOS ------------------------------
 
-
-// ---------------------------------- JUEGOS ----------------------------------
 // ---------------------------------- GET ---------------------------------Patig
-
-//  app.get("/juegos", (req, res) => {
-//    let game_name = req.query.name
-//    let game_pegi = req.query.pegi
-//    let game_platform = req.query.platform
-
-//     if (game_name != null) {
-//       let params = [game_name]
-//       let paramsComas = `%${params}%`;
-//       myQuery = `SELECT *
-//                 FROM juegos
-//                 JOIN juegos_plataforma ON juegos.id_juego = juegos_plataforma.id_juego
-//                 WHERE titulo_juego LIKE ?`
-//         connection.query(myQuery,paramsComas, function(err, result) {
-//           if (err) {
-//             respuesta = "Ha ocurrido un error: " + err+ "."
-//           } else if (result.length === 0) {
-//             respuesta = "No se ha encontrado ningún resultado: " + err+ "."
-//           } else {
-//             respuesta = result
-//           }
-//           res.send(respuesta)
-//         })
-//     }
-
-//     if (game_pegi) {
-//       if (req.query.pegi) {
-//         let params = [game_pegi]
-//         myQuery = `SELECT *
-//                    FROM juegos
-//                    JOIN juegos_plataforma ON juegos.id_juego = juegos_plataforma.id_juego
-//                    WHERE pegi = ?`
-//         connection.query(myQuery, params, function(err, result) {
-//           if (err) {
-//             respuesta = "Ha ocurrido un error: " + err + "."
-//           } else if (result.length === 0) {
-//             respuesta = "No se ha encontrado ningún resultado: " + err + "."
-//           } else {
-//             respuesta = result
-//           }
-//           res.send(respuesta)
-//         })
-//       }
-//     }
-
-    // if (game_platform) {
-    //   if (req.query.platform) {
-    //     let plataforma = [game_platform]
-    //     console.log(plataforma)
-    //     myQuery = `SELECT * FROM juegos RIGHT JOIN juegos_plataforma ON juegos.id_juego = juegos_plataforma.id_juego WHERE ${plataforma}`
-    //   connection.query(myQuery, function(err, result) {
-    //     if (err) {
-    //       respuesta = "Ha ocurrido un error: " + err + "."
-    //     } else if (result.length === 0) {
-    //       respuesta = "No se ha encontrado ningún resultado: " + err + "."
-    //     } else {
-    //       respuesta = result
-    //     }
-    //     res.send(respuesta)
-    //   })
-    //   }
-    // }
-//  });
 
   app.get("/juegos", (req, res) => {
     let game_name = req.query.name
     let game_pegi = req.query.pegi
     let game_platform = req.query.platform
     let params  = new Array();
-    // let and = new Array();
     let query = `SELECT * FROM juegos JOIN juegos_plataforma ON juegos.id_juego = juegos_plataforma.id_juego WHERE `
     console.log(req.query.platform)
 
     if (game_name) {
       params.push(`%${game_name}%`);
-      // and.push(` titulo_juego LIKE ? AND`)
       query += ` titulo_juego LIKE ? AND`
     }
     if (game_pegi) {
@@ -126,11 +60,92 @@ connection.connect(function (err) {
       })
  });
 
+// ---------------------------------- POST ---------------------------------Pati
 
+app.post("/juegos", (req, res) => {
+  let game_name = req.body.name
+  let game_genre = req.body.genre
+  let game_pegi = req.body.pegi
+  let game_platform = req.body.platform
+  let game_player = req.body.player
+  let game_payment = req.body.payment
+  let game_content = req.body.content
+  let game_internet = req.body.internet
+  let game_cover = req.body.cover
+  let game_screen1 = req.body.screen1
+  let game_screen2 = req.body.screen2
+  let game_screen3 = req.body.screen3
+  let game_screen4 = req.body.screen4
+  let game_web = req.body.web
+  let params = new Array(game_name, game_genre, game_pegi, game_player, game_payment, game_content, game_internet, game_cover, game_screen1, game_screen2, game_screen3, game_screen4, game_web)
+  let params_platform = game_platform
+  let query = "INSERT INTO juegos (id_juego, titulo_juego, genero, pegi, tarjeta_jugador, tarjeta_pagos, tarjeta_contenido, tarjeta_internet, caratula_juego, pantallazo1, pantallazo2, pantallazo3, pantallazo4, votos, puntuacionTotal, web_oficial) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, ?)"
 
+console.log(params)
+console.log(params_platform)
+console.log(game_platform)
 
+  connection.query(query, params, function(err, result) {
+    if (err) {
+      respuesta = "Ha ocurrido un error: " + err + "."
+      res.send(respuesta)
+    } else {
+      let query_platform = `INSERT INTO juegos_plataforma (id_juego, ps4, ps5, xbox_series, xbox_one, switch, pc) VALUES (${result.insertId}, ?, ?, ?, ?, ?, ?)`
+      console.log(result.insertId)
+      connection.query(query_platform, params_platform, function(err, result) {
+        if (err) {
+          respuesta = "Ha ocurrido un error: " + err + "."
+        } else {
+          respuesta = result
+        }
+        res.send(respuesta)
+      })
+    }
+  })
+})
 
+// ---------------------------------- PUT ---------------------------------Pati
 
+// app.put("/juegos", (req, res) => {
+//   if (req.body.name.length == 0)
+//     req.body.name = null
+//   if (req.body.cover.length == 0)
+//     req.body.cover = null
+//   if (req.body.screen1.length == 0)
+//     req.body.screen1 = null
+//   if (req.body.screen2.length == 0)
+//     req.body.screen2 = null
+//   if (req.body.screen3.length == 0)
+//     req.body.screen3 = null
+//   if (req.body.screen4.length == 0)
+//     req.body.screen4 = null
+//   if (req.body.web.length == 0)
+//     req.body.web = null
+
+//   let params = [req.body.name, req.body.genre, req.body.pegi, req.body.platform, req.body.player, req.body.payment, req.body.content, req.body.internet, req.body.cover, req.body.screen1, req.body.screen2, req.body.screen3, req.body.screen4, req.body.web];
+//   console.log(params)
+//   let query = "UPDATE juegos SET ("
+// })
+
+// ---------------------------------- DELETE ---------------------------------Pati
+
+app.delete("/juegos", (req, res) => {
+  let id = req.query.id
+    if (id) {
+      let params = [id]
+      let query = "DELETE FROM juegos WHERE juegos.id_juego = ?"
+        connection.query(query, params, function (err, result) {
+          if (err) {
+            respuesta = "Ha ocurrido un error: " + err + "."
+          } else {
+            respuesta = result
+          }
+            res.send(respuesta)
+        })
+    } else {
+      respuesta = "No se ha podido borrar el juego."
+    }
+})
 
 // ------------------------ ENDPOINT LOGIN --------------------------------------------
 
