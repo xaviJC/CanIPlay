@@ -41,17 +41,16 @@
       <div class="menuProfile">
          <mat-tab-group mat-align-tabs="start" style="overflow-y: auto; height:500px; ">
         <mat-tab label="Charlas atendidas">
-          <div class="list-group">
+          <div class="list-group" *ngFor="let charlaAtendida of charlasAtendidas" >
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">¿Qué es el Fornite?</h5>
+                <h5 class="mb-1">{{charlaAtendida.titulo_charla}}</h5>
                 <small class="text-muted">Fecha</small>
               </div>
-              <p class="mb-1">Johnny Mentero</p>
-              <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                varius blandit.</small>
+              <p class="mb-1">{{charlaAtendida.nombre}} {{charlaAtendida.apellido}}</p>
+              <small class="text-muted">{{charlaAtendida.descripcion_charla}}</small>
             </a>
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">Vocabulario "gamer", bro.</h5>
                 <small class="text-muted">Fecha</small>
@@ -59,12 +58,20 @@
               <p class="mb-1">Johnny Mentero</p>
               <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
                 varius blandit.</small>
-            </a>
+            </a> -->
           </div>
         </mat-tab>
         <mat-tab label="Charlas impartidas">
-          <div class="list-group">
+          <div class="list-group" *ngFor="let charlaImpartida of charlasImpartidas" >
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{charlaImpartida.titulo_charla}}</h5>
+                <small class="text-muted">Fecha</small>
+              </div>
+              <p class="mb-1">{{usuarioRegistado.nombre}} {{usuarioRegistado.apellido}}</p>
+              <small class="text-muted">{{charlaImpartida.descripcion_charla}}</small>
+            </a>
+            <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">¿Qué es el Fornite?</h5>
                 <small class="text-muted">Fecha</small>
@@ -108,7 +115,7 @@
               <p class="mb-1">Alba Ranco</p>
               <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
                 varius blandit.</small>
-            </a>
+            </a> -->
           </div>
         </mat-tab>
 
