@@ -48,6 +48,7 @@ export class HeaderComponent implements OnInit {
     this.usuarioRegistado.email = "";
     this.usuarioRegistado.password = "";
     this.usuarioRegistado.tipo_usuario = "";
+    this.apiServiceUsuario.isUserLoggedIn.next(false)
   }
 
   ngOnInit(): void {

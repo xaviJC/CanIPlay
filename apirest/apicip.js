@@ -262,4 +262,144 @@ app.get("/topfive", function(req, res){
     })
 })
 
+// ------------------------ ENDPOINT CHARLAS --------------------------------------------    
+app.get("/charlas", (req, res) => {
+     myQuery = `SELECT charlas.*, usuarios.nombre,usuarios.apellido
+     FROM charlas
+     INNER JOIN usuarios 
+     ON charlas.id_usuario = usuarios.id_usuario WHERE fecha_charla >= CURDATE()`
+       connection.query(myQuery, function(err, result) {
+         if (err) {
+           respuesta = "Ha ocurrido un error: " + err+ "."
+         } else if (result.length === 0) {
+           respuesta = "No se ha encontrado ningún resultado: " + err+ "."
+         } else {
+           respuesta = result
+         }
+         res.send(respuesta)
+       })
+});
+
+app.get("/charlasBuscador", (req, res) => {
+  charla_titulo = req.query.charla_titulo;
+  charla_fecha= req.query.charla_fecha;
+  myQuery = `SELECT charlas.*, usuarios.nombre,usuarios.apellido
+  FROM charlas
+  INNER JOIN usuarios 
+  ON charlas.id_usuario = usuarios.id_usuario WHERE `
+  params= [];
+  if (charla_titulo && charla_fecha) {
+    params.push(`%${charla_titulo}%`)
+    params.push(charla_fecha)
+    myQuery += `titulo_charla  LIKE ? OR fecha_charla = ?`
+  } else {
+    if(charla_titulo) {
+      myQuery += `titulo_charla  LIKE ?`
+      params.push(`%${charla_titulo}%`)
+    }
+    if(charla_fecha) {
+      myQuery += `fecha_charla = ?`
+      params.push(charla_fecha)
+    }
+  }
+  console.log(myQuery)
+    connection.query(myQuery,params, function(err, result) {
+      if (err) {
+        respuesta = "Ha ocurrido un error: " + err+ "."
+      } else {
+        respuesta = result
+      }
+      res.send(respuesta)
+    })
+});
+
+app.post("/charlas",(req, res) => {
+  let params = [req.body.titulo_charla,req.body.fecha_charla,req.body.descripcion_charla,req.body.resumen_charla,req.body.lugar_charla,req.body.id_usuario]
+  console.log(params)
+  let query = `INSERT INTO charlas (id_charla,titulo_charla, fecha_charla, descripcion_charla, resumen_charla,lugar_charla,id_usuario) VALUES (NULL, ?, ?, ?, ?, ?, ?);`;
+  console.log(query)
+  connection.query(query,params, function (error, results) {
+      if (error) {
+          respuesta = `Hubo un error : ${error}`
+      } 
+      else{
+          respuesta = results
+      }
+      res.send(respuesta )    
+  });
+})
+
+
+app.post("/charlasApuntarse",(req, res) => {
+  let params = [req.body.id_usuario,req.body.id_charla]
+  console.log(params)
+  let query = `INSERT INTO usuario_charla (id_usuario, id_charla) VALUES (?, ?);`;
+  console.log(query)
+  connection.query(query,params, function (error, results) {
+      if (error) {
+          respuesta = `Hubo un error : ${error}`
+      } 
+      else{
+          respuesta = results
+      }
+      res.send(respuesta )    
+  });
+})
+
+app.get("/charlasApuntarse",(req, res) => {
+  let params = [req.query.id_charla]
+  console.log(params)
+  let query = `SELECT COUNT(*) as apuntados FROM usuario_charla WHERE id_charla = ?`;
+  console.log(query)
+  connection.query(query,params, function (error, results) {
+      if (error) {
+          respuesta = `Hubo un error : ${error}`
+      } 
+      else{
+          respuesta = results
+      }
+      res.send(respuesta )    
+  });
+})
+
+app.get("/charlasImpartidas",(req, res) => {
+  let params = [req.query.id_usuario]
+  console.log(params)
+  let query = `SELECT * FROM charlas WHERE id_usuario =?`;
+  console.log(query)
+  connection.query(query,params, function (error, results) {
+      if (error) {
+          respuesta = `Hubo un error : ${error}`
+      } 
+      else{
+          respuesta = results
+      }
+      res.send(respuesta )    
+  });
+})
+
+app.get("/charlasAsistidas",(req, res) => {
+  let params = [req.query.id_usuario]
+  console.log(params)
+  let query = `SELECT charlas.*,usuarios.nombre,usuarios.apellido
+  FROM usuario_charla
+  INNER JOIN charlas ON charlas.id_charla = usuario_charla.id_charla 
+  INNER JOIN usuarios ON charlas.id_usuario = usuarios.id_usuario
+  WHERE usuario_charla.id_usuario = ? `;
+  console.log(query)
+  connection.query(query,params, function (error, results) {
+      if (error) {
+          respuesta = `Hubo un error : ${error}`
+      } 
+      else{
+          respuesta = results
+      }
+      res.send(respuesta )    
+  });
+})
+
+
+
+
+
 app.listen(3000);

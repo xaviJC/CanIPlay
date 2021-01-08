@@ -39,11 +39,16 @@ export class ServicioLoginService {
         
         this.usuarioRegistrado.next(data[0])
         alert(`Bienvenido ${this.usuario.nombre}`)
+        this.isUserLoggedIn.next(true)
         this.router.navigate(["/perfil"])
       }
         
       
     })      
+  }
+
+  comprobarUsuarioLogeado() {
+    
   }
 
 
