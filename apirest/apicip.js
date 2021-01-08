@@ -124,7 +124,17 @@ console.log(game_platform)
 
 //   let params = [req.body.name, req.body.genre, req.body.pegi, req.body.platform, req.body.player, req.body.payment, req.body.content, req.body.internet, req.body.cover, req.body.screen1, req.body.screen2, req.body.screen3, req.body.screen4, req.body.web];
 //   console.log(params)
-//   let query = "UPDATE juegos SET ("
+//   // let query = "UPDATE juegos SET titulo_juego = COALESCE(?, titulo_juego), genero = COALESCE(?, genero), pegi = COALESCE(?, pegi), tarjeta_jugador = COALESCE(?, tarjeta_jugador), tarjeta_contenido = COALESCE(?, tarjeta_contenido), tarjeta_internet = COALESCE(?, tarjeta_internet), caratula_juego = COALESCE(?, caratula_juego), pantallazo1 = COALESCE(?, pantallazo1), pantallazo2 = COALESCE(?, pantallazo2), pantallazo3 = COALESCE(?, pantallazo3), pantallazo4 = COALESCE(?, pantallazo4), web_oficial = COALESCE(?, web_oficial) WHERE id_juego = ?";
+//   let query2 = "UPDATE juegos SET titulo_juego = ?, genero = ?, pegi = ?, tarjeta_jugador = ?, tarjeta_pagos = ?, tarjeta_contenido = ?, tarjeta_internet = ?, caratula_juego = ?, pantallazo1 = ?, pantallazo2 = ?, pantallazo3 = ?, pantallazo4 = ?, web_oficial = ? WHERE juegos.id_juego = ?"
+//   console.log(query2)
+//   connection.query(query2, params, (err, result) => {
+//     if (err) {
+//       respuesta = "Ha ocurrido un error: " + err + "."
+//     } else {
+//       respuesta = result
+//     }
+//     res.send(respuesta)
+//   })
 // })
 
 // ---------------------------------- DELETE ---------------------------------Pati
