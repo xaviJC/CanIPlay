@@ -35,20 +35,24 @@
             <input type="text" class="form-control mb-1" placeholder="Screenshot 4">
         </div>
 
+        <div class="img-container mt-4 ml-2">
+            <label for="caratula"><h6>URL de la web oficial del juego</h6></label>
+            <input type="text" class="form-control mb-1" placeholder="Link...">
+        </div>
       </div>
 
       <div class="form-container">
         <h3>Datos del juego</h3>
 
         <div class="form-wrapper">
-
           <form class="f2-wrapper">
-            <div class="row">
-                <div class="col-4">
+            <div class="mini-wrapper">
+            <div class="mini-left-container">
+                <div class="col-9">
                 <label for="titulo"><h6>Título del juego</h6></label>
                   <input type="text" class="form-control" placeholder="">
                 </div>
-                <div class="col-4">
+                <div class="col-5 mt-3">
                 <label for="password"><h6>Género</h6></label>
                 <br>
                 <select class="btn btn-mini">
@@ -61,27 +65,52 @@
                   <option>Plataformas</option>
                   <option>Puzzles</option>
                   <option>Shooter</option>
-                  <option>Simulación</option>                  
+                  <option>Simulación</option>
                 </select>
                 </div>
-              </div>
 
-              <div class="form-group age-input mb-2 col-5">
-                <label><h6>Categoría PEGI</h6></label>
-              <select class="btn btn-mini">
-                <option disabled selected>Seleccione una opcion</option>
-                <option>3</option>
-                <option>7</option>
-                <option>12</option>
-                <option>16</option>
-                <option>18</option>
-              </select>
+                <div class="form-group age-input col-5 mb-2 mt-3">
+                  <label><h6>Categoría PEGI</h6></label>
+                <select class="btn btn-mini">
+                  <option disabled selected>Seleccione una opcion</option>
+                  <option>3</option>
+                  <option>7</option>
+                  <option>12</option>
+                  <option>16</option>
+                  <option>18</option>
+                </select>
               </div>
-
-            <div class="form-group mb-2">
-              <label for="text"><h6>Plataformas disponibles</h6></label>
-              <input class="form-control"  type="text" placeholder="Xbox/Switch/PC">
             </div>
+
+            <div class="mini-right-container pl-2">
+              <label><h6>Plataformas disponibles</h6></label>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label">PS4</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label">PS5</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label">XBOX Series X/S</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label">XBOX One</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label">Nintendo Switch</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label">PC</label>
+              </div>
+            </div>
+          </div>
+
             <div class="row game-cards">
                 <div class="col-5">
                     <div>
@@ -104,9 +133,9 @@
                       <br>
                       <select class="btn btn-mini">
                         <option disabled selected>Seleccione una opcion</option>
-                      <option>Contiene pagos online opcionales</option>    
-                      <option>No contiene pagos online</option>    
-                      <option>Requiere suscripción (con opción a pagos)</option>    
+                      <option>Contiene pagos online opcionales</option>
+                      <option>No contiene pagos online</option>
+                      <option>Requiere suscripción (con opción a pagos)</option>
                     </select>
                   </div>
               </div>
@@ -121,7 +150,7 @@
                         <option disabled selected>Seleccione una opcion</option>
                         <option>Contenido apto para niños</option>
                         <option>Contenido moderado</option>
-                        <option>Contenido adulto</option>              
+                        <option>Contenido adulto</option>
                       </select>
                   </div>
               </div>
@@ -131,11 +160,11 @@
                     <br>
                     <br>
                     <select class="btn btn-mini">
-                      
+
                     <option>No requiere conexión a internet</option>
-                    <option>Requiere conexión a internet</option>    
-                    <option>Mejor experiencia con conexión a internet</option>  
-                  </select>  
+                    <option>Requiere conexión a internet</option>
+                    <option>Mejor experiencia con conexión a internet</option>
+                  </select>
                 </div>
             </div>
             </div>
@@ -143,7 +172,6 @@
               <button type="button" class="btn register-button">Añadir</button>
             </div>
           </form>
-        </div>
 
       </div>
 
