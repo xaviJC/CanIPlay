@@ -48,13 +48,20 @@ connection.connect(function (err) {
       params.push(game_platform);
       query += ` ${game_platform} AND`
     }
+    if (game_name === "" && game_pegi === "" && game_platform === "") {
+      myQuery = query.substring(0,query.length - 6)
+    } else {
+      myQuery = query.substring(0,query.length - 3)
+    }
+    console.log(myQuery)
       connection.query(myQuery, params, function(err, result) {
       if (err) {
         respuesta = "Ha ocurrido un error: " + err + "."
       } else if (result.length === 0) {
-        respuesta = "No se ha encontrado ningún resultado: " + err + "."
+        respuesta = result
       } else {
           respuesta = result
+          
       }
         res.send(respuesta)
       })
@@ -197,7 +204,7 @@ app.post('/registro', (req,res) => {
 
 app.put('/registro', (req,res) => {
     let id = req.body.id_usuario
-    let params = [req.body.nombre,req.body.apellido,req.body.hijos,req.body.email,req.body.password]
+    let params = []
     let query = `UPDATE usuarios SET `;
     let respuesta;
     let updates = new Array();
@@ -205,28 +212,34 @@ app.put('/registro', (req,res) => {
     if (req.body.nombre) {
         params.push(req.body.nombre)
         updates.push(` nombre = ?`)
+        console.log(req.body.nombre)
     }
     if (req.body.apellido) {
         params.push(req.body.apellido)
         updates.push(` apellido = ?`)
+        console.log(req.body.apellido)
     }
     if (req.body.hijos) {
         params.push(req.body.hijos)
         updates.push(` hijos = ?`)
+        console.log(req.body.hijos)
     }
       if (req.body.email) {
         params.push(req.body.email)
         updates.push(` email = ?`)
+        console.log(req.body.email)
     }
 
     query += updates.toString() + ` WHERE id_usuario = ${id}`
+    console.log(query)
+    console.log(params)
+    console.log(updates)
 
     connection.query(query,params, function (error, results) {
-        console.log("llego")
             if (error) {
                 respuesta = `Hubo un error : ${error}`
             } else {
-                respuesta = {codigo : 200, "mensaje" : `Se ha modifcado el disco com id: ${id}` }
+                respuesta = results
             }
             res.send(respuesta)
 

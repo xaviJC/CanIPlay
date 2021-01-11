@@ -22,4 +22,15 @@ export class ServicioUsuarioService {
     return this.http.post(this.url,newUsuario)
     
   }
+
+  public setUsuario(id_usuario:number,nombre:string,apellido:string,hijos:string,email:string) {
+    let jsonDatos = {
+      "id_usuario":id_usuario,
+      "nombre":nombre,
+      "apellido":apellido,
+      "hijos":hijos,
+      "email":email
+    }
+    return this.http.put(this.url,jsonDatos)
+  }
 }

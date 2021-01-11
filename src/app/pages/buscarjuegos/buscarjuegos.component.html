@@ -17,6 +17,7 @@
         <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 border">
           <div class="input-group">
             <select class="form-control border-0 bg-light rounded rounded-pill" id="exampleFormControlSelect1" #pegi>
+              <option value="">--Seleccione una opcion--</option>
               <option value="3">PEGI 3</option>
               <option value="7">PEGI 7</option>
               <option value="12">PEGI 12</option>
@@ -31,6 +32,7 @@
         <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 border">
           <div class="input-group">
             <select class="form-control border-0 bg-light rounded rounded-pill" id="exampleFormControlSelect1" #platform>
+              <option value="">--Seleccione una opcion--</option>
               <option value="pc">PC</option>
               <option value="ps4">PS4</option>
               <option value="ps5">PS5 </option>
@@ -43,20 +45,25 @@
       </div>
     <div class="row button-container">
       <div class="text-center">
-        <button class="btn btn-rosado crearCharla mt-1" (click)="buscar(nombre.value, pegi.value)">Buscar</button>
+        <button class="btn btn-rosado crearCharla mt-1" (click)="buscar(nombre.value, pegi.value,platform.value)">Buscar</button>
     </div>
     </div>
     <div class="row mt-3">
       <hr>
     </div>
     <div class="row button-container justify-content-center text-center"  *ngIf="notFound;else newGame">
-      <div class="col-md-3 fade-in"  *ngFor="let game of gameVarios" >
+      <div class="col-md-3 fade-in"  *ngFor="let game of games" >
           <div>
-            <img alt="picture" src="{{game.caratula}}" routerLink="/paginajuego" class="img-fluid imagenTop">
+            <img alt="picture" src="{{game.caratula_juego}}" routerLink="/paginajuego" (click)="juegoSeleccionado(game)" class="img-fluid imagenTop">
             <br>
-             <span id="game">{{game.nombre}}</span>
+             <span id="game">{{game.titulo_juego}}</span>
              <br>
-             <img class="pegi" src="{{game.pegiURL}}">
+             <!--ngif para controlar que cada icono salga con su correspondiente juego-->
+             <img class="pegi" *ngIf="game.pegi == 3" src="{{imgPegis.pegi3}}">
+             <img class="pegi" *ngIf="game.pegi == 7" src="{{imgPegis.pegi7}}">
+             <img class="pegi" *ngIf="game.pegi == 12" src="{{imgPegis.pegi12}}">
+             <img class="pegi" *ngIf="game.pegi == 16" src="{{imgPegis.pegi16}}">
+             <img class="pegi" *ngIf="game.pegi == 18" src="{{imgPegis.pegi18}}">
             <br>
             <span><b>{{game.plataforma}}</b><b  id="plataforma"></b></span>
             <br>
