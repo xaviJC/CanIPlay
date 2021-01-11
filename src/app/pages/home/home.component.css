@@ -12,6 +12,35 @@
   font-family: 'Shadows Into Light', cursive;
   font-size: px;
 } */
+
+h1 {
+  font-size: 2.4em;
+  font-weight: 300;
+  color: rgb(253, 250, 238);
+}
+
+h1:hover {
+  color: rgb(255, 219, 88);
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 2.7em;
+  color: rgb(253, 250, 238);
+  padding-top: 2%;
+}
+
+h6 {
+  font-size: 1.3em;
+  font-weight: 300;
+  color: rgb(253, 250, 238);
+}
+
+h6:hover {
+  color: rgb(255, 219, 88);
+  text-decoration: none;
+}
+
 .jumbotron {
   color: white;
   background-image: url('../../../assets/home-img/patrik-larsson-TZxMh0i8kXA-unsplash.jpg');
@@ -24,6 +53,20 @@
   box-shadow: 0 7px 10px 0 rgba(36, 35, 35, 0.404);
 }
 
+.subtitulo {
+  margin-top: 3%;
+  margin-bottom: 2.5%;
+}
+
+.justify-content-md-center {
+  margin-top: 3%;
+  margin-bottom: 2.5%;
+}
+
+.cont-logo {
+  text-align: center;
+  margin-top: 0.5%;
+}
 
 .textoNoticia {
   background-color: rgba(0, 0, 0, 0.074);
@@ -154,4 +197,68 @@
 .btn-rosado:hover {
   color: #371a6d;
   background-color: #ffffff;
+}
+
+@media (max-width: 1025px) and (min-width: 768px) {
+
+  h1 {
+    font-size: 2.2em;
+    font-weight: 300;
+    color: rgb(253, 250, 238);
+  }
+
+  h1:hover {
+    color: rgb(255, 219, 88);
+    text-decoration: none;
+  }
+
+  h3 {
+    font-size: 2.2em;
+    font-weight: 300;
+    color: rgb(253, 250, 238);
+    padding-top: 2%;
+  }
+
+  h6 {
+    font-size: 1.1em;
+    font-weight: 200;
+    color: rgb(253, 250, 238);
+  }
+
+  h6:hover {
+    color: rgb(255, 219, 88);
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 280px) {
+  h1 {
+    font-size: 2em;
+    font-weight: 250;
+    color: rgb(253, 250, 238);
+  }
+
+  h1:hover {
+    color: rgb(255, 219, 88);
+    text-decoration: none;
+  }
+
+  h3 {
+    font-size: 2.1em;
+    font-weight: 400;
+    color: rgb(253, 250, 238);
+    padding-top: 2%;
+  }
+
+  h6 {
+    font-size: 1.1em;
+    font-weight: 200;
+    color: rgb(253, 250, 238);
+  }
+
+  h6:hover {
+    color: rgb(255, 219, 88);
+    text-decoration: none;
+  }
+
 }

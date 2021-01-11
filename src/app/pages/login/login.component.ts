@@ -10,19 +10,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   isUserLoggedIn: boolean = false;
-  usuarioRegistado:Usuario;
-  constructor(private apiServiceUsuario:ServicioLoginService) { }
+  usuarioRegistado: Usuario;
+  constructor(private apiServiceUsuario: ServicioLoginService, private router: Router) { }
 
-  login(email:string,password:string) {
-    console.log(email,password) 
-    this.apiServiceUsuario.loginServicio(email,password);   
-    
-    console.log(this.usuarioRegistado) 
-    this.apiServiceUsuario.usuarioRegistrado.subscribe( value => {
+  login(email: string, password: string) {
+    console.log(email, password)
+    this.apiServiceUsuario.loginServicio(email, password);
+
+    console.log(this.usuarioRegistado)
+    this.apiServiceUsuario.usuarioRegistrado.subscribe(value => {
       this.usuarioRegistado = value;
-    })   
+    })
   }
-  
+
 
   ngOnInit(): void {
   }

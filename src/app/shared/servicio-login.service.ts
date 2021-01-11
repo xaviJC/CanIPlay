@@ -14,44 +14,45 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ServicioLoginService {
   private url = "http://localhost:3000/login"
-  private usuario:Usuario = new Usuario("","","","","","");
-  public usuarioRegistrado:BehaviorSubject<Usuario> = new BehaviorSubject<Usuario>(this.usuario);
+  public usuario: Usuario = new Usuario("", "", "", "", "", "");
+  public usuarioRegistrado: BehaviorSubject<Usuario> = new BehaviorSubject<Usuario>(this.usuario);
   public isUserLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  constructor(private http:HttpClient,private router:Router ) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  
-    loginServicio(email:string,password:string){
-    
+
+  loginServicio(email: string, password: string) {
+
     let hash = crypto.HmacSHA256(password, 'abc');
     let hashInBase64 = crypto.enc.Base64.stringify(hash);
     password = hashInBase64;
 
-    let login:Usuario = new Usuario("","","",email,password,"")
+    let login: Usuario = new Usuario("", "", "", email, password, "")
 
-    
-    this.http.post(this.url,login).subscribe((data:Usuario) => {    
-      
+
+    this.http.post(this.url, login).subscribe((data: Usuario) => {
+
       this.usuario = data[0]
-  
+      console.log(this.usuario.tipo_usuario)
       if (typeof this.usuario === "undefined") {
         alert("Introduzca un email/password correcta")
       } else {
-        
+
         this.usuarioRegistrado.next(data[0])
         alert(`Bienvenido ${this.usuario.nombre}`)
+        // console.log(data[0].tipo_usuario)
         this.isUserLoggedIn.next(true)
         this.router.navigate(["/perfil"])
       }
-        
-      
-    })      
+
+
+    })
   }
 
   comprobarUsuarioLogeado() {
-    
+
   }
 
 
 
-    
+
 }

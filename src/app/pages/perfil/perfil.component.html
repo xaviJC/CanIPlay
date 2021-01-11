@@ -1,5 +1,54 @@
-<div class="card-deck d-flex align-items page-container">
+<div class="error-container" *ngIf="this.apiServiceUsuario.usuario.tipo_usuario === ''">
+  <div class="container">
+      <div class="row justify-content-center">
+          <img class="error mt-4" src="https://media.giphy.com/media/8L0Pky6C83SzkzU55a/giphy.gif">
+          <img class="error phantom2 mt-4" src="https://media.giphy.com/media/8L0Pky6C83SzkzU55a/giphy.gif">
+          <img class="error phantom3 mt-4" src="https://media.giphy.com/media/8L0Pky6C83SzkzU55a/giphy.gif">
+      </div>
+  </div>
+</div>
 
+<div class="card-deck d-flex align-items page-container" *ngIf="this.apiServiceUsuario.usuario.tipo_usuario === 'admin'">
+    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-xs-12 profile-container card">
+      <div class="my-profile">
+        <h3>Mi Perfil</h3>
+        <button mat-icon-button color="basic" data-toggle="modal" data-target="#exampleModalLong">
+          <mat-icon  class="editarPerfil">create</mat-icon>
+       </button>
+      </div>
+      <div class="pic-container">
+        <img class="profile-picture"
+          src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin-300x300.jpg">
+      </div>
+      <div class="profile-info">
+        <div class="name-surname">
+          <h3>{{usuarioRegistado.nombre}} </h3>
+          <h3>{{usuarioRegistado.apellido}}</h3>
+        </div>
+        <div class="other-info">
+          <h4>{{usuarioRegistado.email}}</h4>
+        </div>
+        <div class="other-info text-center">
+          <h4>Nº de hijos: </h4>
+          <h4>{{usuarioRegistado.hijos}}</h4>
+          <br>
+          <button mat-icon-button aria-label="Example icon button with a vertical three dot icon"  routerLink="/chat">
+            <mat-icon>sms</mat-icon>
+          </button>
+        </div>
+        <div class="other-info suggest">
+          <h5>Participa en Can I Play:</h5>
+        </div>
+        <div class="other-info">
+          <button type="button" class="btn btn-outline-dark btn-sm" routerLink="/sugerirjuego">Sugerir juego</button>
+          <button type="button" class="btn btn-rosado btn-sm" routerLink="/crearcharla">Crear charla</button>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="card-deck d-flex align-items page-container" *ngIf="this.apiServiceUsuario.usuario.tipo_usuario === 'usuario'">
   <div class="login-container d-flex justify-content-around col-xl-9 col-lg-10 col-md-12 col-sm-12 col-xs-12 card-deck">
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-xs-12 profile-container card">
       <div class="my-profile">
@@ -35,7 +84,6 @@
           <button type="button" class="btn btn-outline-dark btn-sm" routerLink="/sugerirjuego">Sugerir juego</button>
           <button type="button" class="btn btn-rosado btn-sm" routerLink="/crearcharla">Crear charla</button>
         </div>
-
       </div>
     </div>
       <div class="menuProfile">
@@ -50,15 +98,6 @@
               <p class="mb-1">{{charlaAtendida.nombre}} {{charlaAtendida.apellido}}</p>
               <small class="text-muted">{{charlaAtendida.descripcion_charla}}</small>
             </a>
-            <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Vocabulario "gamer", bro.</h5>
-                <small class="text-muted">Fecha</small>
-              </div>
-              <p class="mb-1">Johnny Mentero</p>
-              <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                varius blandit.</small>
-            </a> -->
           </div>
         </mat-tab>
         <mat-tab label="Charlas impartidas">
@@ -71,62 +110,12 @@
               <p class="mb-1">{{usuarioRegistado.nombre}} {{usuarioRegistado.apellido}}</p>
               <small class="text-muted">{{charlaImpartida.descripcion_charla}}</small>
             </a>
-            <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">¿Qué es el Fornite?</h5>
-                <small class="text-muted">Fecha</small>
-              </div>
-              <p class="mb-1">Johnny Mentero</p>
-              <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                varius blandit.</small>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Animal Crossing para animales.</h5>
-                <small class="text-muted">Fecha</small>
-              </div>
-              <p class="mb-1">Eddie Ficcio</p>
-              <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                varius blandit.</small>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Dieta para adictos</h5>
-                <small class="text-muted">Fecha</small>
-              </div>
-              <p class="mb-1">Ben Dover Duras</p>
-              <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                varius blandit.</small>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Micropagos = adios ahorros</h5>
-                <small class="text-muted">Fecha</small>
-              </div>
-              <p class="mb-1">Kevin Vives</p>
-              <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                varius blandit.</small>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Gestión de la frustración</h5>
-                <small class="text-muted">Fecha</small>
-              </div>
-              <p class="mb-1">Alba Ranco</p>
-              <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                varius blandit.</small>
-            </a> -->
           </div>
         </mat-tab>
-
       </mat-tab-group>
     </div>
-
-
-    </div>
-
   </div>
-
+</div>
 <!-- Modal -->
 <div class="modal fade rounded-lg" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -150,7 +139,6 @@
                     <input type="text" class="form-control" placeholder="García">
                   </div>
                 </div>
-
                 <div class="form-group age-input mb-2 col-5">
                   <label><h6>Nº de hijos:</h6></label>
                 <select class="btn btn-mini">
@@ -178,6 +166,7 @@
     </div>
   </div>
 </div>
-
+</div>
+</div>
 
 

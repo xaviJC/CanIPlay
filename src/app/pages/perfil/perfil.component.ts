@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicioLoginService } from '../../shared/servicio-login.service';
 import { Usuario } from 'src/app/model/usuario';
 import { ServicioCharlasService } from 'src/app/shared/servicio-charlas.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,30 +11,33 @@ import { ServicioCharlasService } from 'src/app/shared/servicio-charlas.service'
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-  public usuario:string;
+  public usuario: string;
   isUserLoggedIn: boolean;
-  usuarioRegistado:any;
-  charlasAtendidas:any;
-  charlasImpartidas:any;
-  constructor(private apiServiceUsuario:ServicioLoginService,private apicharlas:ServicioCharlasService) {
-    this.apiServiceUsuario.usuarioRegistrado.subscribe( value => {
-      this.usuarioRegistado = value;
-      console.log(this.usuarioRegistado.tipo_usuario)
-    })
+  usuarioRegistado: any;
+  charlasAtendidas: any;
+  charlasImpartidas: any;
+  constructor(private apiServiceUsuario: ServicioLoginService, private apicharlas: ServicioCharlasService) {
+    // this.apiServiceUsuario.usuarioRegistrado.subscribe(value => {
+    //   this.usuarioRegistado = value;
+    //   if (this.usuarioRegistado.tipo_usuario === "admin") {
+    //     // console.log(this.usuarioRegistado.tipo_usuario)
+    //     // console.log("hola")
+    //   }
+    // })
+    this.usuarioRegistado = this.apiServiceUsuario.usuario
 
-    this.apicharlas.getImpartidas(this.usuarioRegistado.id_usuario).subscribe( value => {
-      console.log("get imaprtidas")
+    this.apicharlas.getImpartidas(this.usuarioRegistado.id_usuario).subscribe(value => {
+      // console.log("get imaprtidas")
       this.charlasImpartidas = value
-      console.log(this.charlasImpartidas)
+      // console.log(this.charlasImpartidas)
     })
 
-    
-    this.apicharlas.getApuntadosCharla(this.usuarioRegistado.id_usuario).subscribe( value => {
-      console.log("get charlasAtendidas")
+    this.apicharlas.getApuntadosCharla(this.usuarioRegistado.id_usuario).subscribe(value => {
+      // console.log("get charlasAtendidas")
       this.charlasAtendidas = value
-      console.log(this.charlasAtendidas)
+      // console.log(this.charlasAtendidas)
     })
-   }
+  }
 
   ngOnInit(): void {
 
