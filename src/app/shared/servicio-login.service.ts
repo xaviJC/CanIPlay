@@ -4,7 +4,7 @@ import { Usuario } from '../model/usuario'
 import * as crypto from 'node_modules/crypto-js';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-
+import swal from'sweetalert2';
 
 
 
@@ -17,6 +17,7 @@ export class ServicioLoginService {
   private usuario:Usuario = new Usuario("","","","","","");
   public usuarioRegistrado:BehaviorSubject<Usuario> = new BehaviorSubject<Usuario>(this.usuario);
   public isUserLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  titularAlerta:string = '';
   constructor(private http:HttpClient,private router:Router ) { }
 
   
@@ -25,6 +26,7 @@ export class ServicioLoginService {
     let hash = crypto.HmacSHA256(password, 'abc');
     let hashInBase64 = crypto.enc.Base64.stringify(hash);
     password = hashInBase64;
+    
 
     let login:Usuario = new Usuario("","","",email,password,"")
 
@@ -34,13 +36,16 @@ export class ServicioLoginService {
       this.usuario = data[0]
   
       if (typeof this.usuario === "undefined") {
-        alert("Introduzca un email/password correcta")
+        // alert("Introduzca un email/password correcta")
+        swal.fire('Introduzca un email/password correcta"', this.titularAlerta, 'error');
       } else {
         
         this.usuarioRegistrado.next(data[0])
-        alert(`Bienvenido ${this.usuario.nombre}`)
+        // alert(`Bienvenido ${this.usuario.nombre}`)
+        swal.fire(`Hola ${this.usuario.nombre}`, this.titularAlerta, 'success');
         this.isUserLoggedIn.next(true)
-        this.router.navigate(["/perfil"])
+        setTimeout(() => { this.router.navigate(["/perfil"]) }, 2000);
+       
       }
         
       

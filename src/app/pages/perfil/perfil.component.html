@@ -50,15 +50,6 @@
               <p class="mb-1">{{charlaAtendida.nombre}} {{charlaAtendida.apellido}}</p>
               <small class="text-muted">{{charlaAtendida.descripcion_charla}}</small>
             </a>
-            <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Vocabulario "gamer", bro.</h5>
-                <small class="text-muted">Fecha</small>
-              </div>
-              <p class="mb-1">Johnny Mentero</p>
-              <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                varius blandit.</small>
-            </a> -->
           </div>
         </mat-tab>
         <mat-tab label="Charlas impartidas">
@@ -71,51 +62,6 @@
               <p class="mb-1">{{usuarioRegistado.nombre}} {{usuarioRegistado.apellido}}</p>
               <small class="text-muted">{{charlaImpartida.descripcion_charla}}</small>
             </a>
-            <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">¿Qué es el Fornite?</h5>
-                <small class="text-muted">Fecha</small>
-              </div>
-              <p class="mb-1">Johnny Mentero</p>
-              <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                varius blandit.</small>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Animal Crossing para animales.</h5>
-                <small class="text-muted">Fecha</small>
-              </div>
-              <p class="mb-1">Eddie Ficcio</p>
-              <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                varius blandit.</small>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Dieta para adictos</h5>
-                <small class="text-muted">Fecha</small>
-              </div>
-              <p class="mb-1">Ben Dover Duras</p>
-              <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                varius blandit.</small>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Micropagos = adios ahorros</h5>
-                <small class="text-muted">Fecha</small>
-              </div>
-              <p class="mb-1">Kevin Vives</p>
-              <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                varius blandit.</small>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Gestión de la frustración</h5>
-                <small class="text-muted">Fecha</small>
-              </div>
-              <p class="mb-1">Alba Ranco</p>
-              <small class="text-muted">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                varius blandit.</small>
-            </a> -->
           </div>
         </mat-tab>
 
@@ -143,17 +89,17 @@
               <div class="row mt-3 mb-3">
                   <div class="col-6">
                   <label for="password"><h6>Nombre</h6></label>
-                    <input type="text" class="form-control" placeholder="Juan">
+                    <input type="text" #nombre class="form-control" value="{{usuarioRegistado.nombre}}">
                   </div>
                   <div class="col-6">
                   <label for="password"><h6>Apellido</h6></label>
-                    <input type="text" class="form-control" placeholder="García">
+                    <input type="text" #apellido class="form-control" value="{{usuarioRegistado.apellido}}">
                   </div>
                 </div>
 
                 <div class="form-group age-input mb-2 col-5">
                   <label><h6>Nº de hijos:</h6></label>
-                <select class="btn btn-mini">
+                <select class="btn btn-mini" #hijos>
                   <option>0</option>
                   <option>1</option>
                   <option>2</option>
@@ -163,10 +109,10 @@
                 </div>
               <div class="form-group email mb-2">
                 <label for="email"><h6>Correo Electrónico</h6></label>
-                <input class="form-control" placeholder="Email...">
+                <input class="form-control" #email value="{{usuarioRegistado.email}}">
               </div>
               <div class="form-group mb-1 mt-3 text-center">
-                <button type="button" class="btn btn-warning">Modificar</button>
+                <button type="button" class="btn btn-warning" (click)="modificarPerfil(nombre.value,apellido.value,hijos.value,email.value)">Modificar</button>
               </div>
               <div class="form-group mb-4 mt-3 text-center">
                 <button type="button" class="btn btn-danger ">Borrar cuenta de usuario</button>
