@@ -56,7 +56,7 @@
           <div>
             <img alt="picture" src="{{game.caratula_juego}}" routerLink="/paginajuego" (click)="juegoSeleccionado(game)" class="img-fluid imagenTop">
             <br>
-             <span id="game">{{game.titulo_juego}}</span>
+             <span class="gametitle" id="game">{{game.titulo_juego}}</span>
              <br>
              <!--ngif para controlar que cada icono salga con su correspondiente juego-->
              <img class="pegi" *ngIf="game.pegi == 3" src="{{imgPegis.pegi3}}">
@@ -65,7 +65,7 @@
              <img class="pegi" *ngIf="game.pegi == 16" src="{{imgPegis.pegi16}}">
              <img class="pegi" *ngIf="game.pegi == 18" src="{{imgPegis.pegi18}}">
             <br>
-            <span><b>{{game.plataforma}}</b><b  id="plataforma"></b></span>
+            <span><b>{{game.plataforma}}</b><b id="plataforma"></b></span>
             <br>
           </div>
         </div>
@@ -81,6 +81,7 @@
         </div>
     </ng-template>
 
+</div>
 </div>
 
 

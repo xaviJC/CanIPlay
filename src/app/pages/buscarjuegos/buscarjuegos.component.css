@@ -28,13 +28,20 @@ h6 {
   transition: transform .25s ease;
 }
 
+.gametitle {
+  font-weight: 500;
+}
+
 .pegi {
   width: 30px;
+  margin-top: 2%;
 }
 
 .imagenTop {
-  width: 166px;
+  width: 150px;
   height: 209px;
+  margin-bottom: 3.5%;
+  border: 3px solid #371a6d;
 }
 
 .fade-in {

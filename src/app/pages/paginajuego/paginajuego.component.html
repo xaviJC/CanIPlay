@@ -22,7 +22,7 @@
                 <div class="genre-container">
                   <div class="row">
                     <!-- <button class="col-xl-5 col-md-6 col-sm-6 col-xs-2 btn btn-warning btn-sm">+ Info</button> -->
-                    <a class="col-xl-5 col-md-6 col-sm-6 col-xs-2 btn btn-warning btn-sm" href="#" role="buttontarget=" target="_blank" href="{{juego.web_oficial}}">+ Info</a>
+                    <a class="col-xl-5 col-md-6 col-sm-6 col-xs-2 btn btn-warning btn-sm" href="#" role="buttontarget=" target="_blank" href="{{juego.web_oficial}}">Info</a>
 
                     <!-- <div class="col-xl-1 genre"><h4>Género: </h4></div> -->
                     <div class="videogame-genre col-xl-1 col-md-5 col-sm-1"><h4>{{juego.genero}}</h4></div>
@@ -40,9 +40,9 @@
               </div>
 
               <div class="d-flex platform-container justify-content-center">
-                <h4><span *ngIf="juego.pc == 1">PC·</span><span *ngIf="juego.xbox_one == 1">XboxOne·</span><span *ngIf="juego.xbox_series == 1">Xbox Series X·</span>
-                  <br>
-                  <span *ngIf="juego.ps4 == 1">PS4·</span><span *ngIf="juego.ps5 == 1">PS5·</span><span *ngIf="juego.switch == 1">NSW</span></h4>
+                <h4><span *ngIf="juego.pc == 1">PC · </span><span *ngIf="juego.xbox_one == 1">XboxOne · </span><span *ngIf="juego.xbox_series == 1">Xbox Series X · </span>
+                  <!-- <br> -->
+                  <span *ngIf="juego.ps4 == 1">PS4 · </span><span *ngIf="juego.ps5 == 1">PS5 · </span><span *ngIf="juego.switch == 1">NSW</span></h4>
               </div>
               <hr>
               <div class="recomend">
