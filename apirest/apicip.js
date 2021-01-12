@@ -163,8 +163,66 @@ app.delete("/juegos", (req, res) => {
       respuesta = "No se ha podido borrar el juego."
     }
 })
+// ----------------- ENDPOINT SUGERENCIAS Y SUGERENCIAS ADMIN (USUARIO)-------------------pati
 
-// ------------------------ ENDPOINT LOGIN --------------------------------------------
+// app.get('/sugAdmin', (req, res) => {
+//   let params = [req.query.id]
+//   if(!id) {
+//       let query = "SELECT * FROM sugerencias"
+//     connection.query (query, params, function(error, result) {
+//     if (error) {
+//       respuesta = `Error: ${error}`
+//     } else {
+//       respuesta = result
+//     }
+//     res.send(respuesta)
+//   })
+//   } else {
+//     let query = "SELECT * FROM sugerencias WHERE id_sugerencia = ?"
+//         connection.query (query, params, function(error, result) {
+//     if (error) {
+//       respuesta = `Error: ${error}`
+//     } else {p
+//       respuesta = result
+//     }
+//     res.send(respuesta)
+//   })
+//   }
+// })
+
+app.post('/sugerirjuego', (req, res) => {
+ let params = [req.body.name, req.body.platform]
+ let query = "INSERT INTO sugerencias (id_sugerencia, titulo_juego, plataforma, id_usuario) VALUES (NULL, ?, ?, 1)"
+ connection.query (query, params, function(error, result) {
+   if (error) {
+     respuesta = `Error: ${error}`
+   } else if (result.length === 0) {
+     respuesta = result
+   } else {
+     respuesta = result
+   }
+   res.send(respuesta)
+ })
+})
+
+app.delete('/sugAdmin', (req, res) => {
+  let id = req.query.id
+  if (id) {
+    let params = [id]
+    let query = "DELETE FROM `sugerencias` WHERE `sugerencias`.`id_sugerencia` = ?"
+         connection.query(query, params, function (err, result) {
+          if (err) {
+            respuesta = "Ha ocurrido un error: " + err + "."
+          } else {
+            respuesta = result
+          }
+            res.send(respuesta)
+        })
+    } else {
+      respuesta = "No se ha podido borrar el juego."
+    }
+})
+// ------------------------ ENDPOINT LOGIN -------------------------------
 
 app.post('/login', (req,res) => {
     let params = [req.body.email,req.body.password]
@@ -182,7 +240,7 @@ app.post('/login', (req,res) => {
   });
 });
 
-// ------------------------ ENDPOINT REGISTRO --------------------------------------------
+// ------------------------ ENDPOINT REGISTRO ----------------------------
 
 /**
  * REGISTRO DE USUARIO CON PASSWORD CIFRADA
@@ -285,11 +343,11 @@ app.get("/topfive", function(req, res){
     })
 })
 
-// ------------------------ ENDPOINT CHARLAS --------------------------------------------    
+// ------------------------ ENDPOINT CHARLAS ---------------------
 app.get("/charlas", (req, res) => {
      myQuery = `SELECT charlas.*, usuarios.nombre,usuarios.apellido
      FROM charlas
-     INNER JOIN usuarios 
+     INNER JOIN usuarios
      ON charlas.id_usuario = usuarios.id_usuario WHERE fecha_charla >= CURDATE()`
        connection.query(myQuery, function(err, result) {
          if (err) {
@@ -308,7 +366,7 @@ app.get("/charlasBuscador", (req, res) => {
   charla_fecha= req.query.charla_fecha;
   myQuery = `SELECT charlas.*, usuarios.nombre,usuarios.apellido
   FROM charlas
-  INNER JOIN usuarios 
+  INNER JOIN usuarios
   ON charlas.id_usuario = usuarios.id_usuario WHERE `
   params= [];
   if (charla_titulo && charla_fecha) {
@@ -344,11 +402,11 @@ app.post("/charlas",(req, res) => {
   connection.query(query,params, function (error, results) {
       if (error) {
           respuesta = `Hubo un error : ${error}`
-      } 
+      }
       else{
           respuesta = results
       }
-      res.send(respuesta )    
+      res.send(respuesta )
   });
 })
 
@@ -361,11 +419,11 @@ app.post("/charlasApuntarse",(req, res) => {
   connection.query(query,params, function (error, results) {
       if (error) {
           respuesta = `Hubo un error : ${error}`
-      } 
+      }
       else{
           respuesta = results
       }
-      res.send(respuesta )    
+      res.send(respuesta )
   });
 })
 
@@ -377,11 +435,11 @@ app.get("/charlasApuntarse",(req, res) => {
   connection.query(query,params, function (error, results) {
       if (error) {
           respuesta = `Hubo un error : ${error}`
-      } 
+      }
       else{
           respuesta = results
       }
-      res.send(respuesta )    
+      res.send(respuesta )
   });
 })
 
@@ -393,11 +451,11 @@ app.get("/charlasImpartidas",(req, res) => {
   connection.query(query,params, function (error, results) {
       if (error) {
           respuesta = `Hubo un error : ${error}`
-      } 
+      }
       else{
           respuesta = results
       }
-      res.send(respuesta )    
+      res.send(respuesta )
   });
 })
 
@@ -406,18 +464,18 @@ app.get("/charlasAsistidas",(req, res) => {
   console.log(params)
   let query = `SELECT charlas.*,usuarios.nombre,usuarios.apellido
   FROM usuario_charla
-  INNER JOIN charlas ON charlas.id_charla = usuario_charla.id_charla 
+  INNER JOIN charlas ON charlas.id_charla = usuario_charla.id_charla
   INNER JOIN usuarios ON charlas.id_usuario = usuarios.id_usuario
   WHERE usuario_charla.id_usuario = ? `;
   console.log(query)
   connection.query(query,params, function (error, results) {
       if (error) {
           respuesta = `Hubo un error : ${error}`
-      } 
+      }
       else{
           respuesta = results
       }
-      res.send(respuesta )    
+      res.send(respuesta )
   });
 })
 
