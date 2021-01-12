@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Sugerencias } from 'src/app/model/sugerencias';
+import { ServicioSugerenciasService } from 'src/app/shared/servicio-sugerencias.service';
 
 @Component({
   selector: 'app-paginasugerir',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginasugerirComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ServicioSugerencias: ServicioSugerenciasService) { }
+  crearSugerencia(name: string, platform: string) {
+    this.ServicioSugerencias.addSugerencia(new Sugerencias(0, name, platform, 0)).subscribe((data: Sugerencias) => {
+      alert("Sugerencia recibida");
+    })
+  }
 
   ngOnInit(): void {
   }

@@ -12,17 +12,15 @@ export class JuegosService {
   public juego: Juego;
   constructor(private http: HttpClient) { }
 
-  getGames(nombre:string,pegi:string,plataforma:string) {
+  getGames(nombre: string, pegi: string, plataforma: string) {
     return this.http.get(`${this.url}?pegi=${pegi}&name=${nombre}&platform=${plataforma}`)
   }
-  setJuegoSeleccionado(game:Juego) {
+  setJuegoSeleccionado(game: Juego) {
     this.juego = game;
     console.log("servicio de juego")
     console.log(this.juego)
   }
-  getJuegoSeleccionado():Juego {
+  getJuegoSeleccionado(): Juego {
     return this.juego
   }
-
-
 }
