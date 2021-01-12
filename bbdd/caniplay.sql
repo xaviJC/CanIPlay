@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 23-12-2020 a las 11:10:54
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.2.34
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 11-01-2021 a las 20:11:25
+-- Versión del servidor: 10.4.16-MariaDB
+-- Versión de PHP: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -47,7 +47,15 @@ INSERT INTO `charlas` (`id_charla`, `titulo_charla`, `fecha_charla`, `descripcio
 (9, 'Tu cerebro en los videojuegos', '2021-01-21', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '¿Cómo afectan los videojuegos al ritmo del cerebro? ¡Descúbrelo con Daphne!', 'https://www.google.es/', 3),
 (10, 'Coaching sessions #2: \"The Binding of Isaac\"', '2021-01-18', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '¿Te atreves a luchar contra tus mayores miedos? No te preocupes, ya lo hace Xavi por ti.', 'https://www.google.es/', 4),
 (11, 'Sobrevive el 2020 al más puro estilo \"Lara Croft\"', '2020-12-11', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'El 2020 aún no ha terminado. Yaiza nos explicará las mejores técnicas para aguantar lo que queda de año.', 'https://www.google.es/', 5),
-(12, 'Aprende inglés con los videojuegos', '2020-12-28', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '¿Se te da regular el inglés? ¡Patrícia te recomienda los mejores (y peores) juegos para aprender mientras juegas!', 'https://www.google.es/', 6);
+(12, 'Aprende inglés con los videojuegos', '2020-12-28', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '¿Se te da regular el inglés? ¡Patrícia te recomienda los mejores (y peores) juegos para aprender mientras juegas!', 'https://www.google.es/', 6),
+(17, 'Coaching sessions #2: \"The Binding of Isaac\"', '2021-01-18', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '¿Te atreves a luchar contra tus mayores miedos? No te preocupes, ya lo hace Xavi por ti.', 'https://www.google.es/', 4),
+(18, 'Sobrevive el 2020 al más puro estilo \"Lara Croft\"', '2020-12-11', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'El 2020 aún no ha terminado. Yaiza nos explicará las mejores técnicas para aguantar lo que queda de año.', 'https://www.google.es/', 5),
+(19, 'Aprende inglés con los videojuegos', '2020-12-28', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '¿Se te da regular el inglés? ¡Patrícia te recomienda los mejores (y peores) juegos para aprender mientras juegas!', 'https://www.google.es/', 6),
+(20, 'Mejores ciudades con Cities: Skylines', '2021-01-04', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '¡Aprendamos con Karoliina y Cities: Skylines a mejorar las ciudades del mañana!', 'https://www.google.es/', 2),
+(21, '¿Es realmente Link una mujer?', '2020-12-04', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'd', 'a', 9),
+(22, 'Jugar la FIFA te hace más listo', '2020-12-31', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'resumen', 'https://discord.gg/4YF5JDWn', 7),
+(23, 'Como borrar las partidas de tu hijo si se porta mal', '2020-12-09', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'asdfadsf', 'Discord', 9),
+(24, 'Como no jugar', '2020-12-31', 'coasa', 'asd', 'www.google.es', 9);
 
 -- --------------------------------------------------------
 
@@ -115,7 +123,9 @@ INSERT INTO `juegos` (`id_juego`, `titulo_juego`, `genero`, `pegi`, `tarjeta_jug
 (22, 'Tomb Raider: Shadow of the Tomb Raider', 'Aventura', '18', 'Single Player', 'Contiene pagos online opcionales', 'Contenido adulto', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/917q49DeTgL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71KWYSrd7TL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81yIfvvtgRL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81a4DLsgovL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71s75jkvcRL._AC_SL1500_.jpg', 20, 60, 'https://tombraider.square-enix-games.com/en-us'),
 (23, ' Resident Evil 3 ', 'Acción', '18', 'Single Player', 'No contiene pagos online', 'Contenido adulto', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/81dkv99OHwL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71D5bHWOWoL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/61vYhnsyJvL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71LabCg563L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/61fFySMSPtL._AC_SL1500_.jpg', 20, 60, 'https://www.residentevil.com/re3/es/'),
 (24, 'Mortal Kombat', 'Acción', '18', 'Single/multiplayer', 'No contiene pagos online', 'Contenido adulto', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/81IYymJXt%2BL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/61xPpYXpePL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71jxRkUc0LL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71HfL-x1jVL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/61C-Tjw61SL._AC_SL1500_.jpg', 20, 60, 'https://www.mortalkombat.com/'),
-(25, 'Hellblade Senua\'s Sacrifice', 'Aventura', '18', 'Single/multiplayer', 'No contiene pagos online', 'Contenido adulto', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/81UfMKqh-YL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/813rgb11U3L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/810a61UlgGL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71-E4QVAnUL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81R00SXtU3L._AC_SL1500_.jpg', 20, 60, 'https://www.hellblade.com/');
+(25, 'Hellblade Senua\'s Sacrifice', 'Aventura', '18', 'Single/multiplayer', 'No contiene pagos online', 'Contenido adulto', 'Mejor experiencia con conexión a internet', 'https://images-na.ssl-images-amazon.com/images/I/81UfMKqh-YL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/813rgb11U3L._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/810a61UlgGL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/71-E4QVAnUL._AC_SL1500_.jpg', 'https://images-na.ssl-images-amazon.com/images/I/81R00SXtU3L._AC_SL1500_.jpg', 20, 60, 'https://www.hellblade.com/'),
+(26, 'titulo', 'Aventura', '3', 'Single/multiplayer', 'No contiene pagos online', 'Contenido moderado', 'Requiere conexión a internet', 'asdasdasd', 'asd', 'asd', 'asd', 'asd', 0, 0, 'asdsadas'),
+(27, 'titulo', 'Aventura', '3', 'Single/multiplayer', 'No contiene pagos online', 'Contenido moderado', 'Requiere conexión a internet', 'asdasdasd', 'asd', 'asd', 'asd', 'asd', 0, 0, 'asdsadas');
 
 -- --------------------------------------------------------
 
@@ -230,7 +240,11 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `hijos`, `email`, `p
 (3, 'Julia', 'Manzanares', '+4', 'JManzanares@gustr.com', '1234', 'usuario'),
 (4, 'Mario', 'Acosta', '3', 'acosta37@hotmail.es', '1234', 'usuario'),
 (5, 'Isabel ', 'Bermúdez', '1', 'isaBer@gmail.com', '1234', 'admin'),
-(6, 'Juan', 'Palomo', '+4', 'juanito@gmail.com', '1234', 'admin');
+(6, 'Juan', 'Palomo', '+4', 'juanito@gmail.com', '1234', 'admin'),
+(7, 'Javier', 'Campos', '1', 'javierhyws@gmail.com', 'a6pSztU5etJqsDWidxigdvu3hVtmtxhYhnJU3n7nN2Y=', 'usuario'),
+(8, 'Javier', 'Campos', '1', 'j@gmail.com', 'a6pSztU5etJqsDWidxigdvu3hVtmtxhYhnJU3n7nN2Y=', 'admin'),
+(9, 'Maria', 'Magdalena', '', 'mm@gmail.com', 'eJ4G6EXmxoC1+8KjCr+D9ApmBzmTo9cI4hHGglrDc7w=', 'usuario'),
+(10, 'Maria', 'Campos', '3', 'javierhyws@gmail.com', 'a6pSztU5etJqsDWidxigdvu3hVtmtxhYhnJU3n7nN2Y=', 'usuario');
 
 -- --------------------------------------------------------
 
@@ -242,6 +256,28 @@ CREATE TABLE `usuario_charla` (
   `id_usuario` int(11) NOT NULL,
   `id_charla` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuario_charla`
+--
+
+INSERT INTO `usuario_charla` (`id_usuario`, `id_charla`) VALUES
+(2, 7),
+(5, 7),
+(6, 7),
+(1, 10),
+(5, 10),
+(3, 10),
+(6, 9),
+(1, 9),
+(1, 19),
+(1, 7),
+(9, 10),
+(9, 10),
+(7, 9),
+(9, 17),
+(9, 10),
+(9, 9);
 
 --
 -- Índices para tablas volcadas
@@ -318,7 +354,7 @@ ALTER TABLE `usuario_charla`
 -- AUTO_INCREMENT de la tabla `charlas`
 --
 ALTER TABLE `charlas`
-  MODIFY `id_charla` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_charla` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `chat`
@@ -330,7 +366,7 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT de la tabla `juegos`
 --
 ALTER TABLE `juegos`
-  MODIFY `id_juego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_juego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `likes_usuario`
@@ -354,7 +390,7 @@ ALTER TABLE `sugerencias`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas

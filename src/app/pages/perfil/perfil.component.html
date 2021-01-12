@@ -1,4 +1,4 @@
-<div class="error-container" *ngIf="this.apiServiceUsuario.usuario.tipo_usuario === ''">
+<div class="error-container" *ngIf="usuarioRegistado.tipo_usuario === ''">
   <div class="container">
       <div class="row justify-content-center">
           <img class="error mt-4" src="https://media.giphy.com/media/8L0Pky6C83SzkzU55a/giphy.gif">
@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div class="card-deck d-flex align-items page-container" *ngIf="this.apiServiceUsuario.usuario.tipo_usuario === 'admin'">
+<div class="card-deck d-flex align-items page-container" *ngIf="usuarioRegistado.tipo_usuario === 'admin'">
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-xs-12 profile-container card">
       <div class="my-profile">
         <h3>Mi Perfil</h3>
@@ -47,8 +47,7 @@
   </div>
 </div>
 
-
-<div class="card-deck d-flex align-items page-container" *ngIf="this.apiServiceUsuario.usuario.tipo_usuario === 'usuario'">
+<div class="card-deck d-flex align-items page-container" *ngIf="usuarioRegistado.tipo_usuario === 'usuario'">
   <div class="login-container d-flex justify-content-around col-xl-9 col-lg-10 col-md-12 col-sm-12 col-xs-12 card-deck">
     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-xs-12 profile-container card">
       <div class="my-profile">
@@ -168,5 +167,3 @@
 </div>
 </div>
 </div>
-
-
