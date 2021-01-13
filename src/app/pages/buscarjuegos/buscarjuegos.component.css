@@ -2,6 +2,12 @@ h6 {
   text-align: center;
 }
 
+.page-container {
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+
 .caratulaBusqueda {
   height: 150px;
 }
@@ -10,6 +16,11 @@ h6 {
   color: #ded4f1;
   background-color: #371a6d;
   border-color: #371a6d;
+}
+
+.btn-rosado:hover {
+  color: #371a6d;
+  background-color: #ffffff;
 }
 
 .title {
