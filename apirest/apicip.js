@@ -331,7 +331,7 @@ app.put('/registro', (req,res) => {
 
 app.get("/topfive", function(req, res){
     params = req.query.pegi
-    let sql = "SELECT * FROM juegos AS s INNER JOIN juegos_plataforma AS m ON (s.id_juego = m.id_juego) WHERE pegi= ?  AND  ORDER BY puntuacionTotal DESC LIMIT 5";
+    let sql = "SELECT * FROM juegos AS s INNER JOIN juegos_plataforma AS m ON (s.id_juego = m.id_juego) WHERE pegi= ? ORDER BY puntuacionTotal DESC LIMIT 5";
     connection.query(sql,params, function(err, result){
         if(err){
             console.log(err);
@@ -481,6 +481,17 @@ app.get("/charlasAsistidas",(req, res) => {
 
 
 
+app.get("/ranking", function(req, res){
+    let sql = "SELECT * FROM juegos AS s INNER JOIN juegos_plataforma AS m ON (s.id_juego = m.id_juego) ORDER BY puntuacionTotal DESC LIMIT 5";
+    connection.query(sql, function(err, result){
+        if(err){
+            console.log(err);
+        }else{
+            console.log(result);
+        }
 
+        res.send(result)
+    })
+})
 
 app.listen(3000);
