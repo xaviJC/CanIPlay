@@ -1,3 +1,4 @@
+<div class="page-container">
 <div class="container mt-5">
       <div class="row text-center">
           <h2 class="title">ENCUENTRA TU JUEGO</h2>
@@ -8,7 +9,7 @@
         <h6>Buscar por título</h6>
         <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 border">
           <div class="input-group">
-              <input type="search" placeholder="Titulo de de juego" class="form-control border-0 bg-light rounded rounded-pill" #nombre>
+              <input type="search" placeholder="Título de juego" class="form-control border-0 bg-light rounded rounded-pill" #nombre>
           </div>
         </div>
       </div>
@@ -17,7 +18,7 @@
         <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 border">
           <div class="input-group">
             <select class="form-control border-0 bg-light rounded rounded-pill" id="exampleFormControlSelect1" #pegi>
-              <option value="">--Seleccione una opcion--</option>
+              <option value="">Selecciona una opción</option>
               <option value="3">PEGI 3</option>
               <option value="7">PEGI 7</option>
               <option value="12">PEGI 12</option>
@@ -32,7 +33,7 @@
         <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 border">
           <div class="input-group">
             <select class="form-control border-0 bg-light rounded rounded-pill" id="exampleFormControlSelect1" #platform>
-              <option value="">--Seleccione una opcion--</option>
+              <option value="">Selecciona una opción</option>
               <option value="pc">PC</option>
               <option value="ps4">PS4</option>
               <option value="ps5">PS5 </option>
@@ -75,12 +76,13 @@
         <div class="row text-center">
 
                  <p>¿No encuentras el juego que buscas? ¡Escuchamos tus propuestas!
-                   <button mat-icon-button color="basic"><mat-icon routerLink="/sugerirjuego">create</mat-icon></button>
+                   <button class="btn-sm btn-rosado" routerLink="/sugerirjuego">Sugerir </button>
                   </p>
 
         </div>
     </ng-template>
 
+</div>
 </div>
 </div>
 

@@ -5,6 +5,7 @@ import * as crypto from 'node_modules/crypto-js';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import swal from 'sweetalert2';
+import { type } from 'os';
 
 
 
@@ -32,10 +33,22 @@ export class ServicioLoginService {
     this.http.post(this.url, login).subscribe((data: Usuario) => {
       this.usuario = data[0]
       if (typeof this.usuario === "undefined") {
-        swal.fire('Introduce un email o contraseña válido', this.titularAlerta, 'error');
+        swal.fire({
+          icon: 'error',
+          title: "Imposible inciar sesión",
+          text: 'Revisa tu email y contraseña',
+          confirmButtonColor: "#371a6d"
+        })
+
+        // swal.fire('Introduce un email o contraseña válido', this.titularAlerta, 'error');
       } else {
         this.usuarioRegistrado.next(data[0])
-        swal.fire(`Hola, ${this.usuario.nombre}`, this.titularAlerta, 'success');
+        swal.fire({
+          icon: 'success',
+          title: "Has iniciado sesión",
+          text: `Bienvenido de nuevo, ${this.usuario.nombre}`,
+          confirmButtonColor: "#371a6d"
+        })
         this.isUserLoggedIn.next(true)
         setTimeout(() => { this.router.navigate(["/perfil"]) }, 2000);
       }

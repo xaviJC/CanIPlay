@@ -12,7 +12,6 @@ export class PaginasugerirComponent implements OnInit {
   constructor(private ServicioSugerencias: ServicioSugerenciasService) { }
   crearSugerencia(name: string, platform: string) {
     this.ServicioSugerencias.addSugerencia(new Sugerencias(0, name, platform, 0)).subscribe((data: Sugerencias) => {
-      alert("Sugerencia recibida");
     })
   }
 

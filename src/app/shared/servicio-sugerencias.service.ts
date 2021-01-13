@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Sugerencias } from 'src/app/model/sugerencias'
+import swal from 'sweetalert2';
 
 
 @Injectable({
@@ -14,7 +15,14 @@ export class ServicioSugerenciasService {
 
   addSugerencia(sugerencia: Sugerencias) {
     console.log(sugerencia)
-    return this.http.post(this.url, sugerencia)
+    swal.fire({
+      icon: 'success',
+      title: 'Sugerencia recibida:',
+      text: `${sugerencia.name}`,
+      confirmButtonColor: "#371a6d",
+    });
   }
 }
+
+
 
