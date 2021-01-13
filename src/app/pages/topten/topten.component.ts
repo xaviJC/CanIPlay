@@ -3,6 +3,7 @@ import { from } from 'rxjs';
 import { Juego } from 'src/app/models/juego'
 import {ServicioTop5Service} from 'src/app/shared/servicio-top5.service';
 import {ServicioRankingService} from 'src/app/shared/servicio-ranking.service';
+import { JuegosService } from 'src/app/shared/juegos.service';
 
 @Component({
   selector: 'app-topten',
@@ -16,8 +17,17 @@ export class ToptenComponent implements OnInit {
   public pegi12: any[]
   public pegi16: any[]
   public pegi18: any[]
-
-  constructor(private apiServiceTop5: ServicioTop5Service, private apiServiceRanking: ServicioRankingService) { 
+  // public games:Juego[];
+  // public game: Juego;
+// 
+  public imgPegis = {
+    "pegi3": "../../../assets/pegi-icons/pegi-3.png",
+    "pegi7": "../../../assets/pegi-icons/pegi-7.png",
+    "pegi12": "../../../assets/pegi-icons/pegi-12.png",
+    "pegi16": "../../../assets/pegi-icons/pegi-16.png",
+    "pegi18": "../../../assets/pegi-icons/pegi-18.png"
+  }
+  constructor(private apiServiceTop5: ServicioTop5Service, private apiServiceRanking: ServicioRankingService, private apiJuegos:JuegosService) { 
   console.log("Funcionando servicio vista-disco")
   this.pegi3
   this.pegi7
@@ -53,6 +63,12 @@ export class ToptenComponent implements OnInit {
     })
   }
 
+  juegoSeleccionado(game:Juego) {
+    console.log("juegoSeleccionado")
+    console.log(game)
+    console.log("llamada a servicio")
+    this.apiJuegos.setJuegoSeleccionado(game);
+  }
 
   ngOnInit(): void {
   }
