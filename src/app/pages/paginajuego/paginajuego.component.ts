@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {  VanillaTiltSettings } from 'angular-tilt';
+import { VanillaTiltSettings } from 'angular-tilt';
 import { Juego } from 'src/app/models/juego';
 import { JuegosService } from 'src/app/shared/juegos.service';
 import { ServicioLoginService } from 'src/app/shared/servicio-login.service';
-import swal from'sweetalert2';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-paginajuego',
@@ -11,17 +11,13 @@ import swal from'sweetalert2';
   styleUrls: ['./paginajuego.component.css']
 })
 export class PaginajuegoComponent implements OnInit {
-  public tiltSettings:VanillaTiltSettings;
+  public tiltSettings: VanillaTiltSettings;
   public juego: any;
-  usuarioRegistrado:any;
-  isUserLoggedIn:boolean;
-  titularAlerta:string = '';
-  public notaMedia:number;
-  
+  usuarioRegistrado: any;
+  isUserLoggedIn: boolean;
+  titularAlerta: string = '';
+  public notaMedia: number;
 
-    /**
-   * Creo un json para guardar rutas de iconos pegi
-   */
   public imgPegis = {
     "pegi3": "../../../assets/pegi-icons/pegi-3.png",
     "pegi7": "../../../assets/pegi-icons/pegi-7.png",
@@ -30,48 +26,58 @@ export class PaginajuegoComponent implements OnInit {
     "pegi18": "../../../assets/pegi-icons/pegi-18.png"
   }
 
-  constructor(private apiJuegos:JuegosService,private apiServiceUsuario:ServicioLoginService) {
+  constructor(private apiJuegos: JuegosService, private apiServiceUsuario: ServicioLoginService) {
     this.juego = this.apiJuegos.juego;
-    console.log(this.juego.puntuacionTotal+ "/"+this.juego.votos)
+    console.log(this.juego.puntuacionTotal + "/" + this.juego.votos)
     this.notaMedia = (this.juego.puntuacionTotal / this.juego.votos);
     // this.notaMedia.toFixed(2);
-    this.apiServiceUsuario.usuarioRegistrado.subscribe( value => {
+    this.apiServiceUsuario.usuarioRegistrado.subscribe(value => {
       this.usuarioRegistrado = value;
       console.log(this.usuarioRegistrado)
     })
-   }
+  }
 
-   
-   handleChange(evt) {
-    if(this.usuarioRegistrado.tipo_usuario) {
-      this.apiJuegos.getVoto(this.usuarioRegistrado.id_usuario,this.juego.id_juego).subscribe((data) => {
+  handleChange(evt) {
+    if (this.usuarioRegistrado.tipo_usuario) {
+      this.apiJuegos.getVoto(this.usuarioRegistrado.id_usuario, this.juego.id_juego).subscribe((data) => {
         console.log(data[0])
-        if(data[0]) {
-          swal.fire('Ya votaste en este juego')
+        if (data[0]) {
+          swal.fire({
+            icon: 'warning',
+            title: 'Ya votaste éste juego',
+            confirmButtonColor: "#371a6d",
+          });
+
         } else {
           var target = evt.target;
           let voto = parseInt(target.value);
           let puntTotal = this.juego.puntuacionTotal + voto;
           let numVotos = this.juego.votos + 1;
           console.log("this.usuarioRegistrado.id_usuario,this.juego.id_juego,voto,puntTotal,numVotos")
-          console.log(this.usuarioRegistrado.id_usuario,this.juego.id_juego,voto,puntTotal,numVotos)
-          this.apiJuegos.addVoto(this.usuarioRegistrado.id_usuario,this.juego.id_juego,voto,puntTotal,numVotos).subscribe((data) => {
-            swal.fire('Gracias por votar  ')
+          console.log(this.usuarioRegistrado.id_usuario, this.juego.id_juego, voto, puntTotal, numVotos)
+          this.apiJuegos.addVoto(this.usuarioRegistrado.id_usuario, this.juego.id_juego, voto, puntTotal, numVotos).subscribe((data) => {
+            swal.fire({
+              icon: 'success',
+              title: '¡Gracias por votar!',
+              confirmButtonColor: "#371a6d",
+            });
           })
         }
       })
     } else {
-      swal.fire('Registrate para poder votar ')
+      swal.fire({
+        icon: 'warning',
+        title: 'Debes registrarte para votar.',
+        confirmButtonColor: "#371a6d",
+      });
     }
-   }
+  }
 
-  
   ngOnInit(): void {
-    this.apiServiceUsuario.isUserLoggedIn.subscribe( value => {
+    this.apiServiceUsuario.isUserLoggedIn.subscribe(value => {
       this.isUserLoggedIn = value;
       console.log("comprobar user")
       console.log(this.isUserLoggedIn)
-    }) 
+    })
   }
-
 }

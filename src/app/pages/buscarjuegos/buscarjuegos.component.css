@@ -53,6 +53,8 @@ h6 {
   height: 209px;
   margin-bottom: 3.5%;
   border: 3px solid #371a6d;
+  border-radius: 5px;
+  box-shadow: 4px 10px 16px -6px rgb(145, 143, 143);
 }
 
 .fade-in {
