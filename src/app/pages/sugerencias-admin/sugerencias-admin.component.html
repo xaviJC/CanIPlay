@@ -5,11 +5,13 @@
     <div class="row">
         <mat-form-field>
             <mat-label>Filtrar</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+            <!-- <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input> -->
+            <input matInput  placeholder="Ex. ium" #input>
             <!-- <input matInput name="" id=""> -->
           </mat-form-field>
 
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"> -->
+        <table mat-table class="mat-elevation-z8">
 
             <!-- Checkbox Column -->
             <ng-container matColumnDef="select">
@@ -56,15 +58,16 @@
             <ng-container matColumnDef="delete">
                 <th mat-header-cell *matHeaderCellDef>Borrar</th>
                 <td mat-cell *matCellDef="let element">
-                    <button mat-mini-fab color="basic" (click)="delete(element)" aria-label="Example icon button with a delete icon" #id>
+                    <!-- <button mat-mini-fab color="basic" (click)="delete(element)" aria-label="Example icon button with a delete icon" #id> -->
+                    <button mat-mini-fab color="basic"  aria-label="Example icon button with a delete icon" #id>
                         <mat-icon>delete</mat-icon>
                       </button>
                      </td>
               </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-                (click)="selection.toggle(row)">
+            <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"> -->
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;">
             </tr>
 
           </table>
