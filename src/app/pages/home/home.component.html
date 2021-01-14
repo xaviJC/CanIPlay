@@ -100,72 +100,22 @@
         <h2>CHARLAS DE LA SEMANA</h2>
     </div>
   <div class="row  text-center mt-5" >
-    <div class="col-xl-4 col-xs-12 col-md-6  grow-rotate-on-hover" >
-      <!-- <h5 class="">Lunes</h5> -->
+    <div class="course-card col-xl-4 col-xs-12 col-md-6  grow-rotate-on-hover" *ngFor="let charla of charlas;; let i = index">
+            
       <div class="card mb-3" style="max-width: 18rem;">
-        <div class="card-header bg-transparent" routerLink="/perfil">Jane McGonigal</div>
-        <div class="card-body ">
-          <h5 class="card-title">Videojuegos para un mundo mejor.</h5>
-          <p class="card-text">¡Imaginad aprovechar el poder de los videojuegos para resolver problemas diarios!</p>
-        </div>
-        <div class="card-footer bg-transparent"><button class="btn btn-rosado" routerLink="/charlas">Ver más</button></div>
-      </div>
-    </div>
-    <div class="col-xl-4 col-xs-12 col-md-6   grow-rotate-on-hover-center">
-      <!-- <h5 class="">Martes</h5> -->
-      <div class="card mb-3" style="max-width: 18rem;">
-        <div class="card-header bg-transparent" routerLink="/perfil">Karoliina Korppoo</div>
-        <div class="card-body ">
-          <h5 class="card-title">Mejores ciudades con Cities: Skylines</h5>
-          <p class="card-text">¡Aprendamos con Karoliina y Cities: Skylines a mejorar las ciudades del mañana!</p>
-        </div>
-        <div class="card-footer bg-transparent"><button class="btn btn-rosado" routerLink="/charlas">Ver más</button></div>
-      </div>
-    </div>
-    <div class="col-xl-4 col-xs-12 col-md-6  grow-rotate-on-hover-left">
-      <!-- <h5 class="">Miercoles</h5> -->
-      <div class="card mb-3" style="max-width: 18rem;">
-        <div class="card-header bg-transparent" routerLink="/perfil">Neil Druckman</div>
-        <div class="card-body ">
-          <h5 class="card-title">Tu cerebro en los videojuegos</h5>
-          <p class="card-text">¿Cómo afectan los videojuegos al ritmo del cerebro? ¡Descúbrelo con Daphne!</p>
-        </div>
-        <div class="card-footer bg-transparent"><button class="btn btn-rosado" routerLink="/charlas">Ver más</button></div>
-      </div>
-    </div>
-  <br>
-  <div class="course-card col-xl-4 col-xs-12 col-md-6  grow-rotate-on-hover">
-    <!-- <h5 class="">Jueves</h5> -->
-    <div class="card mb-3" style="max-width: 18rem;">
-      <div class="card-header bg-transparent" routerLink="/perfil">Neil Druckman</div>
-      <div class="card-body ">
-        <h5 class="card-title">Coaching sessions #2: "The Binding of Isaac"</h5>
-        <p class="card-text">¿Te atreves a luchar contra tus mayores miedos? No te preocupes, ya lo hace Xavi por ti. </p>
-      </div>
-      <div class="card-footer bg-transparent"><button class="btn btn-rosado" routerLink="/charlas">Ver más</button></div>
-    </div>
-  </div>
-  <div class="course-card col-xl-4 col-xs-12 col-md-6  grow-rotate-on-hover-center">
-    <!-- <h5 class="">Viernes</h5> -->
-    <div class="card mb-3" style="max-width: 18rem;">
-      <div class="card-header bg-transparent" routerLink="/perfil">Neil Druckman</div>
-      <div class="card-body ">
-        <h5 class="card-title">Sobrevive el 2020 al más puro estilo "Lara Croft"</h5>
-        <p class="card-text">El 2020 aún no ha terminado. Yaiza nos explicará las mejores técnicas para aguantar lo que queda de año.</p>
-      </div>
-      <div class="card-footer bg-transparent"><button class="btn btn-rosado" routerLink="/charlas">Ver más</button></div>
-    </div>
-  </div>
-  <div class="course-card col-xl-4 col-xs-12 col-md-6  grow-rotate-on-hover-left">
-    <!-- <h5 class="">Sabado</h5> -->
-    <div class="card mb-3" style="max-width: 18rem;">
-      <div class="card-header bg-transparent" routerLink="/perfil">Neil Druckman</div>
-      <div class="card-body ">
-        <h5 class="card-title">Aprende inglés con los videojuegos</h5>
-        <p class="card-text">¿Se te da regular el inglés? ¡Patrícia te recomienda los mejores (y peores) juegos para aprender mientras juegas! </p>
-      </div>
-      <div class="card-footer bg-transparent"><button class="btn btn-rosado" routerLink="/charlas">Ver más</button></div>
-    </div>
-  </div>
-  </div>
+          <div class="card-header bg-transparent">{{charla.nombre}}{{charla.apellido}}</div>
+          <div class="card-body ">
+              <h5 class="card-title">{{charla.titulo_charla}}</h5>
+              <p class="card-text">{{charla.resumen_charla}}</p>
+          </div>
+          <div class="card-footer bg-transparent">
+              <div class="row justify-content-center">
+                  <div class="col-6">
+                      <button class="btn btn-rosado" routerLink="/charlas">Ver más</button>
+                  </div>
+              </div>
+          </div>
+     </div>            
+</div>
+  </div> 
 </div>
