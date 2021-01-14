@@ -14,6 +14,7 @@ export class ServicioSugerenciasService {
   constructor(private http: HttpClient) { }
 
   addSugerencia(sugerencia: Sugerencias) {
+    
     console.log(sugerencia)
     swal.fire({
       icon: 'success',

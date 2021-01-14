@@ -16,7 +16,7 @@ export class PaginajuegoComponent implements OnInit {
   usuarioRegistrado:any;
   isUserLoggedIn:boolean;
   titularAlerta:string = '';
-  public notaMedia:number;
+  public notaMedia;
   
 
     /**
@@ -34,7 +34,7 @@ export class PaginajuegoComponent implements OnInit {
     this.juego = this.apiJuegos.juego;
     console.log(this.juego.puntuacionTotal+ "/"+this.juego.votos)
     this.notaMedia = (this.juego.puntuacionTotal / this.juego.votos);
-    // this.notaMedia.toFixed(2);
+    this.notaMedia = this.notaMedia.toFixed(2);
     this.apiServiceUsuario.usuarioRegistrado.subscribe( value => {
       this.usuarioRegistrado = value;
       console.log(this.usuarioRegistrado)

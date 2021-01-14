@@ -5,7 +5,6 @@ import * as crypto from 'node_modules/crypto-js';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import swal from 'sweetalert2';
-import { type } from 'os';
 
 
 

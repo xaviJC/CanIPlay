@@ -28,54 +28,6 @@
                     *ngIf="rank.ps5 == 1">PS5·</span><span *ngIf="rank.switch == 1">NSW</span>
             <br>
         </div>
-        <!-- <div class="col-md-2">
-            <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/81%2BpdXH3fjL._AC_SL1500_.jpg"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-                onclick="myFunction('img/marksmenkingblack_180x.png')">
-            <br>
-            <span id="game">Cyberpunk 2077 </span>
-            <br>
-            <img class="pegi" src="https://pegi.info/themes/pegi/public-images/pegi/pegi18.png">
-            <br>
-            <span><b>PS4/XBOX/PC</b><b id="plataforma"></b></span>
-            <br>
-        </div>
-        <div class="col-md-2">
-            <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://64.media.tumblr.com/4a8aade31d32ce4819e24a8f0ed1cca7/b4ee4f64d226e051-04/s640x960/b01aef19960ce261037c2a47fda39f6dc1859ac5.jpg"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-                onclick="myFunction('img/marksmenkingblack_180x.png')">
-            <br>
-            <span id="game">League of Legends</span>
-            <br>
-            <img class="pegi" src="https://pegi.info/themes/pegi/public-images/pegi/pegi12.png">
-            <br>
-            <span><b>PC</b><b id="plataforma"></b></span>
-            <br>
-        </div>
-        <div class="col-md-2">
-            <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/81OFTUvFX4L._AC_SL1500_.jpg"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-                onclick="myFunction('img/marksmenkingblack_180x.png')">
-            <br>
-            <span id="game">The last of Us.PartII</span>
-            <br>
-            <img class="pegi" src="https://pegi.info/themes/pegi/public-images/pegi/pegi18.png">
-            <br>
-            <span><b>PS4</b><b id="plataforma"></b></span>
-            <br>
-        </div>
-        <div class="col-md-2">
-            <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/811ChVACmaL._AC_SL1500_.jpg"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-                onclick="myFunction('img/marksmenkingblack_180x.png')">
-            <br>
-            <span id="game">Tomb Raider</span>
-            <br>
-            <img class="pegi" src="https://pegi.info/themes/pegi/public-images/pegi/pegi18.png">
-            <br>
-            <span><b>PS4/XBOX/PC</b><b id="plataforma"></b></span>
-            <br>
-        </div> -->
       </div>
     </div>
 
@@ -89,7 +41,7 @@
     <div class="row  justify-content-center text-center">
         <div class="col-md-2" *ngFor="let pegi3 of pegi3">
             <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="{{pegi3.caratula_juego}}"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong">
+                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong" (click)="juegoSeleccionado(pegi3)">
             <br>
             <span id="game" class="game_title">{{pegi3.titulo_juego}}</span>
             <br>
@@ -99,45 +51,6 @@
 
             <br>
         </div>
-        <!-- <div class="col-md-2">
-            <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/81PlF%2BHTScL._AC_SL1500_.jpg"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-                onclick="myFunction('img/marksmenkingblack_180x.png')">
-            <br>
-            <span id="game">Super Mario Party </span>
-            <span><b>SWITCH</b><b id="plataforma"></b></span>
-            <br>
-        </div>
-        <div class="col-md-2">
-            <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://d8mkdcmng3.imgix.net/f077/753221.jpg?auto=format&bg=0FFF&fit=fill&h=600&q=100&w=600&s=f41f43c2b36e88393202580934475756"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-                onclick="myFunction('img/marksmenkingblack_180x.png')">
-            <br>
-            <span id="game">Paw Patrol</span>
-            <br>
-            <span><b>PC/SWITCH/PS4</b><b id="plataforma"></b></span>
-            <br>
-        </div> -->
-        <!-- <div class="col-md-2">
-            <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/71sT6IkxThL._AC_SL1000_.jpg"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-                onclick="myFunction('img/marksmenkingblack_180x.png')">
-            <br>
-            <span id="game">Animal Crossing</span>
-            <br>
-            <span><b>SWITCH</b><b id="plataforma"></b></span>
-            <br>
-        </div> -->
-        <!-- <div class="col-md-2">
-            <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/81w4hDOorIL._AC_SL1500_.jpg"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-                onclick="myFunction('img/marksmenkingblack_180x.png')">
-            <br>
-            <span id="game">Mario & Sonic</span>
-            <br>
-            <span><b>SWITCH</b><b id="plataforma"></b></span>
-            <br>
-        </div> -->
     </div>
   </div>
 
@@ -150,7 +63,7 @@
     <div class="row  justify-content-center text-center">
         <div class="col-md-2" *ngFor="let pegi7 of pegi7">
             <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="{{pegi7.caratula_juego}}"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong">
+                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong" (click)="juegoSeleccionado(pegi7)">
             <br>
             <span id="game" class="game_title">{{pegi7.titulo_juego}}</span>
             <br>
@@ -160,46 +73,7 @@
            <!-- <span><b></b><b id="plataforma"></b>{{pegi7.plataforma}}</span> -->
             <br>
         </div>
-        <!-- <div class="col-md-2">
-            <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://cdn-products.eneba.com/resized-products/InlPQPt7WRDHBRnySANJHVQrS2whLdUdTX9JB7djmGw_350x200_3x-0.jpeg"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-                onclick="myFunction('img/marksmenkingblack_180x.png')">
-            <br>
-            <span id="game">Among Us</span>
-            <br>
-            <span><b>PC</b><b id="plataforma"></b>{{pegi7.plataforma}}</span>
-            <br>
-        </div>
-        <div class="col-md-2">
-            <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/91QEkbiqDHL._AC_SL1500_.jpg"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-                onclick="myFunction('img/marksmenkingblack_180x.png')">
-            <br>
-            <span id="game">Crash Bandicoot</span>
-            <br>
-            <span><b>PS4</b><b id="plataforma"></b></span>
-            <br>
-        </div> -->
-        <!-- <div class="col-md-2">
-            <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/913V%2BirTARL._AC_SL1500_.jpg"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-                onclick="myFunction('img/marksmenkingblack_180x.png')">
-            <br>
-            <span id="game">Ratchet and Clank</span>
-            <br>
-            <span><b>PS4</b><b id="plataforma"></b></span>
-            <br>
-        </div> -->
-        <!-- <div class="col-md-2">
-            <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://m.media-amazon.com/images/I/81z+zbr-ltL._AC_SL1500_.jpg"
-                class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-                onclick="myFunction('img/marksmenkingblack_180x.png')">
-            <br>
-            <span id="game">Lego Harry Potter</span>
-            <br>
-            <span><b>XBOX/SWITCH/PS4</b><b id="plataforma"></b></span>
-            <br>
-        </div> -->
+
     </div>
   </div>
 
@@ -212,7 +86,7 @@
 <div class="row justify-content-center text-center">
     <div class="col-md-2" *ngFor="let pegi12 of pegi12">
         <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="{{pegi12.caratula_juego}}"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong">
+            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong" (click)="juegoSeleccionado(pegi12)">
         <br>
         <span id="game" class="game_title">{{pegi12.titulo_juego}}</span>
         <br>
@@ -222,46 +96,7 @@
         <!-- <span><b></b><b id="plataforma"></b>{{pegi12.plataforma}}</span> -->
         <br>
     </div>
-    <!-- <div class="col-md-2">
-        <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://cdn-products.eneba.com/resized-products/InlPQPt7WRDHBRnySANJHVQrS2whLdUdTX9JB7djmGw_350x200_3x-0.jpeg"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-            onclick="myFunction('img/marksmenkingblack_180x.png')">
-        <br>
-        <span id="game">Among Us</span>
-        <br>
-        <span><b>PC</b><b id="plataforma"></b></span>
-        <br>
-    </div>
-    <div class="col-md-2">
-        <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/91QEkbiqDHL._AC_SL1500_.jpg"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-            onclick="myFunction('img/marksmenkingblack_180x.png')">
-        <br>
-        <span id="game">Crash Bandicoot</span>
-        <br>
-        <span><b>PS4</b><b id="plataforma"></b></span>
-        <br>
-    </div>
-    <div class="col-md-2">
-        <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/913V%2BirTARL._AC_SL1500_.jpg"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-            onclick="myFunction('img/marksmenkingblack_180x.png')">
-        <br>
-        <span id="game">Ratchet and Clank</span>
-        <br>
-        <span><b>PS4</b><b id="plataforma"></b></span>
-        <br>
-    </div>
-    <div class="col-md-2">
-        <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://m.media-amazon.com/images/I/81z+zbr-ltL._AC_SL1500_.jpg"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-            onclick="myFunction('img/marksmenkingblack_180x.png')">
-        <br>
-        <span id="game">Lego Harry Potter</span>
-        <br>
-        <span><b>XBOX/SWITCH/PS4</b><b id="plataforma"></b></span>
-        <br>
-    </div> -->
+
 </div>
 </div>
 
@@ -274,7 +109,7 @@
 <div class="row  justify-content-center text-center">
     <div class="col-md-2" *ngFor="let pegi16 of pegi16">
         <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="{{pegi16.caratula_juego}}"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong">
+            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong" (click)="juegoSeleccionado(pegi16)">
         <br>
         <span id="game" class="game_title">{{pegi16.titulo_juego}}</span>
         <br>
@@ -284,46 +119,6 @@
 
         <br>
     </div>
-    <!-- <div class="col-md-2">
-        <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://cdn-products.eneba.com/resized-products/InlPQPt7WRDHBRnySANJHVQrS2whLdUdTX9JB7djmGw_350x200_3x-0.jpeg"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-            onclick="myFunction('img/marksmenkingblack_180x.png')">
-        <br>
-        <span id="game">Among Us</span>
-        <br>
-        <span><b>PC</b><b id="plataforma"></b></span>
-        <br>
-    </div>
-    <div class="col-md-2">
-        <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/91QEkbiqDHL._AC_SL1500_.jpg"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-            onclick="myFunction('img/marksmenkingblack_180x.png')">
-        <br>
-        <span id="game">Crash Bandicoot</span>
-        <br>
-        <span><b>PS4</b><b id="plataforma"></b></span>
-        <br>
-    </div>
-    <div class="col-md-2">
-        <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/913V%2BirTARL._AC_SL1500_.jpg"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-            onclick="myFunction('img/marksmenkingblack_180x.png')">
-        <br>
-        <span id="game">Ratchet and Clank</span>
-        <br>
-        <span><b>PS4</b><b id="plataforma"></b></span>
-        <br>
-    </div>
-    <div class="col-md-2">
-        <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://m.media-amazon.com/images/I/81z+zbr-ltL._AC_SL1500_.jpg"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-            onclick="myFunction('img/marksmenkingblack_180x.png')">
-        <br>
-        <span id="game">Lego Harry Potter</span>
-        <br>
-        <span><b>XBOX/SWITCH/PS4</b><b id="plataforma"></b></span>
-        <br>
-    </div> -->
 
 </div>
 </div>
@@ -337,7 +132,7 @@
 <div class="row  justify-content-center text-center">
     <div class="col-md-2" *ngFor="let pegi18 of pegi18">
         <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="{{pegi18.caratula_juego}}"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong">
+            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong" (click)="juegoSeleccionado(pegi18)">
         <br>
         <span id="game" class="game_title">{{pegi18.titulo_juego}}</span>
         <br>
@@ -347,46 +142,7 @@
         <!-- <span><b></b><b id="plataforma"></b>{{pegi18.plataforma}}</span> -->
         <br>
     </div>
-    <!-- <div class="col-md-2">
-        <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://cdn-products.eneba.com/resized-products/InlPQPt7WRDHBRnySANJHVQrS2whLdUdTX9JB7djmGw_350x200_3x-0.jpeg"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-            onclick="myFunction('img/marksmenkingblack_180x.png')">
-        <br>
-        <span id="game">Among Us</span>
-        <br>
-        <span><b>PC</b><b id="plataforma"></b></span>
-        <br>
-    </div>
-    <div class="col-md-2">
-        <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/91QEkbiqDHL._AC_SL1500_.jpg"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-            onclick="myFunction('img/marksmenkingblack_180x.png')">
-        <br>
-        <span id="game">Crash Bandicoot</span>
-        <br>
-        <span><b>PS4</b><b id="plataforma"></b></span>
-        <br>
-    </div>
-    <div class="col-md-2">
-        <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://images-na.ssl-images-amazon.com/images/I/913V%2BirTARL._AC_SL1500_.jpg"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-            onclick="myFunction('img/marksmenkingblack_180x.png')">
-        <br>
-        <span id="game">Ratchet and Clank</span>
-        <br>
-        <span><b>PS4</b><b id="plataforma"></b></span>
-        <br>
-    </div>
-    <div class="col-md-2">
-        <img type="button" class="btn btn-dark" id="producto" routerLink="/paginajuego" alt="picture" src="https://m.media-amazon.com/images/I/81z+zbr-ltL._AC_SL1500_.jpg"
-            class="img-fluid imagenTop" data-toggle="modal" data-target="#exampleModalLong"
-            onclick="myFunction('img/marksmenkingblack_180x.png')">
-        <br>
-        <span id="game">Lego Harry Potter</span>
-        <br>
-        <span><b>XBOX/SWITCH/PS4</b><b id="plataforma"></b></span>
-        <br>
-    </div> -->
+
 
   </div>
 </div>
