@@ -480,6 +480,56 @@ app.get("/charlasAsistidas",(req, res) => {
 })
 
 
+/**ENDPOINT VOTACION DE JUEGO */
+
+app.post("/vote",(req, res) => {
+  let params = [req.body.id_usuario,req.body.id_juego,req.body.voto,req.body.numVotos,req.body.puntTotal]
+  console.log(params)
+  let query = "INSERT INTO likes_usuario (id_like_usario, id_usuario, id_juego, voto) VALUES (NULL, ?, ?, ?)"
+  console.log(query)
+  console.log(params)
+
+
+  connection.query(query, params, function(err, result) {
+    if (err) {
+      respuesta = "Ha ocurrido un error: " + err + "."
+      res.send(respuesta)
+    } else {
+      let query_put = `UPDATE juegos SET votos = ?, puntuacionTotal = ? WHERE juegos.id_juego = ?;`
+      console.log("query_put")
+      let params_platform = [req.body.numVotos,req.body.puntTotal,req.body.id_juego]
+      console.log(query_put)
+      connection.query(query_put, params_platform, function(err, result) {
+        if (err) {
+          respuesta = "Ha ocurrido un error: " + err + "."
+        } else {
+          respuesta = result
+        }
+        res.send(respuesta)
+      })
+    }
+  })
+})
+
+app.get("/vote",(req, res) => {
+  let params = [req.query.id_usuario ,req.query.id_juego]
+  console.log(params)
+  let query = `SELECT id_like_usario FROM likes_usuario WHERE id_usuario = ? AND id_juego = ?`;
+  console.log(query)
+  connection.query(query,params, function (error, results) {
+      if (error) {
+          respuesta = `Hubo un error : ${error}`
+      } 
+      else{
+          respuesta = results
+      }
+      res.send(respuesta )    
+  });
+})
+
+
+
+
 
 app.get("/ranking", function(req, res){
     let sql = "SELECT * FROM juegos AS s INNER JOIN juegos_plataforma AS m ON (s.id_juego = m.id_juego) ORDER BY puntuacionTotal DESC LIMIT 5";
