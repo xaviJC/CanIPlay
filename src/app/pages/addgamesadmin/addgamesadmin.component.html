@@ -6,12 +6,13 @@
         <h3>Imágenes del juego</h3>
           <div class="row mt-4 ml-2">
             <label for="caratula"><h6>Carátula del juego</h6></label>
-            <input type="text" class="form-control mb-1" placeholder="Inserte la url de la imagen" [(ngModel)]="urlCaratula">
+            <!-- <input type="text" class="form-control mb-1" placeholder="Inserte la url de la imagen" [(ngModel)]="urlCaratula" #urlCaratula> -->
+            <input type="text" class="form-control mb-1" placeholder="Inserte la url de la imagen" #caratula_juego>
           </div>
         <div class="row justify-content-center">
             <div class="col-xl-4 mt-4 ml-2">
 
-                <img *ngIf="urlCaratula === ''; else imgExiste" class="caratula" src="https://www.evisionstore.com/images/notfound.png" alt="">
+                <!-- <img *ngIf="urlCaratula === ''; else imgExiste" class="caratula" src="https://www.evisionstore.com/images/notfound.png" alt=""> -->
                 <ng-template #imgExiste>
                     <img  class="caratula" src="{{urlCaratula}}" alt="">
                 </ng-template>
@@ -29,15 +30,15 @@
         </div>
         <div class="img-container mt-4 ml-2">
             <label for="caratula"><h6>Imágenes del juego</h6></label>
-            <input type="text" class="form-control mb-1" placeholder="Screenshot 1">
-            <input type="text" class="form-control mb-1" placeholder="Screenshot 2">
-            <input type="text" class="form-control mb-1" placeholder="Screenshot 3">
-            <input type="text" class="form-control mb-1" placeholder="Screenshot 4">
+            <input type="text" class="form-control mb-1" placeholder="Screenshot 1" #pantallazo1>
+            <input type="text" class="form-control mb-1" placeholder="Screenshot 2" #pantallazo2>
+            <input type="text" class="form-control mb-1" placeholder="Screenshot 3" #pantallazo3>
+            <input type="text" class="form-control mb-1" placeholder="Screenshot 4" #pantallazo4>
         </div>
 
         <div class="img-container mt-4 ml-2">
             <label for="caratula"><h6>URL de la web oficial del juego</h6></label>
-            <input type="text" class="form-control mb-1" placeholder="Link...">
+            <input type="text" class="form-control mb-1" placeholder="Link..." #web_oficial>
         </div>
       </div>
 
@@ -50,12 +51,12 @@
             <div class="mini-left-container">
                 <div class="col-9">
                 <label for="titulo"><h6>Título del juego</h6></label>
-                  <input type="text" class="form-control" placeholder="">
+                  <input type="text" class="form-control" placeholder="" #titulo_juego>
                 </div>
                 <div class="col-5 mt-3">
                 <label for="password"><h6>Género</h6></label>
                 <br>
-                <select class="btn btn-mini">
+                <select class="btn btn-mini" #genero>
                   <option disabled selected>Seleccione una opcion</option>
                   <option>Acción</option>
                   <option>Aventura</option>
@@ -71,7 +72,7 @@
 
                 <div class="form-group age-input col-5 mb-2 mt-3">
                   <label><h6>Categoría PEGI</h6></label>
-                <select class="btn btn-mini">
+                <select class="btn btn-mini" #pegi>
                   <option disabled selected>Seleccione una opcion</option>
                   <option>3</option>
                   <option>7</option>
@@ -85,7 +86,7 @@
             <div class="mini-right-container pl-2">
               <label><h6>Plataformas disponibles</h6></label>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" #plataforma>
                 <label class="form-check-label">PS4</label>
               </div>
               <div class="form-check">
@@ -117,7 +118,7 @@
                         <b><span class="spanJuegos">Nº de jugadores</span></b>
                         <br>
                         <br>
-                        <select class="btn btn-mini">
+                        <select class="btn btn-mini" #tarjeta_jugador>
                           <option disabled selected>Seleccione una opcion</option>
                           <option>Single player</option>
                           <option>Single/multiplayer</option>
@@ -131,7 +132,7 @@
                       <b> <span class="spanJuegos">Pagos</span></b>
                       <br>
                       <br>
-                      <select class="btn btn-mini">
+                      <select class="btn btn-mini" #tarjeta_pagos>
                         <option disabled selected>Seleccione una opcion</option>
                       <option>Contiene pagos online opcionales</option>
                       <option>No contiene pagos online</option>
@@ -146,7 +147,7 @@
                       <b><span class="spanJuegos">Tipo de contenido</span></b>
                       <br>
                       <br>
-                      <select class="btn btn-mini">
+                      <select class="btn btn-mini" #tarjeta_contenido>
                         <option disabled selected>Seleccione una opcion</option>
                         <option>Contenido apto para niños</option>
                         <option>Contenido moderado</option>
@@ -159,7 +160,7 @@
                     <b> <span class="spanJuegos">Internet</span></b>
                     <br>
                     <br>
-                    <select class="btn btn-mini">
+                    <select class="btn btn-mini" #tarjeta_internet>
 
                     <option>No requiere conexión a internet</option>
                     <option>Requiere conexión a internet</option>
@@ -169,7 +170,16 @@
             </div>
             </div>
             <div class="form-group mb-4">
-              <button type="button" class="btn register-button">Añadir</button>
+
+
+<!-- ------------------------COMENTADO PARA QUE NO PETE-----------> 
+
+              <!-- <button type="button" class="btn register-button" (click)="addJuego(caratula_juego.value, pantallazo1.value,
+               pantallazo2.value, pantallazo3.value, pantallazo4.value, web_oficial.value, genero.value, tarjeta_jugador.value,
+               tarjeta_pagos.value, tarjeta_contenido.value, tarjeta_internet.value)">Añadir</button> -->
+
+<!-- ------------------------COMENTADO PARA QUE NO PETE----------->
+
             </div>
           </form>
 

@@ -23,4 +23,9 @@ export class JuegosService {
   getJuegoSeleccionado(): Juego {
     return this.juego
   }
+
+  postJuego(newJuego:Juego){
+    return this.http.post(this.url, newJuego);
+    console.log("holi")
+  }
 }
