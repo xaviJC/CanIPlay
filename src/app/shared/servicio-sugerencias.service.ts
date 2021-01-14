@@ -15,7 +15,9 @@ export class ServicioSugerenciasService {
   constructor(private http: HttpClient) { }
 
   addSugerencia(sugerencia: Sugerencias) {
+
     return this.http.post(this.url, sugerencia)
+
   }
 
   getSugerencia() {

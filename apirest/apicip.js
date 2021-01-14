@@ -88,9 +88,9 @@ app.post("/juegos", (req, res) => {
   let params_platform = game_platform
   let query = "INSERT INTO juegos (id_juego, titulo_juego, genero, pegi, tarjeta_jugador, tarjeta_pagos, tarjeta_contenido, tarjeta_internet, caratula_juego, pantallazo1, pantallazo2, pantallazo3, pantallazo4, votos, puntuacionTotal, web_oficial) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, ?)"
 
-console.log(params)
-console.log(params_platform)
-console.log(game_platform)
+// console.log(params)
+// console.log(params_platform)
+// console.log(game_platform)
 
   connection.query(query, params, function(err, result) {
     if (err) {
