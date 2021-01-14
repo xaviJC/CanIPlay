@@ -11,9 +11,11 @@ h1 {
   text-align: center;
   margin-top: 3%;
 }
-.game_title{
+
+.game_title {
   font-weight: 500;
 }
+
 .magic {
   background: rgb(255, 254, 250);
   border-width: 0.6em;
@@ -52,7 +54,8 @@ h1 {
 }
 
 .imagenTop {
-  width: 166px;
+  width: 150px;
   height: 209px;
-  margin-bottom: 5%;
+  margin-bottom: 3.5%;
+  border: 3px solid #371a6d;
 }

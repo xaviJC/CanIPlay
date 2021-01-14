@@ -61,7 +61,7 @@ connection.connect(function (err) {
         respuesta = result
       } else {
           respuesta = result
-          
+
       }
         res.send(respuesta)
       })
@@ -339,6 +339,21 @@ app.get("/topfive", function(req, res){
             console.log(result);
         }
 
+        res.send(result)
+    })
+})
+
+// <-------------------------Sugerencias ------------------------------>
+
+
+app.get("/sugAdmin", function(req, res){
+    let sql = "SELECT * FROM `sugerencias`";
+    connection.query(sql, function(err, result){
+        if(err){
+          console.log(err);
+        }else{
+          console.log(result);
+        }
         res.send(result)
     })
 })

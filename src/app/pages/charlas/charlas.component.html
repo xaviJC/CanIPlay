@@ -4,7 +4,7 @@
         <h2>APÚNTATE A NUESTRAS CHARLAS</h2>
     </div>
     <!-- <p><a class="nav-link" routerLink="/crearcharla">crearcharla</a></p> -->
-   
+
     <!-- <p><a class="nav-link" routerLink="/crearcharla">crearcharla</a></p> -->
 
     <div class="row justify-content-center mt-2">
@@ -36,9 +36,9 @@
     <!-- <hr> -->
     <div class="row text-center mt-5">
         <div class="course-card col-xl-4 col-xs-12 col-md-6  grow-rotate-on-hover" *ngFor="let charla of charlas;; let i = index">
-            
+
             <div class="card mb-3" style="max-width: 18rem;"  *ngIf="charlasDefault === false; else charlasBuscador">
-                <div class="card-header bg-transparent">{{charla.nombre}}{{charla.apellido}}</div>
+                <div class="card-header bg-transparent">{{charla.nombre}} {{charla.apellido}}</div>
                 <div class="card-body ">
                     <h5 class="card-title">{{charla.titulo_charla}}</h5>
                     <p class="card-text">{{charla.resumen_charla}}</p>
@@ -55,9 +55,9 @@
                         </div>
                     </div>
                 </div>
-           </div>            
+           </div>
            <ng-template #charlasBuscador>
-        
+
             <div class="card mb-3" style="max-width: 18rem;">
                 <div class="card-header bg-transparent">{{charla.nombre}} {{charla.apellido}}</div>
                 <div class="card-body ">
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-           </div>   
+           </div>
         </ng-template>
     </div>
 

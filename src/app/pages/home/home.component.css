@@ -90,9 +90,10 @@ h6:hover {
 }
 
 .imagenTop {
-  width: 166px;
+  width: 150px;
   height: 209px;
-  margin-bottom: 5%;
+  margin-bottom: 3.5%;
+  border: 3px solid #371a6d;
 }
 
 .text-center {

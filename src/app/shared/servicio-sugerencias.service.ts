@@ -10,18 +10,18 @@ import swal from 'sweetalert2';
 export class ServicioSugerenciasService {
 
   private url = "http://localhost:3000/sugerirjuego"
+  private url2 = "http://localhost:3000/sugAdmin"
   public sugerencia: Sugerencias;
   constructor(private http: HttpClient) { }
 
   addSugerencia(sugerencia: Sugerencias) {
-    console.log(sugerencia)
-    swal.fire({
-      icon: 'success',
-      title: 'Sugerencia recibida:',
-      text: `${sugerencia.name}`,
-      confirmButtonColor: "#371a6d",
-    });
+    return this.http.post(this.url, sugerencia)
   }
+
+  getSugerencia() {
+    return this.http.get(this.url2)
+  }
+
 }
 
 
