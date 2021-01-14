@@ -13,18 +13,10 @@ import swal from 'sweetalert2';
 export class PaginajuegoComponent implements OnInit {
   public tiltSettings: VanillaTiltSettings;
   public juego: any;
-<<<<<<< HEAD
-  usuarioRegistrado:any;
-  isUserLoggedIn:boolean;
-  titularAlerta:string = '';
-  public notaMedia;
-  
-=======
   usuarioRegistrado: any;
   isUserLoggedIn: boolean;
   titularAlerta: string = '';
   public notaMedia: number;
->>>>>>> revision
 
   public imgPegis = {
     "pegi3": "../../../assets/pegi-icons/pegi-3.png",
@@ -37,14 +29,9 @@ export class PaginajuegoComponent implements OnInit {
   constructor(private apiJuegos: JuegosService, private apiServiceUsuario: ServicioLoginService) {
     this.juego = this.apiJuegos.juego;
     console.log(this.juego.puntuacionTotal + "/" + this.juego.votos)
-    this.notaMedia = (this.juego.puntuacionTotal / this.juego.votos);
-<<<<<<< HEAD
-    this.notaMedia = this.notaMedia.toFixed(2);
-    this.apiServiceUsuario.usuarioRegistrado.subscribe( value => {
-=======
-    // this.notaMedia.toFixed(2);
+    this.notaMedia = (this.juego.puntuacionTotal / this.juego.votos).toFixed(2);
+    // this.notaMedia = this.notaMedia.toFixed(2);
     this.apiServiceUsuario.usuarioRegistrado.subscribe(value => {
->>>>>>> revision
       this.usuarioRegistrado = value;
       console.log(this.usuarioRegistrado)
     })
