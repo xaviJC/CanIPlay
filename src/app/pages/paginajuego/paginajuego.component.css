@@ -333,7 +333,11 @@ hr {
     width: 275px;
     border-radius: 13px;
   }
-
+  
+ a .volver{
+  text-decoration: none!important;
+  color:#371a6d!important;
+}
   /* descomentar para intentar quitar ventana modal*/
 
   /* .modal {

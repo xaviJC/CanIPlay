@@ -23,6 +23,10 @@ export class ServicioSugerenciasService {
   getSugerencia() {
     return this.http.get(this.url2)
   }
+  
+  deleteSugerencia(id) {
+    return this.http.delete(`${this.url2}?id=${id}`)
+  }
 
 }
 

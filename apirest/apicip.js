@@ -165,30 +165,18 @@ app.delete("/juegos", (req, res) => {
 })
 // ----------------- ENDPOINT SUGERENCIAS Y SUGERENCIAS ADMIN (USUARIO)-------------------pati
 
-// app.get('/sugAdmin', (req, res) => {
-//   let params = [req.query.id]
-//   if(!id) {
-//       let query = "SELECT * FROM sugerencias"
-//     connection.query (query, params, function(error, result) {
-//     if (error) {
-//       respuesta = `Error: ${error}`
-//     } else {
-//       respuesta = result
-//     }
-//     res.send(respuesta)
-//   })
-//   } else {
-//     let query = "SELECT * FROM sugerencias WHERE id_sugerencia = ?"
-//         connection.query (query, params, function(error, result) {
-//     if (error) {
-//       respuesta = `Error: ${error}`
-//     } else {p
-//       respuesta = result
-//     }
-//     res.send(respuesta)
-//   })
-//   }
-// })
+app.get('/sugAdmin', (req, res) => {
+      let query = "SELECT * FROM sugerencias"
+    connection.query (query, function(error, result) {
+    if (error) {
+      respuesta = `Error: ${error}`
+    } else {
+      respuesta = result
+    }
+    res.send(respuesta)
+  })
+
+})
 
 app.post('/sugerirjuego', (req, res) => {
  let params = [req.body.name, req.body.platform]

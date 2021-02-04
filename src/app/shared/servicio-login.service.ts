@@ -36,7 +36,8 @@ export class ServicioLoginService {
           icon: 'error',
           title: "Imposible inciar sesión",
           text: 'Revisa tu email y contraseña',
-          confirmButtonColor: "#371a6d"
+          confirmButtonColor: "#371a6d",
+          heightAuto: false
         })
 
         // swal.fire('Introduce un email o contraseña válido', this.titularAlerta, 'error');
@@ -46,7 +47,8 @@ export class ServicioLoginService {
           icon: 'success',
           title: "Has iniciado sesión",
           text: `Bienvenido de nuevo, ${this.usuario.nombre}`,
-          confirmButtonColor: "#371a6d"
+          confirmButtonColor: "#371a6d",
+          heightAuto: false
         })
         this.isUserLoggedIn.next(true)
         setTimeout(() => { this.router.navigate(["/perfil"]) }, 2000);

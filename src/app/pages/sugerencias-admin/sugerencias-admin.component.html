@@ -6,12 +6,12 @@
         <mat-form-field>
             <mat-label>Filtrar</mat-label>
             <!-- <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input> -->
-            <input matInput  placeholder="Ex. ium" #input>
+            <input matInput (keyup)="applyFilter($event)"  placeholder="Ex. ium" #input>
             <!-- <input matInput name="" id=""> -->
           </mat-form-field>
 
         <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"> -->
-        <table mat-table class="mat-elevation-z8">
+        <table mat-table class="mat-elevation-z8" [dataSource]="dataSource">
 
             <!-- Checkbox Column -->
             <ng-container matColumnDef="select">
@@ -25,25 +25,31 @@
             </ng-container>
 
             <!-- Position Column -->
-            <ng-container matColumnDef="position">
+            <ng-container matColumnDef="id">
               <th mat-header-cell *matHeaderCellDef> ID </th>
-              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+              <td mat-cell *matCellDef="let element"> {{element.id_sugerencia}} </td>
+              <!-- <td mat-cell *matCellDef="let element"> {{element.position}} </td> -->
             </ng-container>
 
             <!-- Name Column -->
-            <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef> Título </th>
-              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            <ng-container matColumnDef="titulo">
+              <th mat-header-cell *matHeaderCellDef>Plataformas </th>
+              <td mat-cell *matCellDef="let element"> {{element.titulo_juego}} </td>
             </ng-container>
 
             <!-- Motivo Column -->
-            <ng-container matColumnDef="motivo">
+            <!-- <ng-container matColumnDef="add">
               <th mat-header-cell *matHeaderCellDef>Plataformas </th>
-              <td mat-cell *matCellDef="let element"> {{element.motivo}} </td>
-            </ng-container>
+              <td mat-cell *matCellDef="let element"> {{element.plataforma}} </td>
+            </ng-container> -->
 
 
             <!-- Añadir Column -->
+            <!-- <ng-container matColumnDef="delete">
+              <th mat-header-cell *matHeaderCellDef>Plataformas </th>
+              <td mat-cell *matCellDef="let element"> {{element.titulo_juego}} </td>
+            </ng-container> -->
+
             <ng-container matColumnDef="add">
                 <th mat-header-cell *matHeaderCellDef>Añadir </th>
                 <td mat-cell *matCellDef="let element">
@@ -57,9 +63,8 @@
             <!-- Borrar Column -->
             <ng-container matColumnDef="delete">
                 <th mat-header-cell *matHeaderCellDef>Borrar</th>
-                <td mat-cell *matCellDef="let element">
-                    <!-- <button mat-mini-fab color="basic" (click)="delete(element)" aria-label="Example icon button with a delete icon" #id> -->
-                    <button mat-mini-fab color="basic"  aria-label="Example icon button with a delete icon" #id>
+                <td mat-cell *matCellDef="let element,let i = index;">
+                    <button mat-mini-fab color="basic"  aria-label="Example icon button with a delete icon"  (click)="delete(element.titulo_juego,element.id_sugerencia,i)">
                         <mat-icon>delete</mat-icon>
                       </button>
                      </td>

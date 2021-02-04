@@ -52,9 +52,12 @@
         <img class="pegi" *ngIf="rank.pegi == 18"src="{{imgPegis.pegi18}}">
 
         <br>
-            <span *ngIf="rank.pc == 1">PC·</span><span *ngIf="rank.xbox_one == 1">XboxOne·</span> <span
+            <!-- <span *ngIf="rank.pc == 1">PC·</span><span *ngIf="rank.xbox_one == 1">XboxOne·</span> <span
                 *ngIf="rank.xbox_series == 1">Xbox Series X·</span> <span *ngIf="rank.ps4 == 1">PS4·</span><span
-                *ngIf="rank.ps5 == 1">PS5·</span><span *ngIf="rank.switch == 1">NSW</span>
+                *ngIf="rank.ps5 == 1">PS5·</span><span *ngIf="rank.switch == 1">NSW</span> -->
+                <span *ngIf="rank.pc == 1"> PC &nbsp;</span><span *ngIf="rank.xbox_one == 1"> XboxOne &nbsp;</span> <span
+                *ngIf="rank.xbox_series == 1">Xbox Series &nbsp;</span> <span *ngIf="rank.ps4 == 1"> PS4 &nbsp;</span><span
+                *ngIf="rank.ps5 == 1"> PS5 &nbsp;</span><span *ngIf="rank.switch == 1"> &nbsp; NSW &nbsp;</span>
         <br>
     </div>
         <!-- <div class="col-md-2">
