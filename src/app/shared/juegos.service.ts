@@ -27,8 +27,10 @@ export class JuegosService {
 
 
   postJuego(newJuego:Juego){
+    console.log("newJuego")
+    console.log(newJuego)
     return this.http.post(this.url, newJuego);
-    console.log("holi")
+    // console.log("holi")
   }
 
   addVoto(id_usuario,id_juego,voto,puntTotal,numVotos) {
