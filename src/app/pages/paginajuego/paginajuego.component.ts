@@ -29,7 +29,7 @@ export class PaginajuegoComponent implements OnInit {
   constructor(private apiJuegos: JuegosService, private apiServiceUsuario: ServicioLoginService) {
     this.juego = this.apiJuegos.juego;
     console.log(this.juego.puntuacionTotal + "/" + this.juego.votos)
-    // this.notaMedia = (this.juego.puntuacionTotal / this.juego.votos).toFixed(2);
+    this.notaMedia = (this.juego.puntuacionTotal).toFixed(2);
     // this.notaMedia = this.notaMedia.toFixed(2);
     this.apiServiceUsuario.usuarioRegistrado.subscribe(value => {
       this.usuarioRegistrado = value;

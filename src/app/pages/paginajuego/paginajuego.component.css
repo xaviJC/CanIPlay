@@ -32,7 +32,7 @@ h5 {
   border-width: 0.6em;
   border-color: #371a6d;
   border-style: solid;
-  padding: 2% 2% 2% 2%;
+  padding: 1% 2% 2% 1%;
   border-radius: 15px;
   box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2),
     4px 6px 20px 4px rgba(0, 0, 0, 0.19);
@@ -45,7 +45,6 @@ h5 {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   padding-bottom: 1%;
-
   /* box-shadow: 2px, ; */
   /* box-shadow: 6px 9px 6px -6px rgb(27, 27, 27); */
 }
@@ -63,7 +62,7 @@ h5 {
 }
 
 .box-container {
-  margin-top: 17%;
+  margin-top: 10%;
   margin-left: 2%;
 }
 
@@ -168,7 +167,7 @@ h5 {
 }
 
 .card-wrapper {
-  padding-top: 3%;
+  padding-top: 7%;
 }
 
 .card-tip {
@@ -185,7 +184,7 @@ h5 {
 .img-wrapper {
   float: left;
   margin-top: 0.5%;
-  padding-top: 5%;
+  padding-top: 8%;
 }
 
 .game-image {
@@ -206,6 +205,13 @@ h5 {
 
 .card-text {
   text-align: center;
+}
+
+.btn-rosado {
+  color: #ded4f1;
+  background-color: #371a6d;
+  border-color: #371a6d;
+  width: auto;
 }
 
 hr {
@@ -333,11 +339,12 @@ hr {
     width: 275px;
     border-radius: 13px;
   }
-  
- a .volver{
-  text-decoration: none!important;
-  color:#371a6d!important;
-}
+
+  a .volver {
+    text-decoration: none !important;
+    color: #371a6d !important;
+  }
+
   /* descomentar para intentar quitar ventana modal*/
 
   /* .modal {

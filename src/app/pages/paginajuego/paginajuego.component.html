@@ -4,11 +4,11 @@
       <div class="row">
 
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-xs-12 game-data">
-          <a class="volver fas fa-angle-double-left fa-2x ml-3 " routerLink="/buscarjuegos"></a>
+        <a class="col-xl-5 col-md-6 col-sm-6 col-xs-2 btn btn-rosado btn-sm" href="#" role="buttontarget=" routerLink="/buscarjuegos"><i class="fas fa-arrow-left"></i></a>
           <div class="profile-wrapper">
             <!-- <i class="fas fa-angle-double-left"></i> -->
-            
-            <div class="box-container d-flex justify-content-center">              
+
+            <div class="box-container d-flex justify-content-center">
               <img aTilt class="videogame-img" src="{{juego.caratula_juego}}">
             </div>
 
@@ -43,7 +43,7 @@
               <div class="d-flex platform-container justify-content-center">
                 <h4><span *ngIf="juego.pc == 1">  PC &nbsp;</span><span *ngIf="juego.xbox_one == 1"> XboxOne &nbsp;</span><span *ngIf="juego.xbox_series == 1"> Xbox Series X &nbsp; </span>
                   <!-- <br> -->
-                  <span *ngIf="juego.ps4 == 1">  PS4 &nbsp;</span><span *ngIf="juego.ps5 == 1"> PS5 &nbsp;</span><span *ngIf="juego.switch == 1"> NSW </span></h4>
+                  <span *ngIf="juego.ps4 == 1">  PS4 &nbsp;</span><span *ngIf="juego.ps5 == 1"> PS5 &nbsp;</span><span *ngIf="juego.switch == 1"> Switch </span></h4>
               </div>
               <hr class="hrpotato">
               <div class="recomend">
