@@ -3,10 +3,6 @@
         <h5>Cómo dicen que el saber no ocupa lugar...</h5>
         <h2>APÚNTATE A NUESTRAS CHARLAS</h2>
     </div>
-    <!-- <p><a class="nav-link" routerLink="/crearcharla">crearcharla</a></p> -->
-
-    <!-- <p><a class="nav-link" routerLink="/crearcharla">crearcharla</a></p> -->
-
     <div class="row justify-content-center mt-2">
         <div class="col-xl-6">
             <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 border">
@@ -26,7 +22,7 @@
         </div>
         <div class="col-2">
             <button class="btn btn-rosado buscarReset mt-1" (click)="buscador(titulo.value,fecha.value)" [disabled]="!tituloCharla && !fechaCharla">Buscar</button>
-            <button class="btn btn-rosado buscarReset mt-1 ml-2" (click)="reset()" >Todas</button>
+            <button class="btn btn-rosado buscarReset mt-1 ml-3" (click)="reset()"><i class="fas fa-trash-alt"></i></button>
         </div>
     </div>
     <div class="text-center">
@@ -50,7 +46,7 @@
                                   <mat-icon>sms</mat-icon>
                                 </button>
                         </div> -->
-                        <div class="col-6">                            
+                        <div class="col-6">
                             <button *ngIf="isUserLoggedIn === false; else registro" class="btn btn-rosado" data-toggle="modal" (click)="handleChange($event)"  >Ver más</button>
                             <ng-template #registro>
                             <button class="btn btn-rosado" data-toggle="modal" (click)="charlaSeleccionada(i)" data-target="#exampleModalLong" >Ver más</button>
@@ -100,7 +96,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <h5 class="text-center">{{charlaModal.nombre}}{{charlaModal.apellido}}</h5>
+            <h5 class="text-center">{{charlaModal.nombre}} {{charlaModal.apellido}}</h5>
             <hr>
             <div class="row text-center">
                 <div class="when col-md-4"><fa-icon [icon]="faCalendarDay"></fa-icon><span class="ml-2">{{charlaModal.fecha_charla}}</span></div>

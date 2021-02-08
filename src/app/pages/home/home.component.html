@@ -11,11 +11,11 @@
       </div>
       <div class="row justify-content-md-center">
         <div class="ranking col col-lg-6 col-xs-12">
-          <a><h1>· Ránking y buscador de juegos</h1></a>
+          <a style="text-decoration:none;" routerLink="/topten"><h1><i class="fas fa-list-ol"></i> Ránking y buscador de juegos</h1></a>
           <h6>Encuentra el juego más indicado con nuestros ránkings. Busca y filtra según edad o consola.</h6>
         </div>
         <div class="charlas col col-lg-6 col-xs-12">
-          <a><h1>· Charlas diarias</h1></a>
+          <a style="text-decoration:none;" routerLink="/charlas"><h1><i class="far fa-comments"></i> Charlas diarias</h1></a>
           <h6>¡Imparte o asiste a eventos sobre videojuegos! <br>Encuentra nuevas charlas cada día, inscríbete y asiste online.</h6>
         </div>
       </div>
@@ -45,10 +45,10 @@
         <span id="game" class="game_title">{{rank.titulo_juego}}</span>
         <br>
 
-        <img class="pegi" *ngIf="rank.pegi == 3" src="{{imgPegis.pegi3}}"> 
-        <img class="pegi" *ngIf="rank.pegi == 7" src="{{imgPegis.pegi7}}"> 
-        <img class="pegi" *ngIf="rank.pegi == 12" src="{{imgPegis.pegi12}}"> 
-        <img class="pegi" *ngIf="rank.pegi == 16" src="{{imgPegis.pegi16}}"> 
+        <img class="pegi" *ngIf="rank.pegi == 3" src="{{imgPegis.pegi3}}">
+        <img class="pegi" *ngIf="rank.pegi == 7" src="{{imgPegis.pegi7}}">
+        <img class="pegi" *ngIf="rank.pegi == 12" src="{{imgPegis.pegi12}}">
+        <img class="pegi" *ngIf="rank.pegi == 16" src="{{imgPegis.pegi16}}">
         <img class="pegi" *ngIf="rank.pegi == 18"src="{{imgPegis.pegi18}}">
 
         <br>
@@ -57,7 +57,7 @@
                 *ngIf="rank.ps5 == 1">PS5·</span><span *ngIf="rank.switch == 1">NSW</span> -->
                 <span *ngIf="rank.pc == 1"> PC &nbsp;</span><span *ngIf="rank.xbox_one == 1"> XboxOne &nbsp;</span> <span
                 *ngIf="rank.xbox_series == 1">Xbox Series &nbsp;</span> <span *ngIf="rank.ps4 == 1"> PS4 &nbsp;</span><span
-                *ngIf="rank.ps5 == 1"> PS5 &nbsp;</span><span *ngIf="rank.switch == 1"> &nbsp; NSW &nbsp;</span>
+                *ngIf="rank.ps5 == 1"> PS5 &nbsp;</span><span *ngIf="rank.switch == 1"> &nbsp; Switch &nbsp;</span>
         <br>
     </div>
         <!-- <div class="col-md-2">
@@ -123,9 +123,9 @@
     </div>
   <div class="row  text-center mt-5" >
     <div class="course-card col-xl-4 col-xs-12 col-md-6  grow-rotate-on-hover" *ngFor="let charla of charlas;; let i = index">
-            
+
       <div class="card mb-3" style="max-width: 18rem;">
-          <div class="card-header bg-transparent">{{charla.nombre}}{{charla.apellido}}</div>
+          <div class="card-header bg-transparent">{{charla.nombre}} {{charla.apellido}}</div>
           <div class="card-body ">
               <h5 class="card-title">{{charla.titulo_charla}}</h5>
               <p class="card-text">{{charla.resumen_charla}}</p>
@@ -137,7 +137,7 @@
                   </div>
               </div>
           </div>
-     </div>            
+     </div>
 </div>
-  </div> 
+  </div>
 </div>

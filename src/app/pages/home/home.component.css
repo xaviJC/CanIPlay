@@ -36,11 +36,6 @@ h6 {
   color: rgb(253, 250, 238);
 }
 
-h6:hover {
-  color: rgb(255, 219, 88);
-  text-decoration: none;
-}
-
 .jumbotron {
   color: white;
   background-image: url('../../../assets/home-img/patrik-larsson-TZxMh0i8kXA-unsplash.jpg');
