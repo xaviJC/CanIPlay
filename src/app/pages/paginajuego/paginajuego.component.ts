@@ -16,7 +16,7 @@ export class PaginajuegoComponent implements OnInit {
   usuarioRegistrado: any;
   isUserLoggedIn: boolean;
   titularAlerta: string = '';
-  public notaMedia: number;
+  public notaMedia: string;
 
   public imgPegis = {
     "pegi3": "../../../assets/pegi-icons/pegi-3.png",

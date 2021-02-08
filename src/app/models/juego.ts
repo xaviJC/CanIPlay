@@ -4,7 +4,7 @@ export class Juego {
   public titulo_juego: string;
   public genero: string;
   public pegi: number;
-  public plataforma: string;
+  public plataforma: string[];
   public tarjeta_jugador: string;
   public tarjeta_pagos: string;
   public tarjeta_contenido: string;
@@ -18,7 +18,7 @@ export class Juego {
   public puntuacionTotal: number;
   public web_oficial: string;
 
-  constructor(id_juego: number, titulo_juego: string, genero: string, pegi: number, plataforma: string,
+  constructor(id_juego: number, titulo_juego: string, genero: string, pegi: number, plataforma:string [],
     tarjeta_jugador: string, tarjeta_pagos: string, tarjeta_contenido: string, tarjeta_internet: string,
     caratula_juego: string, pantallazo1: string, pantallazo2: string, pantallazo3: string, pantallazo4: string,
     votos: number, puntuacionTotal: number, web_oficial: string) {

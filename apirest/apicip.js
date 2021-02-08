@@ -70,26 +70,67 @@ connection.connect(function (err) {
 // ---------------------------------- POST ---------------------------------Pati
 
 app.post("/juegos", (req, res) => {
-  let game_name = req.body.name
-  let game_genre = req.body.genre
+  let game_name = req.body.titulo_juego
+  let game_genre = req.body.genero
   let game_pegi = req.body.pegi
-  let game_platform = req.body.platform
-  let game_player = req.body.player
-  let game_payment = req.body.payment
-  let game_content = req.body.content
-  let game_internet = req.body.internet
-  let game_cover = req.body.cover
-  let game_screen1 = req.body.screen1
-  let game_screen2 = req.body.screen2
-  let game_screen3 = req.body.screen3
-  let game_screen4 = req.body.screen4
-  let game_web = req.body.web
+  let game_platform = req.body.plataforma
+  let game_player = req.body.tarjeta_jugador
+  let game_payment = req.body.tarjeta_pagos
+  let game_content = req.body.tarjeta_contenido
+  let game_internet = req.body.tarjeta_internet
+  let game_cover = req.body.caratula_juego
+  let game_screen1 = req.body.pantallazo1
+  let game_screen2 = req.body.pantallazo2
+  let game_screen3 = req.body.pantallazo3
+  let game_screen4 = req.body.pantallazo4
+  let game_web = req.body.web_oficial
   let params = new Array(game_name, game_genre, game_pegi, game_player, game_payment, game_content, game_internet, game_cover, game_screen1, game_screen2, game_screen3, game_screen4, game_web)
   let params_platform = game_platform
+  let params_plataformaFIna = [0,0,0,0,0,0];
   let query = "INSERT INTO juegos (id_juego, titulo_juego, genero, pegi, tarjeta_jugador, tarjeta_pagos, tarjeta_contenido, tarjeta_internet, caratula_juego, pantallazo1, pantallazo2, pantallazo3, pantallazo4, votos, puntuacionTotal, web_oficial) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, 0, ?)"
+  
+  // let id = req.query.id
+  // if (id) {
+  //   let params = [id]
+  //   let query = "DELETE FROM `sugerencias` WHERE `sugerencias`.`id_sugerencia` = ?"
+  //        connection.query(query, params, function (err, result) {
+  //         if (err) {
+  //           respuesta = "Ha ocurrido un error: " + err + "."
+  //         } else {
+  //           respuesta = result
+  //         }
+  //           res.send(respuesta)
+  //       })
+  //   } else {
+  //     respuesta = "No se ha podido borrar el juego."
+  //   }
 
-// console.log(params)
-// console.log(params_platform)
+console.log("for")
+for(let i = 0;i < params_platform.length ; i++) {
+  console.log(params_platform[i])
+  if(params_platform[i] == "0") {
+    params_plataformaFIna[0] =  1;
+  }
+  if(params_platform[i] == "1") {
+    params_plataformaFIna[1] =  1;
+  }
+  if(params_platform[i] == "2") {
+    params_plataformaFIna[2] =  1;
+  }
+  if(params_platform[i] == "3") {
+    params_plataformaFIna[3] =  1;
+  }
+  if(params_platform[i] == "4") {
+    params_plataformaFIna[4] =  1;
+  }
+  if(params_platform[i] == "5") {
+    params_plataformaFIna[5] =  1;
+  }
+}
+
+
+console.log(params_plataformaFIna);
+
 // console.log(game_platform)
 
   connection.query(query, params, function(err, result) {
@@ -99,7 +140,7 @@ app.post("/juegos", (req, res) => {
     } else {
       let query_platform = `INSERT INTO juegos_plataforma (id_juego, ps4, ps5, xbox_series, xbox_one, switch, pc) VALUES (${result.insertId}, ?, ?, ?, ?, ?, ?)`
       console.log(result.insertId)
-      connection.query(query_platform, params_platform, function(err, result) {
+      connection.query(query_platform, params_plataformaFIna, function(err, result) {
         if (err) {
           respuesta = "Ha ocurrido un error: " + err + "."
         } else {
@@ -163,32 +204,20 @@ app.delete("/juegos", (req, res) => {
       respuesta = "No se ha podido borrar el juego."
     }
 })
-// ----------------- ENDPOINT SUGERENCIAS Y SUGERENCIAS ADMIN (USUARIO)-------------------pati
+// ----------------- ENDPOINT ºERENCIAS Y SUGERENCIAS ADMIN (USUARIO)-------------------pati
 
-// app.get('/sugAdmin', (req, res) => {
-//   let params = [req.query.id]
-//   if(!id) {
-//       let query = "SELECT * FROM sugerencias"
-//     connection.query (query, params, function(error, result) {
-//     if (error) {
-//       respuesta = `Error: ${error}`
-//     } else {
-//       respuesta = result
-//     }
-//     res.send(respuesta)
-//   })
-//   } else {
-//     let query = "SELECT * FROM sugerencias WHERE id_sugerencia = ?"
-//         connection.query (query, params, function(error, result) {
-//     if (error) {
-//       respuesta = `Error: ${error}`
-//     } else {p
-//       respuesta = result
-//     }
-//     res.send(respuesta)
-//   })
-//   }
-// })
+app.get('/sugAdmin', (req, res) => {
+      let query = "SELECT * FROM sugerencias"
+    connection.query (query, function(error, result) {
+    if (error) {
+      respuesta = `Error: ${error}`
+    } else {
+      respuesta = result
+    }
+    res.send(respuesta)
+  })
+
+})
 
 app.post('/sugerirjuego', (req, res) => {
  let params = [req.body.name, req.body.platform]

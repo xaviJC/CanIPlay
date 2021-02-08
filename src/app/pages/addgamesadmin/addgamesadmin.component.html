@@ -7,12 +7,12 @@
           <div class="row mt-4 ml-2">
             <label for="caratula"><h6>Carátula del juego</h6></label>
             <!-- <input type="text" class="form-control mb-1" placeholder="Inserte la url de la imagen" [(ngModel)]="urlCaratula" #urlCaratula> -->
-            <input type="text" class="form-control mb-1" placeholder="Inserte la url de la imagen" #caratula_juego>
+            <input type="text" class="form-control mb-1" placeholder="Inserte la url de la imagen" #caratula_juego [(ngModel)]="urlCaratula" >
           </div>
         <div class="row justify-content-center">
             <div class="col-xl-4 mt-4 ml-2">
 
-                <!-- <img *ngIf="urlCaratula === ''; else imgExiste" class="caratula" src="https://www.evisionstore.com/images/notfound.png" alt=""> -->
+                <img *ngIf="urlCaratula === ''; else imgExiste" class="caratula" src="https://www.evisionstore.com/images/notfound.png" alt="">
                 <ng-template #imgExiste>
                     <img  class="caratula" src="{{urlCaratula}}" alt="">
                 </ng-template>
@@ -20,20 +20,20 @@
             <div class=" col-xl-5 img-container mt-4 ml-2">
                 <div class="grupo-pantallazos mr-3 ">
 
-                    <img class="pantallazos" src="https://images-na.ssl-images-amazon.com/images/I/81OY2Tnp5XL._AC_SL1500_.jpg">
-                    <img class="pantallazos" src="https://images-na.ssl-images-amazon.com/images/I/71214JYG-tL._AC_SL1500_.jpg">
+                    <img class="pantallazos" src="{{pantallazo1}}">
+                    <img class="pantallazos" src="{{pantallazo2}}">
                     <br>
-                    <img class="pantallazos" src="https://images-na.ssl-images-amazon.com/images/I/81OY2Tnp5XL._AC_SL1500_.jpg">
-                    <img class="pantallazos" src="https://images-na.ssl-images-amazon.com/images/I/71214JYG-tL._AC_SL1500_.jpg">
+                    <img class="pantallazos" src="{{pantallazo3}}">
+                    <img class="pantallazos" src="{{pantallazo4}}">
                 </div>
             </div>
         </div>
         <div class="img-container mt-4 ml-2">
             <label for="caratula"><h6>Imágenes del juego</h6></label>
-            <input type="text" class="form-control mb-1" placeholder="Screenshot 1" #pantallazo1>
-            <input type="text" class="form-control mb-1" placeholder="Screenshot 2" #pantallazo2>
-            <input type="text" class="form-control mb-1" placeholder="Screenshot 3" #pantallazo3>
-            <input type="text" class="form-control mb-1" placeholder="Screenshot 4" #pantallazo4>
+            <input type="text" class="form-control mb-1" placeholder="Screenshot 1" #pantallazo_1  [(ngModel)]="pantallazo1">
+            <input type="text" class="form-control mb-1" placeholder="Screenshot 2" #pantallazo_2  [(ngModel)]="pantallazo2">
+            <input type="text" class="form-control mb-1" placeholder="Screenshot 3" #pantallazo_3  [(ngModel)]="pantallazo3">
+            <input type="text" class="form-control mb-1" placeholder="Screenshot 4" #pantallazo_4  [(ngModel)]="pantallazo4">
         </div>
 
         <div class="img-container mt-4 ml-2">
@@ -84,7 +84,14 @@
             </div>
 
             <div class="mini-right-container pl-2">
-              <label><h6>Plataformas disponibles</h6></label>
+              <ul class="checkbox-items">
+                <li *ngFor="let item of checkboxesDataList">
+                  <input type="checkbox" class="form-check-input" name="{{item.label}}" [value]="item.label" (change)="getValue($event,item.id)" >
+                  <label class="form-check-label">{{item.label}}</label>
+                </li>
+              </ul>
+              
+              <!-- <label for="options"><h6>Plataformas disponibles</h6></label>
               <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1" #plataforma>
                 <label class="form-check-label">PS4</label>
@@ -108,7 +115,7 @@
               <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label">PC</label>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -173,10 +180,14 @@
 
 
 <!-- ------------------------COMENTADO PARA QUE NO PETE-----------> 
-
-              <!-- <button type="button" class="btn register-button" (click)="addJuego(caratula_juego.value, pantallazo1.value,
-               pantallazo2.value, pantallazo3.value, pantallazo4.value, web_oficial.value, genero.value, tarjeta_jugador.value,
-               tarjeta_pagos.value, tarjeta_contenido.value, tarjeta_internet.value)">Añadir</button> -->
+<!-- // id_juego: number, titulo_juego: string, genero: string, pegi: number, plataforma:string [],
+//   tarjeta_jugador: string, tarjeta_pagos: string, tarjeta_contenido: string, tarjeta_internet: string,
+//   caratula_juego: string, pantallazo1: string, pantallazo2: string, pantallazo3: string, pantallazo4: string,
+//   votos: number, puntuacionTotal: number, web_oficial: string -->
+          <button type="button" class="btn register-button" (click)="addJuego(titulo_juego.value,genero.value, pegi.value, tarjeta_jugador.value,
+          tarjeta_pagos.value, tarjeta_contenido.value, tarjeta_internet.value, caratula_juego.value, pantallazo_1.value,
+           pantallazo_2.value, pantallazo_3.value, pantallazo_4.value, web_oficial.value)">Añadir</button>
+               <!-- <button type="button" class="btn register-button" (click)="addJuego()"></button> -->
 
 <!-- ------------------------COMENTADO PARA QUE NO PETE----------->
 

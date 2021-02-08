@@ -4,13 +4,9 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { ServicioSugerenciasService } from 'src/app/shared/servicio-sugerencias.service';
 import { Sugerencias } from 'src/app/model/sugerencias';
+import {MatTableModule} from '@angular/material/table';
+import swal from 'sweetalert2';
 
-
-// export interface PeriodicElement {
-//   name: string;
-//   position: number;
-//   motivo: string;
-// }
 
 // const ELEMENT_DATA: PeriodicElement[] = [
 //   { position: 0, name: 'Pes 2020', motivo: "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione doloribus adipisci itaque in pariatur" },
@@ -45,18 +41,26 @@ import { Sugerencias } from 'src/app/model/sugerencias';
   styleUrls: ['./sugerencias-admin.component.css']
 })
 export class SugerenciasAdminComponent implements OnInit {
-  displayedColumns: string[] = ['select', 'position', 'name', 'motivo', 'add', 'delete'];
-  // data = Object.assign(ELEMENT_DATA);
+  displayedColumns: string[] = ['id', 'titulo', 'add', 'delete'];
+  data:any[] = [];
   // sugerencia;
-  // dataSource = new MatTableDataSource<Element>(this.data);
+  public dataSource = new MatTableDataSource<Sugerencias>();
   // selection = new SelectionModel<Sugerencias>(true, []);
+  // data
 
   constructor(private apiServiceSugerencias: ServicioSugerenciasService) {
-    this.apiServiceSugerencias.getSugerencia().subscribe((data: any) => {
-      console.log(data)
-      let sugerencia = Object.assign(data)
-      let dataSource = new MatTableDataSource<Element>(sugerencia);
-      let selection = new SelectionModel<Sugerencias>(true, []);
+    this.apiServiceSugerencias.getSugerencia().subscribe(res => {
+      this.dataSource.data = res as Sugerencias[];
+      console.log("this.dataSource")
+      console.log(this.dataSource.data)
+    // this.apiServiceSugerencias.getSugerencia().subscribe((data: any) => {
+    //   console.log(data)
+    //   let sugerencia = Object.assign(data)
+    //   console.log( "sugerencia")
+    //   console.log( sugerencia)
+    //   this.dataSource.data = data as Sugerencias[];
+      // let dataSource = new MatTableDataSource<Element>(sugerencia);
+      // let selection = new SelectionModel<Sugerencias>(true, []);
       // @ViewChild(MatPaginator) paginator: MatPaginator;
 
       // ngAfterViewInit() {
@@ -70,23 +74,48 @@ export class SugerenciasAdminComponent implements OnInit {
     })
   }
 
-  // @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  // ngAfterViewInit() {
-  //   this.dataSource.paginator = this.paginator;
-  // }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 
-  // applyFilter(event: Event) {
-  //   const filterValue = (event.target as HTMLInputElement).value;
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-  // }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
-  // delete(algo) {
-  //   console.log(this.dataSource.data)
-  //   let index = algo.position;
-  //   this.dataSource.data.splice(index, 1)
-  //   this.dataSource = new MatTableDataSource<Element>(this.data);
-  // }
+  delete(nombre_juego,id,index) {
+    console.log("id,")
+    console.log(id)
+    console.log(index)
+    console.log(this.dataSource.data)
+
+    swal.fire({
+      title: `¿Quieres borrar ${nombre_juego}?`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        swal.fire(
+          'Borrado',
+          'La sugerencia ha sido borrada',
+          'success'
+        )
+        this.dataSource.data.splice(index, 1)
+        this.dataSource._updateChangeSubscription(); 
+        
+    this.apiServiceSugerencias.deleteSugerencia(id).subscribe((data: any) => {
+      console.log(data)
+    })
+      }
+    })
+
+  }
   /**
    * QUEDA METER FUNCIONALIDAD AL SLIDE BUTTON Y MAS COSAS
    */

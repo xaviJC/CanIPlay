@@ -7,7 +7,7 @@ import { ServicioLoginService } from '../../shared/servicio-login.service';
 import { Usuario } from '../../model/usuario'
 import { Charlas } from 'src/app/model/charlas';
 import { ServicioCharlasService } from 'src/app/shared/servicio-charlas.service';
-
+import swal from 'sweetalert2';
 
 
 
@@ -50,6 +50,19 @@ export class CharlasComponent implements OnInit {
         console.log("no hay na")
       }
     })
+  }
+
+  handleChange(evt) {
+    console.log("usuario")
+    console.log(this.usuarioRegistrado)
+    if (this.usuarioRegistrado.tipo_usuario === "") {
+
+      swal.fire({
+        icon: 'warning',
+        title: 'Debes registrarte para ver la charla.',
+        confirmButtonColor: "#371a6d",
+      });
+    }
   }
 
   reset() {
